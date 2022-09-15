@@ -1,9 +1,9 @@
 body{
     background-color: rgb(127, 255, 212);
-    background-image: url("images/orangeCat.png");
+    background-image: url("orangecat.png");
 }
 p{
     background-color: red;
     padding: 10px;
-    background-image: url("quote.png");
+    background-image: url("images/quote.png");
 }
