@@ -1,4 +1,4 @@
 body{
     background-color: rgb(127, 255, 212);
-    background-image: url(../images/orangecat.png);
+    background-image: url("orangecat.png");
 }
