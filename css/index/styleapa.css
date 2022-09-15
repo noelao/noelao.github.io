@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(127, 255, 212);
+    background-image: url("orangecat.png");
+}
+p{
+    background-color: orangered;
+    padding: 10px;
+    background-image: url("images/quote.png");
+}
