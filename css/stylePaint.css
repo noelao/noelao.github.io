@@ -1,0 +1,47 @@
+#canvas
+{
+    border: 1px solid black;
+    margin: 10px 0 10px 0;
+    cursor: crosshair;
+}
+#colors button
+{
+    width: 40px;
+	height: 40px;
+	border-radius: 30%;
+	margin-top: 0px;
+    cursor: pointer;
+}
+#black 
+{
+    background: black;
+}
+#pink 
+{
+    background: pink;
+}
+#red
+{
+    background: red;
+}
+#green 
+{ 
+    background: green;
+}
+#blue 
+{
+    background: blue;
+}
+#orange 
+{
+    background: orange;
+}
+#aqua{
+    background-color: aqua;
+}
+div.position_static{
+    position: fixed;
+    top: 30px;
+    right: 5px;
+    color: red;
+}

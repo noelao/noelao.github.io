@@ -1,0 +1,70 @@
+body{
+    background-image: url("images/orangeCat.png");
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.fontArial{
+    font-family: Arial;
+}
+div.upb{
+    background-color: #f98869;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    height: 10000px;
+}
+div.kp{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+nav{
+    padding: 50px 0;
+    min-width: 500px;
+}
+nav ul {
+    background-color: rgb(255, 255, 255);
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li a{
+    padding: 10px;
+    color: #000000;
+    font-size: 18px;
+    font-family: Arial;
+    text-decoration: none;
+    display: block;
+}
+p.h{
+    text-shadow: 5px 10px 2px #93986f,
+    -3px 6px 5px #58d1e3;
+}
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+#kom{
+    width: 150px;
+    height: 150px;
+    background-color: lightblue;
+    float: left;
+    overflow: scroll;
+}
+.blue{
+    background-color: #8EC4D0;
+    margin-bottom: 15px;
+    width: 120px;
+    height: 120px;
+    color: aliceblue;
+    /**//**//**/
+    z-index: 1;
+    position: relative;
+}
+.red{
+    background-color:#FF4D4D;
+    margin-bottom: 15px;
+    width: 120px;
+    height: 120px;
+    color: aliceblue;
+    margin-top: -50px;
+    margin-left: 50px;
+    /**//**//**/
+    z-index: 2;
+    position: relative;
+}
