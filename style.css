@@ -1,0 +1,173 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    height: 980px;
+    display: grid;
+    background-color: #232323;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 290px 300px;
+    grid-template-areas: "polong kosong kosong"
+                         "cari kosong kosong";
+}
+.items.ini {
+    display: grid;
+    grid-area: cari;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "kotak logo"
+                         "kotak cariIn";
+}
+/* ini */
+.ini .logo h2 {
+    color: #36474F;
+    font-size: 33px;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 0.3px;
+}
+.ini .logo {
+    justify-content:baseline;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 30px);
+    grid-template-areas: "satu"
+                         "dua"
+                         "pencariIni";
+    grid-area: logo;
+}
+h2.satu {
+    grid-area: satu;
+}
+h2.dua {
+    grid-area: dua;
+}
+.ini .pencari {
+    grid-area: pencariIni;
+    display: flex;
+    grid-area: cariIn;
+}
+.pencari input {
+    position: absolute;
+    border: 1px hidden;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    font-size: large;
+    font-family: 'Dosis', sans-serif;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    background-color: #36474F;
+}
+.pencari .togel {
+    border: 0px solid ;
+    background-color: #601E1A;
+    border-radius: 10px;
+    width: 350px;
+    height: 40px;
+    cursor: pointer;
+}
+.ini .kotakOtak {
+    display: flex;
+    grid-area: kotak;
+    margin: 10px;
+    margin-top: 30px;
+}
+.kotakOtak .kotakmerah {
+    background-color: #601E1A;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 90px;
+}
+/* end */
+
+
+.items.kosong {
+    display: flex;
+    grid-area: kosong;
+}
+.items.polong {
+    display: flex;
+    grid-area: polong;
+}
+/* akhir */
+/* background */
+
+
+
+/* akhir */
+/* container dua */
+.container2 {
+    width: 100%;
+    margin: 50px auto;
+    background-color: #fff;
+    display: grid;
+    height: 1000px;
+}
+h1.bentuk {
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 50px;
+}
+
+
+/* responsif */
+@media (min-width: 1500px) {
+    .ini .kotakOtak {
+        display: absolute;
+        position: relative;
+        grid-area: kotak;
+        margin: 10px;
+        margin-top: 30px;
+    }
+    .kotakOtak .kotakmerah {
+        position: absolute;
+        background-color: #601E1A;
+        margin-top: 0;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 90px;
+    }
+    .kotakOtak .kotakbiru {
+        display: absolute;
+        position: absolute;
+        background-color: #36474F;
+        width: 50px;
+        margin-top: 10px;
+        right: 10px;
+        height: 90px;
+    }
+}
+@media (max-width: 576px) {
+    .ini .pencari {
+        position: absolute;
+        grid-area: pencariIni;
+        display: flex;
+        top: 400px;
+        left: 30px;
+    }
+    .pencari input {
+        display: block;
+        border: 1px hidden;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        font-size: large;
+        font-family: 'Dosis', sans-serif;
+        border-radius: 10px;
+        width: 250px;
+        height: 40px;
+        background-color: #36474F;
+    }
+    .pencari .togel {
+        border: 0px solid ;
+        background-color: #601E1A;
+        border-radius: 10px;
+        width: 300px;
+        height: 40px;
+        cursor: pointer;
+    }
+}
