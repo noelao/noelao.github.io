@@ -1,0 +1,253 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+/* container 1 */
+.container {
+    width: 100%;
+    height: 980px;
+    display: grid;
+    background-color: #1b1b1b;
+    grid-template-columns: minmax(350px, 2.0fr) 4fr;
+    grid-template-rows: 0.9fr 300px 2fr;
+    grid-template-areas: 
+        "kosong kosong"
+        "isi kosong2"
+        "kosong3 kosong3";
+}
+.container .bagian.kosong {
+    grid-area: kosong;
+}
+.container .bagian.kosong2 {
+    grid-area: kosong2;
+}
+.container .bagian.kosong3 {
+    grid-area: kosong3;
+}
+.container .bagian.isi {
+    display: grid;
+    grid-area: isi;
+    /* background-color: green; */
+    grid-template-columns: minmax(0.5fr, 1fr) minmax(240px, 360px);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+        "kotak logo"
+        "kotak cari";
+    gap: 1%;
+}
+/* logo */
+.container .bagian.isi .items.logo{
+    margin-left: 5px;
+    color: #36474F;
+    z-index: 1;
+    height: 200px;
+    display: grid;
+    grid-area: logo;
+    /* background-color: rebeccapurple; */
+    grid-template-rows:74px 28px 28px;
+    grid-template-areas:
+        "kosongan"
+        "siji"
+        "loro";
+
+}
+.container .bagian.isi .items.logo h4 {
+    grid-area: kosongan;
+    grid-area: loro;
+    /* background-color: #fff; */
+    font-size: 35px;
+    font-family: 'Abril Fatface', cursive;
+}
+.container .bagian.isi .items.logo h4:nth-child(even) {
+    grid-area: siji;
+    /* background-color: #fff; */
+    font-size: 35px;
+    font-family: 'Abril Fatface', cursive;
+}
+/* akhir */
+/* cari */
+.container .bagian.isi .items.cari{
+    grid-area: cari;
+    /* background-color: #fff; */
+}
+.container .bagian.isi .items.cari input.masuk {
+    position: relative;
+    left: 10px;
+    background-color: #36474F;
+    width: 105%;
+    height: 34px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 12px;
+    padding-left: 38px;
+}
+.container .bagian.isi .items.cari .koBox {
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    position: relative;
+    top: -25px;
+    width: 25px;
+    height: 25px;
+    background-color: #601E1A;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 7px;
+}
+.container .bagian.isi .items.cari .koBox input.ini {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: -3px;
+    left: -5px;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    border-radius: 5px;
+}
+.container .bagian.isi .items.cari .koBox span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #1b1b1b;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* humberger manu */
+.container .bagian.isi .items.cari .koBox span:nth-child(2){
+    transform-origin: 0 0;
+}
+.container .bagian.isi .items.cari .koBox span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.container .bagian.isi .items.cari .koBox input.ini:checked ~ span:nth-child(2) {
+    transform: translateX(5.4px) rotate(45deg);
+}
+.container .bagian.isi .items.cari .koBox input.ini:checked ~ span:nth-child(4) {
+    transform: translateX(5.4px) rotate(-45deg);
+}
+.container .bagian.isi .items.cari .koBox input.ini:checked ~ span:nth-child(3) {
+    /* transform: translateX(-90px); */
+    opacity: 0;
+}
+
+
+/* end */
+
+.container .bagian.isi .items.cari input.masuk:focus{
+    outline: none;
+}
+/* akhir */
+/* kotak */
+.container .bagian.isi .items.kotak {
+    z-index: 0;
+    grid-area: kotak;
+    /* background-color: #000; */
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.container .bagian.isi .items.kotak .kumpulan {
+    display: flex;
+    position: relative;
+    /* width: 50%; */
+    height: 120px;
+    /* background-color: #fff; */
+    flex-direction: column;
+    align-items: flex-end;
+}
+.container .bagian.isi .items.kotak .kumpulan span.kotak1 {
+    position: absolute;
+    top: 50px;
+    left: 9%;
+    width: 100px;
+    height: 100px;
+    /* background-color: #36474F; */
+}
+.container .bagian.isi .items.kotak .kumpulan span.kotak2 {
+    /* position: absolute; */
+    width: 100px;
+    height: 100px;
+    background-color: #601E1A;
+}
+.container .bagian.isi .items.kotak .kumpulan span.kotak3 {
+    z-index: 0;
+    /* position: ; */
+    width: 100px;
+    height: 100px;
+    background-color: #36474F;
+}
+
+
+
+
+
+
+/* relative ini */
+@media (max-width:576px) {
+    
+    .container .bagian.isi .items.logo{
+        z-index: 1;
+        height: 200px;
+        display: grid;
+        grid-area: logo;
+    /* background-color: rebeccapurple; */
+        grid-template-rows:60px 28px 28px;
+        grid-template-areas:
+            "kosongan"
+            "siji"
+            "loro";
+
+}
+    .container .bagian.isi .items.logo h4 {
+        /* padding-left: 40px; */
+        grid-area: kosongan;
+        grid-area: loro;
+        /* background-color: #fff; */
+        font-size: 35px;
+        font-family: 'Abril Fatface', cursive;
+    }
+    .container .bagian.isi .items.logo h4:nth-child(even) {
+        /* padding-left: 40px; */
+        grid-area: siji;
+        /* background-color: #fff; */
+        font-size: 35px;
+        font-family: 'Abril Fatface', cursive;
+    }
+}
+@media (max-width:768px) {
+    .container {
+        width: 100%;
+        height: 980px;
+        display: grid;
+        background-color: #1b1b1b;
+        grid-template-columns: minmax(320px, 2.0fr) 4fr;
+        grid-template-rows: 1fr 300px 2fr;
+        grid-template-areas: 
+            "kosong kosong"
+            "isi kosong2"
+            "kosong3 kosong3";
+    }
+    .container .bagian.isi .items.kotak .kumpulan {
+        flex-direction: row-reverse;
+    }
+    .container .bagian.isi .items.kotak .kumpulan span.kotak2 {
+        z-index: -1;
+        width: 30px;
+        height: 100px;
+        background-color: #36474F;
+    }
+    .container .bagian.isi .items.kotak .kumpulan span.kotak3 {
+        z-index: 0;
+        width: 50px;
+        height: 100px;
+        background-color: #601E1A;
+    } 
+    .container .bagian.isi .items.kotak .kumpulan span.kotak1 {
+        display: none;
+    }
+}
