@@ -1,0 +1,31 @@
+html,
+body {
+    padding: 0 0;
+    margin: 0 0;
+}
+.cell {
+    width: 75px;
+    height: 75px;
+    border: 2px solid #fff;
+    /* box-shadow: 0 0 0 2px; */
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+}
+#gameContainer{
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+    background-color: #1b1b1b;
+    color: #fff;
+    width: 100%;
+    height: 900px;
+}
+#gameContainer h1 {
+    padding-top: 100px;
+}
+#cellContainer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+}

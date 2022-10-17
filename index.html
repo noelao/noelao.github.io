@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Makan Enak</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="blogs/first.html">BLOGS</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="game/tictactoe/tictactoe.html">GAME</a></li>
+            <li><a href="">CONTACT ME</a></li>
+        </ul>
+    </nav>
     <div class="container">
         <div class="bagian kosong"></div>
         <div class="bagian kosong2"></div>
@@ -21,7 +30,6 @@
             <div class="items cari">
                 <input type="search" class="masuk">
                 <div class="koBox">
-                    
                     <input type="checkbox" class="ini">
                     <span></span>
                     <span></span>
@@ -37,5 +45,13 @@
             </div>
         </div>
     </div>
+    <script>
+        const iniIni = document.querySelector(".koBox input.ini");
+        const nav = document.querySelector("nav");
+
+        iniIni.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
 </body>
 </html>

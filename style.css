@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
 }
+body {
+    overflow-x: hidden;
+}
 /* container 1 */
 .container {
     width: 100%;
@@ -15,6 +18,48 @@ body {
         "kosong kosong"
         "isi kosong2"
         "kosong3 kosong3";
+}
+nav {
+    right: 0;
+    top: 0;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 65px;
+    background-color: #36474F;
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(-100%);
+}
+nav ul {
+    align-items: center;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+nav.slide {
+    opacity: 1;
+    transform: translateY(0);
+}
+nav ul li {
+    transition: all 0.5s;
+    list-style: none;
+}
+nav ul li a {
+    font-family: 'Roboto Mono', monospace;
+    /* background-color: #fff; */
+    padding: 40px 10px;
+    font-size: 20px;
+    color: #1b1b1b;
+    font-style: normal;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+nav ul li:hover {
+    transform: translateY(7px);
+}
+nav ul li a:hover {
+    color: #601E1A;
 }
 .container .bagian.kosong {
     grid-area: kosong;
@@ -189,6 +234,50 @@ body {
 
 /* relative ini */
 @media (max-width:576px) {
+    nav {
+        right: 0;
+        top: 0;
+        display: flex;
+        position: absolute;
+        width: 250px;
+        height: 100%;
+        background-color: #36474F;
+        opacity: 0;
+        transition: all 1s;
+    }
+    nav ul {
+        padding-top: 30px;
+        align-items: center;
+        width: 70%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    nav.slide {
+        opacity: 1;
+    }
+    nav ul li {
+        transition: all 0.5s;
+        list-style: none;
+    }
+    nav ul li a {
+        font-family: 'Roboto Mono', monospace;
+        /* background-color: #fff; */
+        padding: 40px 10px;
+        font-size: 20px;
+        color: #1b1b1b;
+        font-style: normal;
+        text-decoration: none;
+        transition: all 0.5s;
+    }
+    nav ul li:hover {
+        transform: translateY(7px);
+    }
+    nav ul li a:hover {
+        color: #601E1A;
+    }
+    /* end */
     
     .container .bagian.isi .items.logo{
         z-index: 1;
