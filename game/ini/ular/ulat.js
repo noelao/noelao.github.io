@@ -4,10 +4,10 @@ const scoreTex = document.querySelector("#scoreText");
 const resetBtn = document.querySelector(".resetBtn");
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
-const boardBackground = "white";
-const snakeColor = "red";
+const boardBackground = "#1b1b1b";
+const snakeColor = "white";
 const snakeBorder = "black";
-const foodColor = "red";
+const foodColor = "white";
 const unitSize = 25;
 let running = false;
 let xVelocity = unitSize;
@@ -32,10 +32,54 @@ const bawah = document.querySelector(".bawah");
 
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener('click', resetGame);
-kanan.addEventListener('click', function(){
-    
-});
 
+kanan.addEventListener('click', function(){
+    ubahArah(39);
+});
+kiri.addEventListener('click', function(){
+    ubahArah(37);
+});
+bawah.addEventListener('click', function(){
+    ubahArah(40);
+});
+atas.addEventListener('click', function(){
+    ubahArah(38);
+});
+// 
+
+function ubahArah(event){
+    const keyPressed = event;
+    const Left = 37;
+    const Up = 38;
+    const Right = 39;
+    const Down = 40;
+    
+    const goingUp = (yVelocity == -unitSize);
+    const goingDown = (yVelocity == unitSize);
+    const goingRight = (xVelocity == unitSize);
+    const goingLeft = (xVelocity == -unitSize);
+
+    switch(true){
+        case(keyPressed == Left && !goingRight):
+            xVelocity = -unitSize;
+            yVelocity = 0;
+            break;
+        case(keyPressed == Up && !goingDown):
+            xVelocity = -0;
+            yVelocity = -unitSize;
+            break;
+        case(keyPressed == Right && !goingLeft):
+            xVelocity = unitSize;
+            yVelocity = 0;
+            break;
+        case(keyPressed == Down && !goingUp):
+            xVelocity = 0;
+            yVelocity = unitSize;
+            break;
+    }
+};
+
+// 
 gameStart();
 
 function gameStart(){
@@ -81,7 +125,7 @@ function moveSnake(){
     snake.unshift(head);
     if(snake[0].x == foodX && snake[0].y == foodY){
         score += 1;
-        scoreText.textContent = score;
+        scoreTex.textContent = score;
         createFood();
     }
     else {
@@ -150,7 +194,7 @@ function checkGameOver(){
 };
 function displayGameOver(){
     ctx.font = "50px MV Boli";
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "red";
     ctx.textAlign = "center";
     ctx.fillText("Game Over", gameWidth / 2, gameHeight / 2);
     running = false;

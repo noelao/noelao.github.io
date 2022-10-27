@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        html,
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: #36474F;
+        }
         .gameContainer {
             text-align: center;
         }
@@ -14,6 +20,7 @@
         #scoreText {
             font-family: "Permanent Marker", cursive;
             font-size: 100px;
+            color: white;
         }
         .resetBtn {
             font-family: "Permanent Marker", cursive;
@@ -23,6 +30,9 @@
             border: 4px solid;
             border-radius: 15px;
             cursor: pointer;
+        }
+        .tombol {
+            display: none;
         }
         /* relllative mobile */
 
@@ -43,6 +53,7 @@
             }
             #scoreText {
                 grid-area: score;
+                font-size: 30px;
             }
             .resetBtn {
                 grid-area: reset;
