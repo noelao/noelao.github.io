@@ -1,2 +1,0 @@
-# noelao.github.io
-template
