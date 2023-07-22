@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            transition: all 0.3s;
+        }
+        a {
+            text-decoration: none;
+        }
+        .modeMalam {
+            background-color: #000000;
+        }
+        .logo {
+            width: 100%;
+        }
+        .container {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+        }
+        .container .centering {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+        }
+        .container .up {
+            width: 65%;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            flex-direction: column;
+        }
+        .container .up .down {
+            background-color: #333333;
+            height: 500px;
+        }
+        .container .up .down .kotakCil{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: #fff000;
+            width: 40px;
+            height: 100px;
+        }
+        .container .up .down .kotakCil2{
+            position: absolute;
+            left: 17.5%;
+            top: 250px;
+            background-color: #fff000;
+            width: 40px;
+            height: 100px;
+        }
+        .container .up .down .kotakCil3{
+            position: absolute;
+            left: 17.5%;
+            top: 750px;
+            background-color: #fff000;
+            width: 40px;
+            height: 100px;
+        }
+        .container .up .down .kotakCil4{
+            position: absolute;
+            left: 17.5%;
+            bottom: -450px;
+            background-color: #ffffff;
+            width: 40px;
+            height: 100px;
+        }
+        .container .up .inUp {
+            background-color: #333333;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .container .up .downAgain {
+            background-color: #ffffff;
+            height: 270px;
+            border: 3px solid #333333;
+            padding: 0 20px;
+            transition: all 0.5s;
+        }
+        .container .up .downAgain2 {
+            background-color: #ffffff;
+            height: 500px;
+            border: 3px solid #333333;
+            padding: 15px 20px;
+            transition: all 0.5s;
+        }
+        .container .up .downAgain2 .top {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .container .up .downAgain2 .top .kotakanT {
+            width: 170px;
+            display: flex;
+            height: 40px;
+            background-color: #333333;
+            border-radius: 5px;
+            color: #848484;
+            justify-content: center;
+        }
+        .container .up .downAgain2 .top .kotakanT .tengah {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        input.ini {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: -1;
+        }
+        .container .up .inUp .kotak {
+            width: 45px;
+            height: 45px;
+            background-color: #848484;
+            top: 0;
+            margin-top: 2.7px;
+            margin-left: 3px;
+            transition: all 0.5s;
+        }
+        .container .up .inUp .kotak2 {
+            width: 45px;
+            height: 45px;
+            background-color: #000000;
+            top: 0;
+            margin-top: 2.7px;
+            margin-right: 3px;
+            transition: all 0.5s;
+        }
+        div.kotak.modeMalam2 {
+            background-color: #000000;
+        }
+        .container .content {
+            height: 900px;
+            width: 100%;
+            background-color: #8a8a8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="centering">
+            <div class="up">
+                <div class="inUp">
+                    <div class="kotak">
+                        <input type="checkbox" name="" class="ini">
+                    </div>
+                    <div class="kotak2">
+                        <input type="checkbox" name="" class="ini">
+                    </div>
+                </div>
+                <img src="assets/svg/Artboard 1.svg" alt="" srcset="" class="logo">
+                <br>
+                <div class="down">
+                    <div class="kotakCil"></div>
+                    <div class="kotakCil2"></div>
+                    <div class="kotakCil3"></div>
+                    <div class="kotakCil4"></div>
+                </div>
+                <br>
+                <div class="downAgain">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio assumenda quisquam quis doloribus ea. Ut voluptatem est tempore sunt, harum ducimus cum. Doloribus temporibus neque possimus dolorum maiores inventore porro molestiae vero. Quod laboriosam sapiente corrupti quaerat ex id sed commodi accusantium provident, earum alias, similique velit! Debitis velit perferendis aut! Animi ducimus dolores, incidunt similique laudantium distinctio, eos explicabo quos, commodi quibusdam ab minima laboriosam tenetur. Autem provident in architecto, ratione ut aperiam fugit nobis repudiandae fuga molestiae voluptatum molestias nulla veritatis labore praesentium pariatur consequuntur dolorem ad excepturi itaque nemo. Deleniti est velit hic, beatae expedita cum alias doloribus saepe sequi, quisquam, porro totam nihil molestias incidunt magni vel enim maiores tempore explicabo natus et deserunt. Dolor molestias et repellat odio reprehenderit, ipsam fugit deserunt est ea rem tempora hic saepe quis non illum tempore sapiente blanditiis in excepturi magnam nobis! Veritatis perspiciatis perferendis quo deleniti quae natus, laudantium voluptas doloremque, sunt ut culpa, id temporibus exercitationem ad! Labore odio dolore ipsum quaerat hic eos facilis reprehenderit voluptatem iusto dolores. Laboriosam, minima porro aliquam quisquam nulla architecto quis blanditiis exercitationem possimus quidem magnam esse eaque maiores assumenda animi est? Magnam quidem corporis voluptate illo fugiat molestiae molestias quaerat!
+                    </p>
+                </div>
+                <br>
+                <div class="downAgain2">
+                    <div class="top">
+                        <a href="">
+                            <div class="kotakanT">
+                                <div class="tengah">
+                                    ABOUT
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="kotakanT">
+                                <div class="tengah">
+                                    DRAW
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="kotakanT">
+                                <div class="tengah">
+                                    GALERY
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="content"></div> -->
+    </div>
+    <script>
+        const backgroun = document.querySelector("html")
+        const ininih = document.querySelector(".kotak input.ini")
+        const ininih2 = document.querySelector(".kotak2 input.ini")
+        const iniLagi = document.querySelector("div.kotak")
+        const iniLagi2 = document.querySelector("div.kotak2")
+
+        const tulisan1 = document.querySelector("div.downAgain")
+        const tulisan2 = document.querySelector("div.downAgain2")
+
+        var modeAwal = true
+
+        ininih.addEventListener("click", function(){
+            backgroun.classList.toggle("modeMalam")
+            if (modeAwal){
+                modeAwal = false
+                iniLagi.style.backgroundColor = "#000000";
+                iniLagi2.style.backgroundColor = "#848484";
+
+                tulisan1.style.backgroundColor = "#000000"
+                tulisan1.style.color = "#848484"
+                tulisan2.style.backgroundColor = "#000000"
+                tulisan2.style.color = "#848484"
+            } else {
+                modeAwal = true
+                iniLagi.style.backgroundColor = "#848484";
+                iniLagi2.style.backgroundColor = "#000000";
+
+                tulisan1.style.backgroundColor = "#ffffff"
+                tulisan1.style.color = "#848484"
+                tulisan2.style.backgroundColor = "#ffffff"
+                tulisan2.style.color = "#848484"
+            }
+        })
+        ininih2.addEventListener("click", function(){
+            backgroun.classList.toggle("modeMalam")
+            if (modeAwal){
+                modeAwal = false
+                iniLagi.style.backgroundColor = "#000000";
+                iniLagi2.style.backgroundColor = "#848484";
+
+                tulisan1.style.backgroundColor = "#000000"
+                tulisan1.style.color = "#848484"
+                tulisan2.style.backgroundColor = "#000000"
+                tulisan2.style.color = "#848484"
+            } else {
+                modeAwal = true
+                iniLagi.style.backgroundColor = "#848484";
+                iniLagi2.style.backgroundColor = "#000000";
+
+                tulisan1.style.backgroundColor = "#000000"
+                tulisan1.style.color = "#848484"
+                tulisan2.style.backgroundColor = "#000000"
+                tulisan2.style.color = "#848484"
+            }
+        })
+
+    </script>
+</body>
+</html>
