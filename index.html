@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> -->
 
     <title>poloco</title>
     <style>
@@ -57,6 +57,19 @@
             width: 40px;
             height: 100px;
         }
+        .container .up .down .kotakCil .navigasi {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: #ffee0079;
+            width: 90%;
+            height: 90px;
+            transform: translateY(100%);
+            transition: all 0.5s;
+        }
+        .container .up .down .kotakCil:hover .navigasi {
+            transform: translateY(0);
+        }
         .container .up .down .kotakCil2{
             position: absolute;
             left: 17.5%;
@@ -88,13 +101,11 @@
             justify-content: space-between;
         }
         .container .up .downAgain {
-            background-color: #ffffff;
             border: 3px solid #333333;
             padding: 0 20px;
             transition: all 0.5s;
         }
         .container .up .downAgain2 {
-            background-color: #ffffff;
             height: 500px;
             border: 3px solid #333333;
             padding: 15px 20px;
@@ -104,21 +115,57 @@
             display: flex;
             width: 100%;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: space-between;
         }
-        .container .up .downAgain2 .top .kotakanT {
-            width: 170px;
-            display: flex;
+        .container .up .downAgain2 .top .areaOn .kotakanT {
+            width: 190px;
+            display: grid;
             height: 40px;
-            background-color: #333333;
-            border-radius: 5px;
-            color: #848484;
-            justify-content: center;
+            border: 5px solid #333333;
+            color: #333333;
+            overflow: hidden;
+            grid-template-rows: 83% 17%;
+            text-align: center;
         }
-        .container .up .downAgain2 .top .kotakanT .tengah {
+        .container .up .downAgain2 .top .areaOn .kotakanT .tengah {
             display: flex;
             justify-content: center;
             flex-direction: column;
+        }
+        .container .up .downAgain2 .top .areaOn .kotakanN {
+            width: 190px;
+            height: 300px;
+            border: 5px solid #333333;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 97% 3%;
+
+        }
+        .container .up .downAgain2 .top .areaOn .kotakanN .garis {
+            background-color: #0dff00;
+            width: 170px;
+            height: 30px;
+            transform: translateX(-100%);
+            transition: all 0.5s;
+        }
+        .container .up .downAgain2 .top .areaOn .kotakanT .garis {
+            background-color: #0dff00;
+            width: 170px;
+            height: 7px;
+            transform: translateX(-100%);
+            transition: all 0.5s;
+        }
+        .container .up .downAgain2 .top .areaOn:hover .kotakanN .garis{
+            transform: translateX(0);
+        }
+        .container .up .downAgain2 .top .areaOn:hover .kotakanT .garis{
+            transform: translateX(0);
+        }
+        .container .up .downAgain3 {
+            height: 500px;
+            border: 3px solid #333333;
+            padding: 15px 20px;
+            transition: all 0.5s;
         }
         input.ini {
             width: 100%;
@@ -153,6 +200,25 @@
             width: 100%;
             background-color: #8a8a8a;
         }
+        .foooter {
+            background-color: #000;
+            width: 100%;
+            height: 300px;
+            opacity: 0.6;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+        }
+        .foooter .tengah {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .foooter .tengah p {
+            font-size: 130px;
+            opacity: 1;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -170,7 +236,9 @@
                 <img src="assets/svg/Artboard 1.svg" alt="" srcset="" class="logo">
                 <br>
                 <div class="down">
-                    <div class="kotakCil"></div>
+                    <div class="kotakCil">
+                        <div class="navigasi"></div>
+                    </div>
                     <div class="kotakCil2"></div>
                     <div class="kotakCil3"></div>
                     <div class="kotakCil4"></div>
@@ -184,33 +252,81 @@
                 <br>
                 <div class="downAgain2">
                     <div class="top">
-                        <a href="">
+                        <a href="" class="areaOn">
+                            <div class="kotakanN">
+                                <div class="something"></div>
+                                <div class="garis"></div>
+                            </div>
+                            <br>
                             <div class="kotakanT">
                                 <div class="tengah">
-                                    ABOUT
+                                    <div class="something">
+                                        ABOUT
+                                    </div>
                                 </div>
+                                <div class="garis"></div>
                             </div>
                         </a>
-                        <a href="">
+                        <a href="" class="areaOn">
+                            <div class="kotakanN">
+                                <div class="something"></div>
+                                <div class="garis"></div>
+                            </div>
+                            <br>
                             <div class="kotakanT">
                                 <div class="tengah">
-                                    DRAW
+                                    <div class="something">
+                                        ABOUT
+                                    </div>
                                 </div>
+                                <div class="garis"></div>
                             </div>
                         </a>
-                        <a href="">
+                        <a href="" class="areaOn">
+                            <div class="kotakanN">
+                                <div class="something"></div>
+                                <div class="garis"></div>
+                            </div>
+                            <br>
                             <div class="kotakanT">
                                 <div class="tengah">
-                                    GALERY
+                                    <div class="something">
+                                        ABOUT
+                                    </div>
                                 </div>
+                                <div class="garis"></div>
+                            </div>
+                        </a>
+                        <a href="" class="areaOn">
+                            <div class="kotakanN">
+                                <div class="something"></div>
+                                <div class="garis"></div>
+                            </div>
+                            <br>
+                            <div class="kotakanT">
+                                <div class="tengah">
+                                    <div class="something">
+                                        ABOUT
+                                    </div>
+                                </div>
+                                <div class="garis"></div>
                             </div>
                         </a>
                     </div>
                 </div>
+                <br>
+                <div class="downAgain3"></div>
+            </div>
+        </div>
+        <br>
+        <div class="foooter">
+            <div class="tengah">
+                <p>BRRRREEENGOSSS</p>
             </div>
         </div>
         <!-- <div class="content"></div> -->
     </div>
+
     <script>
         const backgroun = document.querySelector("html")
         const ininih = document.querySelector(".kotak input.ini")
