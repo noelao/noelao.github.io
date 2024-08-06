@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            width: 512px;
+            height: 512px;
+            image-rendering: pixelated;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game" width="128" height="128">A cat</canvas>
+
+    <script>
+        // Get canvas context
+        const ctx = document.getElementById("game").getContext("2d");
+
+        // Load image
+        const image = new Image();
+        image.onload = () => {
+        // Draw the image into the canvas
+        ctx.drawImage(image, 0, 0);
+        };
+        image.src = "idle.png";
+    </script>
+</body>
+</html>

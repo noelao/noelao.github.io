@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #canvas{border:1px solid red; margin:0 auto; }
+        img {
+            width: 100px;
+        }
+    </style>
+
+    <canvas id="canvas" width="20000" height="10000"></canvas>
+    
+    <script>
+        var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+    var cw=canvas.width;
+    var ch=canvas.height;
+
+    var img=new Image();
+    img.width = 100;
+    img.height = 1000;
+
+    img.onload=start;
+    img.src="ini.png";
+    function start(){
+
+        ctx.fillText('original',10,30);
+        ctx.drawImage(img,10,30);
+
+        ctx.fillText('flipped',150,30);
+        flipHorizontally(img,9000,30);
+
+    }
+
+    function flipHorizontally(img,x,y){
+        // move to x + img's width
+        ctx.translate(x+img.width,y);
+
+        // scaleX by -1; this "trick" flips horizontally
+        ctx.scale(-1,1);
+        
+        // draw the img
+        // no need for x,y since we've already translated
+        ctx.drawImage(img,0,0);
+        
+        // always clean up -- reset transformations to default
+        ctx.setTransform(1,0,0,1,0,0);
+    }
+    </script>
+
+</body>
+</html>
