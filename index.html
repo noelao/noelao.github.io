@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>noelao in here</title>
+    <title>noelao is me</title>
     <style>
         * {
             padding: 0;
             margin: 0;
+            font-family: monospace;
         }
         .container {
             height: 100vh;
@@ -18,10 +19,38 @@
         }
         .borderan {
             height: auto;
-            width: 500px;
+            width: 300px;
             border: solid black 3px;
-            box-shadow: 5px 5px 0 black;
-            padding: 30px;
+            box-shadow: 7px 7px 0 black;
+            padding: 25px;
+            background-color: white;
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .garis {
+            width: 100%;
+            height: 1.5px;
+            background-image: linear-gradient(to right, #ffffff00, black, black, black, black, #ffffff00);
+        }
+        .listan {
+            display: flex;
+            width: 100%;
+
+            padding: 5px;
+            align-items: start;
+        }
+        .listan .kiri {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .listan .kanan {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            text-align: right;
         }
     </style>
 </head>
@@ -29,11 +58,20 @@
     <div class="container">
         <div class="borderan">
             <h1>list project</h1>
-            <hr>
+            <div class="garis"></div>
+
             <div class="listan">
-                <a href="game/gameJs.html">game with js</a>
+                <div class="kiri">
+                    <a href="game/gameJs.html">game with js</a>
+                    <a href="#">game with godot</a>
+                    <a href="#">portofolio</a>
+                </div>
+                <div class="kanan">
+
+                </div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
