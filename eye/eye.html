@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>      
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    
+        :root {
+            --eysahheight: 70px;
+            --eyspaceminu:calc(var(--eysahheight)/6*5);
+            --eyspaceminune:calc(var(--eyspaceminu)/-2);
+            
+            --bakgron:#d9d9d9;
+            --border-l:#2b2b2b;
+            --border-l2:#969696;
+        }
+
+        .eye {
+            background: #fff;
+
+            border: solid var(--border-l) calc(var(--eysahheight)/6);
+            max-width: calc(var(--eysahheight)*2);
+            border-radius: 100%;
+            height: var(--eysahheight);
+            overflow: hidden;
+            display: grid;
+            justify-content: center;
+            animation-name: blink;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+        }
+        .ball {
+            background-color: var(--border-l);
+            border: solid rgb(74, 74, 74) calc(var(--eysahheight) / 6);
+
+            height: calc(var(--eysahheight)/ 1.5);
+            aspect-ratio: 1;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .eyebrow {
+            background-color: var(--border-l);
+
+            width: calc(var(--eysahheight)*2);
+            aspect-ratio: 1;
+            border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+            transform: rotate(45deg);
+            position: absolute;
+            cursor: pointer;
+        }
+        .eyspace {
+            background-color: var(--bakgron);
+
+            height: calc(var(--eysahheight) + var(--eyspaceminu) - 10px);
+            width: calc(var(--eysahheight)*2 + var(--eyspaceminu));
+            transform: translateY(var(--eyspaceminune));
+            position: relative;
+        }
+        @keyframes blink {
+            0% {height: var(--eysahheight);}
+            10% {height: var(--eysahheight);}
+            15% {height: 0px;}
+            20% {height: var(--eysahheight);}
+            25% {height: 0px;}
+            30% {height: var(--eysahheight);}
+            50% {height: var(--eysahheight);}
+            100% {height: var(--eysahheight);}
+        }
+        @keyframes close {
+            0% {height: var(--eysahheight);}
+            100% {height: 0px;}
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="eyebrow"></div>
+            <div class="eye">
+                <span class="eyspace">
+                    <div class="ball"></div>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var balls = document.querySelector(".ball")
+        document.onmousemove = function(){
+            var x = event.clientX * 100 / window.innerWidth + "%"
+            var y = event.clientY * 100 / window.innerHeight + "%"
+            balls.style.left = x
+            balls.style.top = y
+            balls.style.transform = "translate(-"+x+",-"+y+")"
+        }
+
+        var open = true
+
+        var eye = document.querySelector('.eye')
+        var eye2 = document.querySelector('.eyebrow')
+        var rya = [eye, eye2]
+
+        rya.forEach((ini) => {        
+            ini.addEventListener("click", function(){
+                if(open){
+                    eye.style.webkitAnimation = "close 0.5s ease-in 1";
+                    eye.style.height = "0px"
+                } else {
+                    eye.style.webkitAnimation = "blink 5s linear infinite";
+                    eye.style.height = "var(--eysahheight)"
+                }
+                open=!open
+            })
+        })
+    </script>
+</body>
+</html>
