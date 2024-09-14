@@ -19,7 +19,9 @@
         }
         .borderan {
             height: auto;
-            width: 300px;
+            min-width: 300px;
+            width: max-content;
+
             border: solid black 3px;
             box-shadow: 7px 7px 0 black;
             padding: 25px;
@@ -40,17 +42,59 @@
 
             padding: 5px;
             align-items: start;
+            gap: 8px;
         }
         .listan .kiri {
             display: flex;
             flex-direction: column;
+
             flex: 1;
         }
+        .listan .kiri a {
+            width: max-content;
+        }
+
         .listan .kanan {
             display: flex;
             flex-direction: column;
             flex: 1;
             text-align: right;
+        }
+
+        .container2 {
+            z-index: -1;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .background {
+            max-width: 100%;
+
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            overflow-y: hidden;
+
+        }
+        .background .kotak {
+            height: 25px;
+            aspect-ratio: 1;
+            background-color: rgb(255, 255, 255);
+        }
+
+        @media screen and (max-width: 365px) {
+            .container2 {
+                display: none;
+            }
+            .borderan {
+                width: 200px;
+            }
         }
     </style>
 </head>
