@@ -1,0 +1,107 @@
+
+@font-face {
+    font-family: 'kecilan';
+    src: url(font/Raleway-VariableFont_wght.ttf);
+}
+
+@keyframes showOff {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes showOffKiri {
+    0% {
+        flex: 0;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        flex: 3;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes showOffAtas {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    
+    5%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    45%{
+        opacity: 1;
+        transform: translateY(0);
+        ~ .container .landing2 {
+            background-color: black;
+        }
+    }
+
+    50%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes gantiBcakground {
+    0% {
+        background-color: var(--gelap2);
+    }
+    20% {
+        background-color: var(--gelap2);
+    }
+
+    30% {
+        background-color: var(--gelap);
+    }
+    50% {
+        background-color: var(--gelap);
+    }
+    70% {
+        background-color: var(--gelap);
+    }
+
+    80% {
+        background-color: var(--gelap2);
+    }
+    100% {
+        background-color: var(--gelap2);
+    }
+}
+@keyframes showOffAtas2 {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    
+    5%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    45%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    50%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}

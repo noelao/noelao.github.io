@@ -1,0 +1,12 @@
+.container .footer {    
+    height: 13vh;
+    width: 100%;
+
+    background-color: var(--gelap);
+}
+
+.container .explainWhy {
+    height: 90vh;
+    width: 100%;
+
+}

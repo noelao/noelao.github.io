@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~porto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="keyframe.css">
+    <style>
+        :root {
+            --gelap:#073b4c;
+            --gelap2:#118ab2;
+
+            --merah:#ef476f;
+            --orange:#f78c6b;
+        }
+
+
+        *,*::before,*::after{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        } 
+        .container {
+            min-height: 100vh;
+            width: 100%;
+
+            font-family: kecilan;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 34px;
+            background-color: var(--gelap);
+            opacity: .3;
+        }
+
+        .container .landing {
+            height: 89vh;
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+        .container .landing .centerin {
+            width: calc(610px + 55px);
+
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 55px;
+
+            font-family: kecilan;
+        }
+        
+        .showKiri {
+            opacity: 0;
+
+            animation-name: showOffKiri;
+            animation-duration: .5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        .landing .centerin .kanan {
+            /* flex: 3; */
+            animation-delay: 1s;
+        }
+        @keyframes shadowin {
+            0%{
+                /* box-shadow: 0 0 0 0 var(--merah);
+                transform: translateY(0) translateX(0); */
+            }
+            100%{
+                box-shadow: 8px 8px 0 0 var(--merah);
+                transform: translateY(-8px) translateX(-8px);
+            }
+        }
+
+        .landing .centerin .kanan .pictureProfile {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: var(--gelap);
+            
+            box-shadow: 0 0 0 0 var(--merah);
+            transform: translateY(0) translateX(0);
+
+            animation-name: shadowin;
+            animation-duration: 0.7s;
+            animation-delay: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        .landing .centerin .kiri {
+            flex: 8;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .show {
+            opacity: 0;
+
+            animation-name: showOff;
+            animation-duration: .5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        .landing .centerin .kiri .bigWorld {
+            animation-delay: .5s;
+            font-size: 34px;
+            font-weight: bold;
+        }
+        .landing .centerin .kiri .smallWorld {
+            animation-delay: .7s;
+            font-size: 13px;
+        }
+
+        .container .landing2 {
+            height: 55vh;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: var(--gelap2);
+        }
+        .gantiBackLanding2 {
+            animation-name: gantiBcakground;
+            animation-delay: 2s;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+        }
+
+        .landing2 .wrapper {
+            display: flex;
+            width: 89%;
+            justify-content: space-between;
+            height: 13vh;
+        }
+        .landing2 .wrapper .icons {
+            gap: 21px;
+            display: flex;
+            height: 100%;
+        }
+        .landing2 .wrapper .icons .icon {
+            transform: translateY(-100%);
+            opacity: 0;
+
+            transition: all 0.6s ease-in-out;
+        }
+
+        .landing2 .wrapper .tulisan {
+            color: white;
+            font-weight:bold;
+            font-size: 13vh;
+
+            display: flex;
+        }
+        .landing2 .wrapper .tulisan2 {
+            color: white;
+            font-weight:bold;
+            font-size: 13vh;
+            position: absolute;
+            display: flex;
+        }
+        .hurufan {
+            opacity: 0;
+
+            animation-name: showOffAtas;
+            animation-duration: 7s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        .hurufan2 {
+            opacity: 0;
+
+            animation-name: showOffAtas2;
+            animation-duration: 7s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+        }
+
+        .landing .wrapper .icons img.icon {
+            height: 100%;
+            aspect-ratio: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="landing">
+            <div class="centerin">
+                <div class="kanan showKiri">
+                    <div class="pictureProfile"></div>
+                </div>
+                <div class="kiri">
+                    <div class="show bigWorld">
+                        HI, I'm Full Stack Developer
+                    </div>
+                    <div class="show smallWorld">
+                        I build website from the back to the front, up and down by my self. But i prevere to pick front end, because thats its my save zone.
+                    </div>
+
+                    <div class="logos"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="landing2">
+            <div class="wrapper lihat">
+                <div class="tulisan2"></div>
+                <div class="tulisan"></div>
+
+                <div class="icons">
+                    <img src="icons/png/html.png" alt="" class="icon" height="100%">
+                    <img src="icons/svg/javascript.svg" alt="" class="icon" height="100%">
+                    <img src="icons/svg/css.svg" alt="" class="icon" height="100%">
+                </div>
+            </div>
+        </div>
+
+        <div class="explainWhy"></div>
+
+        <div class="footer"></div>
+    </div>
+
+    <script src="ini.js"></script>
+    <script src="js/animasi.js"></script>
+</body>
+</html>
