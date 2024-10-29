@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorous</title>
+    <link rel="stylesheet" href="source/css/font.css">
+    <link rel="stylesheet" href="source/css/form.css">
+
+    <!--  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <!--  -->
+
+    <style>
+        .garis-gradasi {
+            height: var(--tinggi-garis);
+            width: 100%;
+             
+            background-image: linear-gradient(to right, #00000000, var(--hitam), var(--hitam),var(--hitam), #00000000);
+        }
+        a {
+            color: var(--hitam);
+            text-decoration: none;
+        }
+        .titik-kecil {
+            height: 3.2px;
+            aspect-ratio: 1;
+
+            background-color: var(--hitam);
+            border-radius: 50%;
+
+            transition: transform .2s cubic-bezier(0, 0.8, 0.9, 1);
+        }
+    </style>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        :root {
+            --tinggi-garis: 1.3px;
+
+            --biru: #2a9d8f;
+            --orange: #e9c46a;
+
+            --silver: #e9edc9;
+            --silver2: #fefae0;
+
+            --hitam: #000;
+            --putih: #fff;
+        }
+        .container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 7.5fr 2.5fr;
+
+            flex-direction: column;
+            grid-template-areas: 
+                "kepala kepala"
+                "ini kanan"
+                "isi kanan"
+                "kaki kaki";
+
+            font-family: sans-serif;
+        }
+        .container .header {
+            grid-area: kepala;
+            position: sticky;
+            top: 0;
+            left: 0;
+            
+            height: max-content;
+            width: 100%;
+            padding: 0px 8px;
+
+            background-color: white;
+
+            display: flex;
+            flex-direction: column;
+
+            z-index: 1;
+        }
+        .container .gantungan-header {
+            position: sticky;
+            top: 34px;
+            left: 0;
+
+            display: block;
+            width: 100%;
+            opacity: 0.8;
+
+            display: flex;
+            gap: 3px;
+
+            padding: 0 144px;
+        }
+        .container .content {
+            grid-area: isi;
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+
+            padding: 0px 26px;
+        }
+        .container .footer {
+            grid-area: kaki;
+            height: 144px;
+        }
+        .container .penge-gap {
+            grid-area: ini;
+            height: 360px;
+        }
+        .container .sisi {
+            grid-area: kanan;
+            width: 100%;
+
+            padding: 34px 21px 0 0;
+
+            position: sticky;
+            top: 36px;
+            left: 0;
+        }
+    </style>
+    <style>
+        .content .kiri {
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 13px 34px;
+            flex-wrap: wrap;
+
+            padding: 0 8px;
+        }
+
+        .kiri .displayer {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+        .displayer .tempat-warna {
+            --lebarDasar: 310px;
+            width: 100%;
+            aspect-ratio: 8/2;
+
+            /* min-width: var(--lebarDasar); */
+            /* height: calc(var(--lebarDasar) * 3/8); */
+
+            border-radius: 13px;
+
+            overflow: hidden;
+            display: flex;
+        }
+        .tempat-warna .warna {
+            flex: 1;
+
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Roboto;
+
+            cursor: pointer;
+
+            transition: flex .1s ease-in-out;
+        }
+        .tempat-warna .warna:hover {
+            flex: 3;
+        }
+        .tempat-warna .yangIni:hover {
+            flex: var(--angka);
+        }
+
+        .tempat-warna .warna .indi {
+            min-width: 0;
+            width: 0;
+            opacity: 0;
+            transform: translateX(-30px);
+
+            transition: opacity 0.13s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .tempat-warna .warna:hover .indi{
+            opacity: 1;
+            width: max-content;
+            transform: translateX(0);
+        }
+
+        .displayer .tombolan {
+            height: 34px;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 8px;
+        }
+        .tombolan .titik-tiga {
+            height: 74%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            background-color: var(--silver2);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            cursor: pointer;
+
+            &:hover {
+                & .titik-kecil:nth-child(1) {
+                    transform: translateX(230%) translateY(-230%);
+                }
+                & .titik-kecil:nth-child(3) {
+                    transform: translateX(-230%) translateY(230%);
+                }
+            }
+        }
+        .tombolan .salinSemua {
+            height: 74%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            background-color: var(--silver);
+        }
+
+    </style>
+    <style>
+        .header .atas {
+            height: calc(36px - var(--tinggi-garis));
+            width: 100%;
+
+            padding: 3px 26px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .tengah {
+            height: 0px;
+
+            transition: height .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .atas .kiri {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            gap: 13%;
+        }
+        .kiri .logo h2 {
+            font-family: halloween;
+            font-weight: 100;
+            font-size: 1.3em;
+        }
+        .kiri .searchPoint {
+            width: 55%;
+            height: 100%;
+            border-radius: 90px;
+
+            background-color: var(--silver);
+        }
+        .searchPoint form {
+            height: 100%;
+            width: 100%;
+        }
+        .searchPoint form .searchIni {
+            height: 100%;
+            width: 100%;
+            background-color: inherit;
+            padding: 0 34px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 90px;
+
+            &:focus {
+                background-color: var(--silver2);
+            }
+        }
+
+        .atas .kanan {
+            height: 100%;
+        }
+        .kanan .profile {
+            height: 100%;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .profile .photzo {
+            background-color: var(--silver);
+            border-radius: 50%;
+            height: 76%;
+            aspect-ratio: 1;
+        }
+    </style>
+    <style>
+        .gantungan-header .tema {
+            background-color: var(--hitam);
+            color: var(--putih);
+            border-radius: 0 0 8px 8px;
+            width: max-content;
+            padding: 1px 16px;
+
+            display: flex;
+            align-items: center;
+
+            cursor: pointer;
+        }
+        .tema p {
+            font-size: 0.8em;
+            font-family: "Arima", system-ui;
+        }
+        .tema:nth-child(even) p {
+            font-size: 0.8em;
+            font-family: "Arima", system-ui;
+        }
+    </style>
+    <style>
+        .sisi .description {
+            position: sticky;
+            top: 46px;
+            left: 0;
+
+            background-color: var(--silver);
+            height: 500px;
+            width: 100%;
+            border-radius: 8px;
+
+            padding: 21px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+
+            transition: top 0.1s ease-in-out;
+        }
+        .description .tempat-warna {
+            width: 100%;
+            aspect-ratio: 8/2;
+            display: flex;
+            align-items: center;
+
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .description .creator {
+            display: flex;
+            width: 100%;
+            gap: 5px;
+        }
+        .creator .creator-poto {
+            height: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: var(--biru);
+        }
+        .creator .name-creator {
+            font-family: sans-serif;
+        }
+        .name-creator span {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="atas">
+                <div class="kiri">
+                    <div class="logo">
+                        <h2 id="logoTulis"></h2>
+                    </div>
+                    <div class="searchPoint">
+                        <form action="">
+                            <input type="text" name="" id="" class="searchIni" placeholder="theme...">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="kanan">
+                    <div class="profile">
+                        <a href="#">login</a>
+                        <div class="photzo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tengah"></div>
+            <div class="garis-gradasi"></div>
+        </div>
+        <!-- <div class="gantungan-header">
+            <div class="tema">
+                <p>dark</p>
+            </div>
+            <div class="tema">
+                <p>cheers</p>
+            </div>
+            <div class="tema">
+                <p>sweet</p>
+            </div>
+        </div> -->
+        <div class="penge-gap"></div>
+        <div class="sisi">
+            <div class="description">
+                <div class="judoel">
+                    <h1></h1>
+                </div>
+                <div class="tagTheme"></div>
+                <div class="tempat-warna">
+                </div>
+                <a href="#" class="creator">
+                    <div class="creator-poto"></div>
+                    <div class="name-creator">
+                        <p>noelao <span>|| el creatore</span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="kiri">
+                <div class="displayer">
+                    <div class="tempat-warna">
+                        <div class="warna" style="background-color: #f98080;">
+                            <div class="idin" style="display: none;">1</div>
+                            <div class="indi">
+                                <p>f98080</p>
+                            </div>
+                        </div>
+                        <div class="warna" style="background-color: #a52929;">
+                            <div class="indi">
+                                <p>f98080</p>
+                            </div></div>
+                        <div class="warna" style="background-color: #780505;">
+                            <div class="indi">
+                                <p>f98080</p>
+                            </div></div>
+                        <div class="warna" style="background-color: #420000;">
+                            <div class="indi">
+                                <p>f98080</p>
+                            </div></div>
+                    </div>
+                    <div class="tombolan">
+                        <div class="salinSemua"></div>
+                        <div class="titik-tiga">
+                            <div class="titik-kecil"></div>
+                            <div class="titik-kecil"></div>
+                            <div class="titik-kecil"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer"></div>
+    </div>
+    
+
+
+    <link rel="stylesheet" href="source/css/mobile.css">
+
+    <script src="source/js/color.js"></script>
+    <script src="source/js/restApi.js"></script>
+    <script>
+        var searchIni = document.querySelector(".searchIni")
+        var headerAn = document.querySelector(".header")
+
+        const checkFocus = setInterval(()=>{
+            var lima = 55
+            if(document.hasFocus()){
+                if(document.activeElement === searchIni){
+                    document.querySelector(".header .tengah").style.height = `${lima}px`
+                    document.querySelector(".description").style.top = `${lima + 46}px`
+                } else {
+                    document.querySelector(".header .tengah").style.height = "0px"
+                    document.querySelector(".description").style.top = "46px"
+                }
+            } else {
+                document.querySelector(".header .tengah").style.height = "0px"
+                    document.querySelector(".description").style.top = "46px"
+            }
+        }, 100);
+    </script>
+</body>
+</html>

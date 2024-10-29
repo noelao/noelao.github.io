@@ -1,0 +1,12 @@
+@font-face {
+    font-family: halloween;
+    src: url(../font/Flavors-Regular.ttf);
+}
+
+.oxanium-ini {
+    font-family: "Oxanium", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+  

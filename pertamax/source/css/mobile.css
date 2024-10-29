@@ -1,0 +1,55 @@
+#logoTulis {
+    font-size: 2em;
+}
+#logoTulis::after {
+    content: "coloraurus";
+}
+@media screen and (max-width: 1025px) {
+    .container {
+        grid-template-columns: 5fr 5fr;
+    }
+    .content .kiri {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 769px) {
+    .container {
+        grid-template-columns: 5fr 5fr;
+    }
+    .content .kiri {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #logoTulis {
+        font-size: 1.8em;
+    }
+    #logoTulis::after {
+        content: "clro";
+    }
+    .header .atas {
+        padding: 0px 8px;
+    }
+    .content .kiri {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .container .gantungan-header {
+        display: none;
+    }
+    .container .content {
+        padding: 0px 8px;
+    }
+    .content .kiri {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container .sisi {
+        display: none;
+    }
+}
