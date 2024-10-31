@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drawn</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+        }
+        .container .displayer {
+            display: grid;
+            width: 100%;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            padding: 89px;
+        }
+    </style>
+    <style>
+        .displayer .tempat-warna {
+            width: 100%;
+            aspect-ratio: 8/2;
+
+            padding: 13px;
+
+            display: flex;
+        }
+        .tempat-warna .warna {
+            height: 100%;
+            flex: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="displayer">
+        </div>
+    </div>
+
+    <script src="source/js/data.js"></script>
+    <script src="source/js/color.js"></script>
+    <script>
+        var wrapper = document.querySelector(".displayer")
+        for(i in datas){
+            var pallet = ''
+            for(g in datas[i].warna){
+                pallet += `
+                    <div class="warna" style="background-color: #${datas[i].warna[g]};"></div>
+                `
+            }
+
+            var warnaIni = warnaRata(datas[i].warna)
+            console.log(warnaIni)
+
+            var warna = `
+                <div class="tempat-warna" style="background-color: #${warnaIni};">
+                    ${pallet}
+                </div>
+            `
+            wrapper.innerHTML += warna
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+const datas = [
+    {
+        "id":1,
+        "title":"kemana",
+        "warna":["161540", "3b354b", "543a44", "273037", "4b6169"],
+        "likes":3,
+    },
+    {
+        "id":2,
+        "title":"kemana",
+        "warna":["795c5f", "25232e", "2f3d3b", "6b6a56", "632514", "785028"],
+        "likes":3,
+    },
+    {
+        "id":3,
+        "title":"kemana",
+        "warna":["564c41", "1a130f"],
+        "likes":3,
+    },
+    {
+        "id":4,
+        "title":"joy",
+        "warna":["264653","2a9d8f","e9c46a","f4a261","e76f51"],
+        "likes":3,
+    },
+    {
+        "id":5,
+        "title":"kemana",
+        "warna":["ff6d00", "ff7900","ff8500","ff9100","ff9e00","240046","3c096c","5a189a","7b2cbf","9d4edd"],
+        "likes":3,
+    },
+    {
+        "id":6,
+        "title":"kemana",
+        "warna":["ccd5ae","e9edc9","fefae0","faedcd","d4a373"],
+        "likes":3,
+    },
+    {
+        "id":7,
+        "title":"kemana",
+        "warna":["001219","005f73","0a9396","94d2bd","e9d8a6","ee9b00","ca6702","bb3e03","ae2012","9b2226"],
+        "likes":3,
+    },
+    {
+        "id":8,
+        "title":"kemana",
+        "warna":["2c6e49","4c956c","fefee3","ffc9b9","d68c45"],
+        "likes":3,
+    },
+    {
+        "id":9,
+        "title":"kemana",
+        "warna":["2b2d42","8d99ae","edf2f4","ef233c","d90429"],
+        "likes":3,
+    },
+    {
+        "id":10,
+        "title":"kemana",
+        "warna":["ff595e","ffca3a","8ac926","1982c4","6a4c93"],
+        "likes":3,
+    },
+    {
+        "id":11,
+        "title":"kemana",
+        "warna":["3d5a80","98c1d9","e0fbfc","ee6c4d","293241"],
+        "likes":3,
+    },
+    {
+        "id":12,
+        "title":"kemana",
+        "warna":["30343f","fafaff","e4d9ff","273469","1e2749"],
+        "likes":3,
+    },
+
+]

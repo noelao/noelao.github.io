@@ -1,0 +1,100 @@
+.content .kiri {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px 34px;
+    flex-wrap: wrap;
+
+    padding: 0 8px;
+}
+
+.kiri .displayer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.displayer .tempat-warna {
+    --lebarDasar: 310px;
+    width: 100%;
+    aspect-ratio: 8/2;
+
+    /* min-width: var(--lebarDasar); */
+    /* height: calc(var(--lebarDasar) * 3/8); */
+
+    border-radius: 13px;
+
+    overflow: hidden;
+    display: flex;
+}
+.tempat-warna .warna {
+    flex: 1;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Roboto;
+
+    cursor: pointer;
+
+    transition: flex .1s ease-in-out;
+}
+.tempat-warna .warna:hover {
+    flex: 3;
+}
+.tempat-warna .yangIni:hover {
+    flex: var(--angka);
+}
+
+.tempat-warna .warna .indi {
+    min-width: 0;
+    width: 0;
+    opacity: 0;
+    transform: translateX(-30px);
+
+    transition: opacity 0.13s ease-in-out, transform 0.3s ease-in-out;
+}
+.tempat-warna .warna:hover .indi{
+    opacity: 1;
+    width: max-content;
+    transform: translateX(0);
+}
+
+.displayer .tombolan {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+}
+
+.tombolan .titik-tiga {
+    height: 74%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    background-color: var(--silver2);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    cursor: pointer;
+
+    &:hover {
+        & .titik-kecil:nth-child(1) {
+            transform: translateX(230%) translateY(-230%);
+        }
+        & .titik-kecil:nth-child(3) {
+            transform: translateX(-230%) translateY(230%);
+        }
+    }
+}
+.tombolan .salinSemua {
+    height: 74%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    background-color: var(--silver);
+}

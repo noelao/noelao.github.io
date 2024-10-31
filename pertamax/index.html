@@ -6,6 +6,7 @@
     <title>colorous</title>
     <link rel="stylesheet" href="source/css/font.css">
     <link rel="stylesheet" href="source/css/form.css">
+    <link rel="stylesheet" href="source/css/contentElContainer.css">
 
     <!--  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +22,7 @@
             background-image: linear-gradient(to right, #00000000, var(--hitam), var(--hitam),var(--hitam), #00000000);
         }
         a {
-            color: var(--hitam);
+            color: inherit;
             text-decoration: none;
         }
         .titik-kecil {
@@ -124,108 +125,6 @@
             top: 36px;
             left: 0;
         }
-    </style>
-    <style>
-        .content .kiri {
-            width: 100%;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 13px 34px;
-            flex-wrap: wrap;
-
-            padding: 0 8px;
-        }
-
-        .kiri .displayer {
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-        }
-        .displayer .tempat-warna {
-            --lebarDasar: 310px;
-            width: 100%;
-            aspect-ratio: 8/2;
-
-            /* min-width: var(--lebarDasar); */
-            /* height: calc(var(--lebarDasar) * 3/8); */
-
-            border-radius: 13px;
-
-            overflow: hidden;
-            display: flex;
-        }
-        .tempat-warna .warna {
-            flex: 1;
-
-            height: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-family: Roboto;
-
-            cursor: pointer;
-
-            transition: flex .1s ease-in-out;
-        }
-        .tempat-warna .warna:hover {
-            flex: 3;
-        }
-        .tempat-warna .yangIni:hover {
-            flex: var(--angka);
-        }
-
-        .tempat-warna .warna .indi {
-            min-width: 0;
-            width: 0;
-            opacity: 0;
-            transform: translateX(-30px);
-
-            transition: opacity 0.13s ease-in-out, transform 0.3s ease-in-out;
-        }
-        .tempat-warna .warna:hover .indi{
-            opacity: 1;
-            width: max-content;
-            transform: translateX(0);
-        }
-
-        .displayer .tombolan {
-            height: 34px;
-            display: flex;
-            align-items: center;
-            padding: 0 12px;
-            gap: 8px;
-        }
-        .tombolan .titik-tiga {
-            height: 74%;
-            aspect-ratio: 1;
-            border-radius: 4px;
-            background-color: var(--silver2);
-
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-
-            cursor: pointer;
-
-            &:hover {
-                & .titik-kecil:nth-child(1) {
-                    transform: translateX(230%) translateY(-230%);
-                }
-                & .titik-kecil:nth-child(3) {
-                    transform: translateX(-230%) translateY(230%);
-                }
-            }
-        }
-        .tombolan .salinSemua {
-            height: 74%;
-            aspect-ratio: 1;
-            border-radius: 4px;
-            background-color: var(--silver);
-        }
-
     </style>
     <style>
         .header .atas {
@@ -337,7 +236,7 @@
             gap: 8px;
             align-items: center;
 
-            transition: top 0.1s ease-in-out;
+            transition: top 0.1s ease-in-out, background-color 0.3s ease-in,color 0.3s ease-in;
         }
         .description .tempat-warna {
             width: 100%;
@@ -367,15 +266,46 @@
             opacity: 0.3;
         }
     </style>
+
+    <style>
+        @keyframes munculMenu {
+            0% {
+                opacity: 0;
+                transform: translateY(0) translateX(-90%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%) translateX(0%);
+            }
+            
+        }
+    </style>
+    <style>
+        .menuPencet {
+            height: 144px;
+            aspect-ratio: 3/4;
+            display: grid;
+            grid-template-columns: 1fr 9fr;
+
+            border-radius: 13px 13px 13px 0;
+            background-color: var(--silver);
+
+            position: absolute;
+            animation-name: munculMenu;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="atas">
                 <div class="kiri">
-                    <div class="logo">
+                    <a href="#" class="logo">
                         <h2 id="logoTulis"></h2>
-                    </div>
+                    </a>
                     <div class="searchPoint">
                         <form action="">
                             <input type="text" name="" id="" class="searchIni" placeholder="theme...">
@@ -404,7 +334,8 @@
                 <p>sweet</p>
             </div>
         </div> -->
-        <div class="penge-gap"></div>
+        <div class="penge-gap">
+        </div>
         <div class="sisi">
             <div class="description">
                 <div class="judoel">
@@ -463,6 +394,7 @@
 
     <link rel="stylesheet" href="source/css/mobile.css">
 
+    <script src="source/js/data.js"></script>
     <script src="source/js/color.js"></script>
     <script src="source/js/restApi.js"></script>
     <script>
