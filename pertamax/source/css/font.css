@@ -2,6 +2,14 @@
     font-family: halloween;
     src: url(../font/Flavors-Regular.ttf);
 }
+@font-face {
+    font-family: satu;
+    src: url(../font/Lexend_Giga/LexendGiga-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: dua;
+    src: url(../font/Super\ Serene.ttf);
+}
 
 .oxanium-ini {
     font-family: "Oxanium", sans-serif;

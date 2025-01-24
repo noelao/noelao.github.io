@@ -47,6 +47,7 @@
 
             --biru: #2a9d8f;
             --orange: #e9c46a;
+            --orange2: #e76f51;
 
             --silver: #e9edc9;
             --silver2: #fefae0;
@@ -114,6 +115,12 @@
         .container .penge-gap {
             grid-area: ini;
             height: 360px;
+            padding: 3rem;
+            .isian {
+                height: 100%;
+                width: 100%;
+                background: url(img/dods/dods3.jpg);
+            }
         }
         .container .sisi {
             grid-area: kanan;
@@ -315,7 +322,7 @@
 
                 <div class="kanan">
                     <div class="profile">
-                        <a href="#">login</a>
+                        <a href="login.html">login</a>
                         <div class="photzo"></div>
                     </div>
                 </div>
@@ -335,6 +342,7 @@
             </div>
         </div> -->
         <div class="penge-gap">
+            <div class="isian"></div>
         </div>
         <div class="sisi">
             <div class="description">
@@ -376,7 +384,9 @@
                             </div></div>
                     </div>
                     <div class="tombolan">
-                        <div class="salinSemua"></div>
+                        <div class="salinSemua">
+                            <small class="instructor">copy all the color</small>
+                        </div>
                         <div class="titik-tiga">
                             <div class="titik-kecil"></div>
                             <div class="titik-kecil"></div>
@@ -389,6 +399,19 @@
 
         <div class="footer"></div>
     </div>
+
+
+    <style>
+        .melayang {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            height: 30px;
+            aspect-ratio: 1;
+            background-color: black;
+        }
+    </style>
+    <div class="melayang"></div>
     
 
 

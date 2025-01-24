@@ -34,7 +34,9 @@ for (i in datas){
                         ${pallet}
                     </div>
                     <div class="tombolan">
-                        <div class="salinSemua"></div>
+                        <div class="salinSemua">
+                            <small class="instructor">copy all the color</small>
+                        </div>
                         <div class="titik-tiga">
                             <div class="titik-kecil"></div>
                             <div class="titik-kecil"></div>
@@ -120,7 +122,7 @@ function descriptionMaker(id){
         <a href="#" class="creator">
             <div class="creator-poto"></div>
             <div class="name-creator">
-                <p>noelao <span>||el creatore</span></p>
+                <p>${ini.creator} <span>||el creatore</span></p>
             </div>
         </a>
     `
