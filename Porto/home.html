@@ -6,38 +6,83 @@
     <title>~porto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="keyframe.css">
+    <link rel="stylesheet" href="mobile.css">
     <style>
         :root {
             --gelap:#073b4c;
             --gelap2:#118ab2;
+            --green: #06d6a0;
+            --white: #fff;
 
             --merah:#ef476f;
             --orange:#f78c6b;
+            --yellow: #ffd166;
+
+            --fontIni: 9rem;
         }
+    </style>
+    <style>
 
 
         *,*::before,*::after{
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-        } 
+        }
+        a {
+            text-decoration: none;
+        }
         .container {
             min-height: 100vh;
             width: 100%;
+
+            display: flex;
+            flex-direction: column;
 
             font-family: kecilan;
         }
 
         .header {
+            z-index: 1;
             position: sticky;
+
             top: 0;
-            left: 0;
+
             width: 100%;
             height: 34px;
             background-color: var(--gelap);
             opacity: .3;
-        }
 
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            transition: opacity .3s ease-in;
+
+            .side {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+
+                width: 50%;
+                a {
+                    opacity: 0;
+                    color: var(--white);
+                    transition: opacity .3s ease-in;
+                }
+                a:hover {
+                    opacity: .5;
+                }
+            }
+        }
+        .header:hover {
+            opacity: 1;
+            a {
+                opacity: 1;
+            }
+        }
         .container .landing {
             height: 89vh;
             width: 100%;
@@ -46,9 +91,33 @@
 
             align-items: center;
             justify-content: center;
+            background-size:cover;
+            background-position:center;
+
+            background: url(icons/png/doodle.jpg);
+            /* background-size: contain;
+            background-repeat: repeat-x; */
+            background-position-y: 60vh;
+
+            .background2 {
+                position: absolute;
+                top: 34px;
+                left: 0;
+
+                height: 89vh;
+                width: 100%;
+
+                background: linear-gradient(to top, #b4b4b4, #e4e4e4,#fff,#fff,#fff, #fff, #fff, #fff);
+                /* background: linear-gradient(to top, #d3d3d3, #e4e4e4,#000,#000, #000, #000); */
+                mix-blend-mode:screen;
+
+            }
         }
+
         .container .landing .centerin {
             width: calc(610px + 55px);
+            mix-blend-mode:unset;
+            isolation: isolate;
 
             display: flex;
             flex-direction: row-reverse;
@@ -115,7 +184,7 @@
         }
         .landing .centerin .kiri .bigWorld {
             animation-delay: .5s;
-            font-size: 34px;
+            font-size: 2.5rem;
             font-weight: bold;
         }
         .landing .centerin .kiri .smallWorld {
@@ -124,14 +193,23 @@
         }
 
         .container .landing2 {
-            height: 55vh;
             width: 100%;
+            height: 53vh;
 
             display: flex;
             align-items: center;
             justify-content: center;
-
             background-color: var(--gelap2);
+            .background2 {
+                position: absolute;
+                width: 100%;
+                height: 53vh;
+
+                background: url(icons/png/doodle.jpg);
+                
+                filter: invert(100%) opacity(.2) ;
+                mix-blend-mode: screen;
+            }
         }
         .gantiBackLanding2 {
             animation-name: gantiBcakground;
@@ -141,6 +219,7 @@
         }
 
         .landing2 .wrapper {
+            filter: opacity(1) ;
             display: flex;
             width: 89%;
             justify-content: space-between;
@@ -195,21 +274,247 @@
             aspect-ratio: 1;
         }
     </style>
+    <style>
+        .about {
+            display: flex;
+            flex-direction: column;
+
+            :nth-child(1n) {
+                height: max-content;
+                width: 90%;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 3rem;
+
+                color: var(--gelap);
+
+                .once {
+                    display: flex;
+                    
+                    justify-content: end;
+
+                    text-align: right;
+
+                    letter-spacing: -0.3rem;
+                    line-height: calc(var(--fontIni) + var(--fontIni)/3.2);
+                    /* line-height: calc(var(--fontIni) + var(--fontIni)/2.2); */
+
+                    font-size: var(--fontIni);
+                }
+                .once2 {
+                    height: 100% !important;
+                    width: 100%;
+                    letter-spacing: -0.2rem;
+                    font-size: calc(var(--fontIni) / 3);
+
+                    -webkit-text-fill-color: var(--gelap);
+                    -webkit-text-stroke-width: 2px;
+                    -webkit-text-stroke-color: #ffffff55;
+
+                }
+            }
+
+            :nth-child(2){
+                .once{
+                    width: 40%;
+                    h1 {
+                        color: var(--orange) !important;
+                    }
+                }
+            }
+        }
+    </style>
+    <style>
+        .landing3{
+            background-image: url(icons/png/wallpaper.jpg);
+            .background2 {
+                --tinggi: 49vh;
+                --tebalGaris: 2vh;
+    
+                height: var(--tinggi);
+                width: 100%;
+    
+                display: flex;
+                flex-direction: column;
+                background-color: #00000059;
+    
+                .garis {
+                    height: var(--tebalGaris);
+                    width: 100%;
+                    /* background-color: var(--gelap2); */
+                }
+                .isi {
+                    /* background-color: var(--gelap2); */
+                    height: calc(var(--tinggi) - (var(--tebalGaris)*2));
+    
+                    display: flex;
+                    gap: 3%;
+    
+                    padding: 2rem 5rem;
+    
+                    --lebarKiri: 34%;
+                    .kiri {
+                        width: var(--lebarKiri);
+                        text-align: right;
+    
+                        display: flex;
+                        align-items: center;
+    
+                        h3 {
+                            color: var(--orange);
+                            font-size: 9rem;
+                            line-height: 7rem;
+                            text-align: right;
+                        }
+                    }
+                    .kanan {
+                        width: calc(100% - var(--lebarKiri));
+                        height: 100%;
+                        background-color: var(--white);
+                        border-radius: 13px;
+                    }
+    
+                }
+            }
+        }
+        .pastProject {
+            height: max-content;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            padding: 55px 0;
+            flex-direction: column;
+            gap: 34px;
+
+            .project {
+                height: 54vh;
+                width: 93%;
+                border-radius: 8px;
+
+                background-color: var(--green);
+            }
+        }
+    </style>
+    <style>
+        .landing4 {
+            height: 34vh;
+            width: 100%;
+            background: url(icons/png/dods2.jpg);
+            background-position-y: 60px;
+        }
+        .contact {
+            height: max-content;
+            width: 100%;
+
+            padding: 55px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .background2 {
+                width: 70%;
+                max-width: 55rem;
+                height: 60vh;
+                position: absolute;
+                border-radius: 13px;
+                
+                background: var(--yellow);
+                background: url(icons/png/dods2.jpg);
+                filter: blur(1px) opacity(.4);
+
+                z-index: -1;
+            }
+
+            .wrapper {
+                width: 70%;
+                max-width: 55rem;
+                height: 60vh;
+                padding: 34px;
+
+                /* border: solid var(--yellow) 5px; */
+
+                display: flex;
+                flex-direction:column;
+                gap: 13px;
+                color: var(--);
+
+                .head {
+                    font-size: 2.5rem;
+                }
+
+                .inputan {
+                    display: grid;
+                    gap: 8px 0;
+                    grid-template-columns: 1fr 3fr;
+                    grid-template-rows: repeat(1, fr);
+                    textarea {
+                        height: 2.5rem;
+                        transition: height .3s ease-in;
+                    }
+                    textarea:hover {
+                        height: 7.5rem;
+                    }
+                    textarea:focus {
+                        height: 7.5rem;
+                    }
+                    .te{
+                        text-decoration: none;
+                        border: none;
+                        border-bottom: solid var(--gelap) 3px;
+                        font-size: 1rem;
+                        font-family: kecilan;
+                        padding: 8px 13px;
+
+                        background: var(--white);
+                        border-radius: 8px;
+
+                        resize: none;
+                        
+                        outline: none;
+                    }
+                }
+                
+                .kirim {
+                    background-color: var(--gelap);
+                    padding: 13px 34px;
+
+                    color: var(--yellow);
+                    width: max-content;
+                    border-radius: 8px;
+
+                    cursor: pointer;
+                }
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="header"></div>
+        <div class="header">
+            <div class="side"></div>
+            <div class="side">
+                <a href="#">contact</a>
+                <a href="#">social media</a>
+                <a href="#">about</a>
+            </div>
+        </div>
+
         <div class="landing">
+        <div class="background2">
+        </div>
             <div class="centerin">
                 <div class="kanan showKiri">
                     <div class="pictureProfile"></div>
                 </div>
                 <div class="kiri">
                     <div class="show bigWorld">
-                        HI, I'm Full Stack Developer
+                        HI, I'm Front End Developer
                     </div>
                     <div class="show smallWorld">
-                        I build website from the back to the front, up and down by my self. But i prevere to pick front end, because thats its my save zone.
+                        I build website from the back to the front. I prever to use raw languange, just css js and html.
                     </div>
 
                     <div class="logos"></div>
@@ -218,6 +523,8 @@
         </div>
 
         <div class="landing2">
+        <div class="background2">
+        </div>
             <div class="wrapper lihat">
                 <div class="tulisan2"></div>
                 <div class="tulisan"></div>
@@ -229,8 +536,70 @@
                 </div>
             </div>
         </div>
+        <div class="about">
 
-        <div class="explainWhy"></div>
+            <div class="name">
+                <div class="once">
+                    <h1>my name is</h1>
+                </div>
+                <div class="once2">
+                    <h1>Ahmad Bayu Aji Nugroho</h1>
+                </div>
+            </div>
+            <div class="born">
+                <div class="once">
+                    <h1>born in</h1>
+                </div>
+                <div class="once2">
+                    <h1>2003</h1>
+                </div>
+            </div>
+            <div class="place">
+                <div class="once">
+                    <h1>i live in small village from</h1>
+                </div>
+                <div class="once2">
+                    <h1>Pati regency, Central Java</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="landing4"></div>
+        <div class="pastProject">
+            <div class="project"></div>
+            <div class="project"></div>
+            <div class="project"></div>
+        </div>
+        
+        <div class="landing3">
+            <div class="background2">
+                <div class="garis"></div>
+                <div class="isi">
+                    <div class="kiri">
+                        <h3>side project</h3>
+                    </div>
+                    <div class="kanan">
+    
+                    </div>
+                </div>
+                <div class="garis"></div>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="background2"></div>
+            <div class="wrapper">
+                <h1 class="head">contact me</h1>
+
+                <div class="inputan">
+                    <h2>from</h2>
+                    <input class="te" type="text" placeholder="phone number, email, etc...">
+                    <h2>message</h2>
+                    <textarea class="te" name="" id="" placeholder="dont forget to sleep at night..."></textarea>
+                </div>
+
+                <h2 class="kirim">send</h2>
+            </div>
+        </div>
 
         <div class="footer"></div>
     </div>

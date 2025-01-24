@@ -1,12 +1,23 @@
 .container .footer {    
-    height: 13vh;
+    height: 10em;
     width: 100%;
 
     background-color: var(--gelap);
 }
 
-.container .explainWhy {
-    height: 90vh;
+.container .about {
+    min-height: 100vh;
+    height: max-content;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    padding: 10vh 0;
+}
+.container .pastProject {
+    min-height: 130vh;
+}
+.container .contact {
+    min-height: 34vh;
 }
