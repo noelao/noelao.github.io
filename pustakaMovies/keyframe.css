@@ -1,0 +1,17 @@
+@keyframes besarKecilBack {
+    0%{
+        width: 211%;
+        height: 90%;
+        transform: translateX(-30%) translateY(-53%);
+    }
+    50%{
+        width: 199%;
+        height: 90%;
+        transform: translateX(-23%)translateY(-54%);
+    }
+    100%{
+        width: 211%;
+        height: 90%;
+        transform: translateX(-30%) translateY(-53%);
+    }
+}

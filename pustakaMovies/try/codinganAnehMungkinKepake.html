@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="keyframe.css">
+
+    <style>
+        :root {
+            --warna1: #011936;
+            --warna2: #112c4d;
+            --warna3: #b51c07;
+            --warna4: #97c6bf;
+            --warna5: #387684;
+            --warna6: #998e79;
+            --warna7: #e0d1b4;
+            --warna8: #fcdfa6;
+
+            --gelap: #000;
+            --terang: #fff;
+
+            --lebarSuai:1367px;
+
+        }
+        @font-face {
+            font-family: kecilan;
+            src: url(font/Raleway-VariableFont_wght.ttf);
+        }
+    </style>
+    <style>
+        .wrappBack {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            overflow: hidden;
+        }
+        .background2 {
+            background-color: var(--warna1);
+            width: 150%;
+            height: 90%;
+            border-radius: 100%;
+
+            transform: translateY(-40%) translateX(-15%);
+
+            animation-name: besarKecilBack;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: kecilan;
+        }
+        body {
+            background-color: var(--terang);
+        }
+
+        h1 {
+            line-height: normal;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+        }
+        
+        .lebarSuai {
+            width: var(--lebarSuai);
+            display: flex;
+            flex-direction: row;
+
+            justify-content: space-between;
+        }
+
+        .header {
+            height: 55px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+
+
+            background-color: var(--warna6);
+            .lebarSuai {
+                flex-direction: row;
+                .kiri {
+                    padding: 8px;
+                    color: var(--terang);
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 34px;
+    
+                    width: max-content;
+    
+                    input {
+                        padding: 5px 13px 5px 34px;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        background-color: var(--warna7);
+                        border: none;
+                    }
+                    input:focus {
+                        outline: none;
+                    }
+    
+                    .judul {
+                        display: flex;
+                        flex-direction: row;
+    
+                        h1 {
+                            font-size: 1.5rem;
+                        }
+                        h1:nth-child(2){
+                            color: var(--gelap);
+                        }
+                    }
+                }
+                .kanan {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: end;
+                    padding: 8px;
+    
+                    align-items: end;
+    
+                    .humbergerMenu {
+                        height: 34px;
+                        aspect-ratio: 1;
+    
+                        background-color: var(--warna7);
+                        border-radius: 5px;
+    
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+    
+                        padding: 8px 0;
+    
+                        justify-content: space-between;
+    
+                        span {
+                            height: 3px;
+                            width: 55%;
+                            background-color: var(--gelap);
+    
+                            border-radius: 3px;
+                        }
+                    }
+                }
+            }
+
+        }
+        .content {
+            min-height: 100vh;
+        }
+        .footer {
+            height: 89px;
+            width: 100%;
+            background-color: var(--warna2);
+        }
+    </style>
+    <style>
+        .content {
+            /* temporary */
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            align-items: center;
+        }
+
+        .trending {
+            margin-top: 21px;
+            padding: 13px;
+
+            width: 100%;
+            height: 233px;
+
+            background-color: var(--warna2);
+            border-radius: 8px;
+
+            display: flex;
+            flex-direction: column;
+
+            color: var(--terang);
+
+            .movieSlider {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                height: 89%;
+                width: 100%;
+                background-color: var(--warna1);
+
+                .tombol {
+                    height: 100%;
+                    width: 34px;
+                    background-color: var(--warna4);
+                }
+
+                .displayer {
+                    margin: 0 3px;
+                    flex: 1;
+                    height: 100%;
+
+                    --jumlahMovieTerdisplay: 8;
+
+                    display: flex;
+                    flex-direction: row;
+                    gap: 3px;
+
+                    width: calc(144px * var(--jumlahMovieTerdisplay) + (var(--jumlahMovieTerdisplay) - 1) * 3px);
+
+                    overflow: hidden;
+
+                    .filman {
+                        min-height: 100%;
+                        height: max-content;
+                        width: 144px;
+
+                        background-color: #fff;
+
+                        img {
+                            width: 100%;
+                            height: max-content;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrappBack">
+            <div class="background2"></div>
+        </div>
+        <div class="header">
+            <div class="lebarSuai">
+                <div class="kiri">
+                    <div class="judul">
+                        <h1>pustaka</h1>
+                        <h1>Movies</h1>
+                    </div>
+    
+                    <input type="text" placeholder="/">
+                </div>
+                <div class="kanan">
+                    <div class="humbergerMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="lebarSuai">
+                <div class="trending">
+                    <h3>recomendation</h3>
+                    <div class="movieSlider">
+                        <div class="tombol"></div>
+                        <div class="displayer">
+                            <div class="filman">
+                                <img src="image/movies/film-a-house-on-fire-2024-lk21-d21.jpg" alt="">
+                            </div>
+                            <div class="filman">
+                                <img src="image/movies/film-ad-vitam-2025-lk21-d21.jpg" alt="">
+                            </div>
+                            <div class="filman">
+                                <img src="image/movies/film-alangu-2024-lk21-d21.jpg" alt="">
+                            </div>
+                            <div class="filman"></div>
+                            <div class="filman"></div>
+                            <div class="filman"></div>
+                            <div class="filman"></div>
+                            <div class="filman"></div>
+                            <div class="filman"></div>
+                            <div class="filman"></div>
+                        </div>
+                        <div class="tombol"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+    </div>
+
+    <script>
+        var movieIni = document.querySelectorAll(".displayer .filman")
+
+        
+        // tidak akan berubah angkanya
+        var gapDisplayer = 5
+        var lebarTombol = document.querySelector(".movieSlider .tombol").clientWidth * 2
+        var lebarMovie = movieIni[0].clientWidth
+
+        // yang berubah ubah
+        var movieDisplay = 8
+        var totalLebarMovies = lebarMovie * movieDisplay
+        var totalGapDisplayer = (movieDisplay - 1) * gapDisplayer
+
+        var lebarSuai
+
+        // exekusi
+        lebarSuai = totalGapDisplayer + totalLebarMovies + lebarTombol
+
+        var toalGapDisplayer
+
+
+        document.documentElement.style.setProperty("--lebarSuai", `${lebarSuai}px`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@media screen and (max-width: 1025px) {
+    .trending {
+        height: 144px !important;
+    }
+    .displayer .filman {
+        aspect-ratio: .68 !important;
+    }
+    .trailerIni {
+        margin-top: 34px;
+        height: 233px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .trending {
+        height: 144px !important;
+    }
+    .displayer .filman {
+        aspect-ratio: .68 !important;
+    }
+    .trailerIni {
+        margin-top: 21px;
+    }
+}
