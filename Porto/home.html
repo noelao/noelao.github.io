@@ -164,6 +164,17 @@
             animation-timing-function: ease-in-out;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            img {
+                width: 100%;
+                filter: invert(100%);
+                mix-blend-mode: screen;
+            }
         }
 
         .landing .centerin .kiri {
@@ -394,7 +405,31 @@
                 width: 93%;
                 border-radius: 8px;
 
-                background-color: var(--green);
+                display: flex;
+
+                /* background-color: var(--green); */
+
+                overflow: hidden;
+                
+                .fotoDisplayer {
+                    flex: 1;
+                    height: 100%;
+                    display: flex;
+                    overflow: hidden;
+                    overflow-x: scroll;
+                }
+                .tulisan {
+                    flex: 1;
+                    height: 100%;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    padding: 34px;
+                    .linkin {
+                        margin-top: 34px;
+                    }
+                }
             }
         }
     </style>
@@ -507,14 +542,16 @@
         </div>
             <div class="centerin">
                 <div class="kanan showKiri">
-                    <div class="pictureProfile"></div>
+                    <div class="pictureProfile">
+                        <!-- <img src="icons/png/kkk.png" alt=""> -->
+                    </div>
                 </div>
                 <div class="kiri">
                     <div class="show bigWorld">
                         HI, I'm Front End Developer
                     </div>
                     <div class="show smallWorld">
-                        I build website from the back to the front. I prever to use raw languange, just css js and html.
+                        Turning ideas into real life products is my calling. So i also make a game with godot and spend alot of time on front of monitor.
                     </div>
 
                     <div class="logos"></div>
@@ -564,11 +601,39 @@
             </div>
 
         </div>
-        <div class="landing4"></div>
+        <div class="landing4">
+        </div>
         <div class="pastProject">
-            <div class="project"></div>
-            <div class="project"></div>
-            <div class="project"></div>
+            <div class="project">
+                <div class="fotoDisplayer">
+                    <img src="icons/png/projrct/Screenshot 2025-01-26 134244.png" alt="">
+                    <img src="icons/png/projrct/Screenshot 2025-01-26 134355.png" alt="">
+                </div>
+
+                <div class="tulisan">
+                    <h1>colorous</h1>
+                    <p>bank warna yang saya buat untuk memudahkan saya dalam memaparkan warna dan mengambil keputusan mana warna yang lebih baik. 
+                        Masih banyak pengembangan dalam pengembangan website ini, terutama pada fiture generate color.
+                    </p>
+                    <div class="linkin">
+                        <a href="https://noelao.github.io/pertamax/index.html" target="_blank" >kunjungi website >></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="fotoDisplayer">
+                    <img src="icons/png/projrct/Screenshot 2025-02-06 113338.png" alt="">
+                </div>
+
+                <div class="tulisan">
+                    <h1>pustakaMovies</h1>
+                    <p>website untuk menampilkan display-display film. mengellompokkan pada tema-tema yang sesuai dengan user.
+                    </p>
+                    <div class="linkin">
+                        <a href="https://noelao.github.io/pustakaMovies/home.html" target="_blank" >kunjungi website >></a>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="landing3">
