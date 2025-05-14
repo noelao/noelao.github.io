@@ -1,5 +1,7 @@
 #Hi
+
 nama-nama penghuni variable
+
 - ini
 - makan
 - minum
