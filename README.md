@@ -1,7 +1,5 @@
 # Hi
-
-nama-nama penghuni variable
-
+nama-nama penghuni variable :
 - ini
 - makan
 - minum
