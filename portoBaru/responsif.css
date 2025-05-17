@@ -1,0 +1,126 @@
+@media screen and (max-width: 426px) {
+    .menu {
+        height: 55px !important;
+        width: 100% !important;
+
+        top: auto !important;
+        bottom: 0 !important;
+
+        flex-direction: row !important;
+    }
+    
+    .container {
+        padding-right: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+    }
+    .container .introOne {
+        .wrapper {
+            flex-direction: column-reverse;
+            max-width: 89% !important;
+
+            min-height: 76vh;
+
+            .kiri {
+                flex: 1;
+                height: 500px !important;
+                justify-content: center;
+
+                .hello {
+                    font-size: .7rem;
+                }
+                h1 {
+                    font-size: 1.5rem !important;
+                }
+                .subJudul {
+                    width: 64%;
+                    p {
+                        font-size: .7rem;
+                    }
+
+                }
+            }
+            .kanan {
+                flex: 1.3;
+                width: 100%;
+            }
+        }
+    }
+    .projectIni {
+        .wrapper {
+            .judul {
+                h1 {
+                    width: 100%;
+                    background-color: var(--warna1);
+                    color: var(--terang);
+                    padding: 12px 28px 12px 18px;
+                }
+            }
+            .isian {
+                .project {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    
+    footer {
+        .wrapper {
+            flex-direction: column;
+            gap: 55px;
+
+            .kiri {
+                width: 100%;
+                flex-direction: row;
+                .judul {
+                    align-items: start;
+                    width: 700px;
+                    h2 {
+                        line-height: 1.3rem;
+                    }
+                    p {
+                        font-size: .7rem;
+                    }
+                }
+            }
+            .tengah {
+                width: 100%;
+                .kataKata {
+                    p {
+                        font-size: .7rem;
+                    }
+                }
+                .judul {
+                    h4:nth-child(5) {
+                        display: none;
+                    }
+                    h4:nth-child(6) {
+                        display: none;
+                    }
+                }
+            }
+            .kanan {
+                width: 100%;
+
+                margin-bottom: 100px;
+            }
+        }
+    }
+    
+    .menu {
+        padding: 12px;
+
+        display: flex;
+        flex-direction: column;
+
+
+        .darkmode {
+            width: auto;
+            height: 100%;
+            padding: 6px;
+        }
+    }
+
+
+}
