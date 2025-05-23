@@ -1,0 +1,68 @@
+@media screen and (max-width : 426px) {
+    .container .content .header {
+        .tanggal {
+            position: relative;
+            small.angka {
+                right: auto;
+                left: 0;
+                transform: translateX(-130%);
+            }
+        }
+    }
+    .container .content .recomendation {
+        .putHere {
+            flex-direction: column;
+            gap: 12px;
+
+            .kotakFoto {
+                width: 100%;
+            }
+            .katakata {
+                width: 100%;
+            }
+            .tombolan {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                display: flex;
+                .tomb {
+                    width: max-content;
+                }
+            }
+        }
+    }
+    .container .content .trendingList {
+        .daftarMovie {
+            --lebarIni: 104px;
+            gap: 5px;
+            .movie {
+                min-width: 104px;
+                max-width: 124px;
+            }
+        }
+    }
+}
+@media screen and (max-width : 424px) {
+    .container .content {
+        width: 100%;
+        transform: translateX(0);
+        padding: 12px 18px;
+    }
+    .container .content .recomendation {
+        position: relative;
+        h1 {
+            visibility: hidden;
+            height: 2.4rem;
+        }
+        h1:after {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            height: auto;
+            visibility: visible;
+            content: 'Recomendation';
+        }
+    }
+}

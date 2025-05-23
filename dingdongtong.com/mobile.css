@@ -1,0 +1,54 @@
+@media screen and (max-width : 426px) {
+    .container {
+        --lebarNav: 0;
+    }
+    body {
+        font-size: .62rem;
+    }
+    .container .content {
+        width: 100%;
+        transform: translateX(0);
+        padding: 12px 18px;
+    }
+    .container .navKiri {
+        left: 0;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 38px;
+
+        flex-direction: row;
+
+        .atas {
+            height: 100%;
+            width: auto;
+
+            padding: 5px 6px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            gap: 6px;
+            .photoP{
+                width: auto;
+                height: 100%;
+
+            }
+            .darkmode {
+                width: auto;
+                height: 54%;
+
+            }
+            .menu {
+                width: auto;
+                height: 54%;
+            }
+        }
+        .bawah {
+            height: 100%;
+            width: 32px;
+        }
+
+    }
+}

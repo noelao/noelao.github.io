@@ -1,0 +1,294 @@
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+p {
+    font-family: inter;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--gelap);
+    color: var(--terang);
+    font-size: .8rem;
+
+    transition: background-color .5s;
+}
+.container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: poppins;
+    --lebarNav: 64px;
+}
+.container .navKiri {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    height: 100vh;
+    width: var(--lebarNav);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    z-index: 3;
+
+    background-color: var(--gelap2tetap);
+    
+    box-shadow: 0 0 5px var(--gelaptetap);
+    .atas {
+        width: 100%;
+
+        display: flex;
+        padding: 16px 12px;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        .photoP {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: var(--gelap);
+            border-radius: 100%;
+        }
+        .darkmode {
+            position: relative;
+            width: 54%;
+            aspect-ratio: 1;
+            background-color: var(--terang3);
+            border-radius: 100%;
+
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            padding: 8px;
+            cursor: pointer;
+            rotate: 0deg;
+
+            transition: bacground-color .1s;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                padding: 4px;
+
+                transition: 
+                transform .2s ease-in,
+                padding .2s ease-in, 
+                rotate .2s ease-in;
+            }
+            .ligh {
+                transform: translateX(0);
+            }
+            .dark {
+                transform: translateX(100%);
+            }
+        }
+        .darkmode:hover img{
+            padding: 3px;
+            rotate: 90deg;
+        }
+        .darkmode:active img {
+            padding: 8px;
+            opacity: .7;
+            rotate: 180deg;
+        }
+
+        .menu {
+            transform: translateY(-3px);
+            width: 54%;
+            aspect-ratio: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            transition: transform .2s ease-in-out;
+            .garis {
+                width: 100%;
+                height: 2px;
+                background-color: var(--terangtetap);
+                border-radius: 8px;
+
+                transition: transform .2s ease-in-out;
+            }
+            .garis:nth-child(2){
+                width: 84%;
+            }
+            .garis:nth-child(3){
+                width: 62%;
+            }
+        }
+        .menu:hover {
+            cursor: pointer;
+            .garis {
+                background-color: var(--terangtetap);    
+                box-shadow: 0 0 5px var(--gelap2tetap);
+                transform: translateX(calc(-40% + 10px));
+
+                border-radius: 8px 0 0 8px;
+            }
+        }
+        .searchMenu {
+            width: 82%;
+            aspect-ratio: 1;
+            background-color: var(--gelap);
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+        }
+        .manualGap {
+            width: 100%;
+            aspect-ratio: 1;
+        }
+        .logo {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: var(--gelaptetap);
+            border-radius: 8px;
+            
+        }
+    }
+    .bawah {
+        height: 50px;
+        width: 100%;
+        background-color: #1b1b1b;
+    }
+}
+
+.container .daftarmenu {
+    position: fixed;
+    left: var(--lebarNav);
+    top: 0;
+
+    width: 180px;
+    height: 240px;
+    
+    background-color: var(--gelap2);
+
+    transform: translateX(-100%);
+    opacity: 0;
+    box-shadow: 0 0 5px var(--gelaptetap);
+
+    transition: 
+        transform .3s ease-out,
+        opacity .3s ease-out
+    ;
+
+    z-index: 1;
+    .background2 {
+        padding: 16px;
+        width: 100%;
+        height: 100%;
+
+        ul li {
+            list-style: none;
+            opacity: .7;
+            color: var(--terangtetap);
+            text-transform: lowercase;
+        }
+        ul li:hover {
+            opacity: 1;
+        }
+    }
+    
+}
+.container .searchFormIni {
+    position: fixed;
+    bottom: -42px;
+
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    max-width: 1440px;
+    width: 100%;
+
+    /* background-color: var(--gelap2); */
+
+    transform:translateX(calc(var(--lebarNav) / 2));
+
+    transition: 
+        background-color .5s,
+        bottom .3s;
+    z-index: 1;
+    form {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        input[type="text"]{
+            height: 82%;
+            border: none;
+            outline: none;
+            width: 540px;
+            padding: 0 32px;
+            font-family: poppins;
+            font-size: 1rem;
+
+            background-color: var(--terang);
+            color: var(--gelap);
+
+        }
+        input[type="text"]:focus {
+            outline: none;
+        }
+        .tombolSearch {
+            background-color: var(--terang);
+            height: 82%;
+            aspect-ratio: 2.1;
+
+            padding: 0 12px;
+
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+}
+
+.container .footer {
+    height: 300px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--gelap2tetap);
+
+    margin-top: 120px;
+
+    .asli {
+        max-width: 1440px;
+        height: 100%;
+        
+        width: calc(100% - var(--lebarNav));
+        transform: translateX(calc(var(--lebarNav) / 2));
+        padding: 42px 82px;
+    }
+
+}

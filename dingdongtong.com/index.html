@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bodyContainer.css">
+    <link rel="stylesheet" href="css/font.css">
+    <style>
+        :root {
+            --terang: #f0f0f0;
+            --gelap: #000;
+            --gelap2: #30343f; 
+
+            --terangtetap: #f0f0f0;
+            --gelap2tetap: #30343f;
+            --gelaptetap: #000;
+
+            --gelap3: #0a0a0a;
+            --terang3: #ededed;
+        }
+        .container .content {
+            width: calc(100% - var(--lebarNav));
+            transform: translateX(calc(var(--lebarNav) / 2));
+            max-width: 1440px;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            padding: 42px 82px;
+
+            .manualGap {
+                height: 130px;
+            }
+        }
+
+
+
+        .container .content .header {
+            position: sticky;
+            top: 0;
+
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: var(--gelap);
+            border-bottom: 1px solid var(--gelap2tetap);
+
+            transition: 
+                background-color .5s,
+                top .3s;
+            z-index: 3;
+
+            .mode {
+                position: relative;
+                display: flex;
+                width: max-content;
+                flex-direction: row;
+
+                h2:nth-child(2){
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    position:static;
+                    z-index: 2;
+                    transition: 
+                        padding .1s ease-in-out,
+                        background-color .3s ease-in-out;
+                }
+                h2:nth-child(1).bayang{
+                    position: absolute;
+                    opacity: .3;
+                }
+                h2:nth-child(2).touch:hover{
+                    padding: 0 8px;
+                    cursor: pointer;
+                    opacity: .9;
+                }
+
+                .pilihan {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    gap: 12px;
+                    flex-direction: row;
+
+                    margin-left: 12px;
+
+                    border-radius:  0 50px 50px 0;
+
+                    .asli {
+                        width: 0px;
+                        display: flex;
+                        overflow: hidden;
+                        gap: 8px;
+
+                        transition: width .32s ease-in;
+                        h2 {
+                            opacity: .3;
+                        }
+                    }
+                    .bola {
+                        height: 64%;
+                        aspect-ratio: 1;
+
+                        background-color: var(--terang);
+                        border-radius: 100%;
+
+                        color: var(--gelap3);
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                .pilihan:hover {
+                    .asli {
+                        h2 {
+                            opacity: .3;
+                        }
+                    }
+                }
+                .pilihan .asli h2:hover {
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+
+            .tanggal{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .dadatete {
+                    display: flex;
+                    flex-direction: column;
+                    line-height: 12px;
+                }
+                button {
+                    background-color: transparent;
+                    border:none;
+                    h2 {
+                        cursor: pointer;
+                    }
+                }
+                small.angka {
+                    position: absolute;
+                    right: 0;
+                    transform: translateX(100%);
+                    opacity: .7;
+                }
+                .pilihan {
+                    visibility: hidden;
+                    position: absolute;
+                    top: 8px;
+
+                    height: 100px;
+                    width: max-content;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    padding: 5px 6px;
+                    color: var(--gelaptetap);
+
+                    background-color: var(--terangtetap);
+                    border-radius: 8px;
+                    box-shadow: 0 0 5px var(--gelaptetap);
+
+                    overflow-y: scroll;
+
+                    scrollbar-width: none;
+
+                    small {
+                        opacity: .7;
+                        border-bottom: 1px solid var(--gelaptetap);
+                        margin-bottom: 3px;
+                        cursor: pointer;
+                    }
+                    small:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .container .content .recomendation {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            /* gap: 5px; */
+
+            .putHere {
+                height: max-content;
+                width: 100%;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .kotakFoto {
+                    height: 260px;
+                    width: 520px;
+                    background-color: var(--gelap2tetap);
+                }
+                .katakata {
+                    width: calc(100% - 640px);
+                    padding: 0 16px;
+
+                    .judul {
+                        margin-bottom: 8px;
+                    }
+                    .sinopsis {
+                        font-family: inter;
+                    }
+                }
+                .tombolan {
+                    width: 120px;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    .tomb {
+                        width: 100%;
+                        color: var(--terangtetap);
+
+                        padding: 5px 12px;
+                        background-color: var(--gelap2tetap);
+                        border-radius: 8px;
+
+                        transition: 
+                            background-color .1s ease-in-out,
+                            scale .1s ease-in-out;
+                    }
+                    .tomb:hover {
+                        cursor: pointer;
+                        color: var(--gelaptetap);
+                        background-color: var(--terangtetap);
+                        
+                        box-shadow: 0 0 5px var(--gelap2tetap);
+                    }
+                    .tomb:active {
+                        scale: .92;
+                    }
+                }
+            }
+        }
+        .container .content .trendingList {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            .urutanIni {
+                width: 100%;
+                border-bottom: 1px solid var(--gelap2tetap);
+
+                display: flex;
+                gap: 8px;
+
+                h3.shadow {
+                    opacity: .3;
+                    position: absolute;
+                }
+                h3.pilihx {
+                    cursor: pointer;
+                    z-index: 2;
+                    transition: padding .1s ease-in-out;
+                }
+                h3.pilihx:hover {
+                    padding: 0 6px;
+                }
+                .pilihan {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    .asli {
+                        display: flex;
+                        gap: 8px;
+                        width: 0;
+                        overflow: hidden;
+
+                        transition: width .3s ease;
+                        h3 {
+                            opacity: .3;
+                            cursor: pointer;
+                        }
+                        h3:hover {
+                            opacity: 1;
+                        }
+
+                    }
+                    
+                    .bola {
+                        height: 64%;
+                        aspect-ratio: 1;
+    
+                        border-radius: 100%;
+                        background-color: var(--terang3);
+                    }
+                    .reload {
+                        visibility: hidden;
+                        cursor: pointer;
+
+                        .isi{
+                            transition: rotate .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        }
+                    }
+                    .reload:hover {
+                        .isi {
+                            rotate: -90deg;
+                        }
+                    }
+                }
+            }
+            .daftarMovie {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 6px;
+                
+                --lebarIni: 142px;
+
+                flex-wrap: wrap;
+
+                margin-top: 14px;
+
+                transition: height .3s ease;
+                .movie {
+                    flex: 1;
+                    min-width: 138px;
+                    max-width: 154px;
+
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+
+                    overflow: hidden;
+                    .fotoan {
+                        position: relative;
+                        width: 100%;
+                        height: calc(var(--lebarIni) * 1.46);
+
+                        background-color: var(--gelap2tetap);
+                        .foto {
+                            width: auto;
+                            height: 100%;
+                            overflow: hidden;
+                            img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .rating {
+                            position: absolute;
+                            width: 100%;
+                            padding: 4px;
+
+                            left: 0;
+                            bottom: 0;
+
+                            opacity: .7;
+                            color: var(--terangtetap);
+                        }
+                        .judul {
+                            padding: 0 12px;
+                            position: absolute;
+                            width: 100%;
+
+                            top: 0;
+                            opacity: 0;
+                            box-shadow: 0 0 10px var(--gelap);
+                        }
+                    }
+                }
+                .movie:hover {
+                    .fotoan {
+                        box-shadow: 0 0 5px var(--gelap2tetap);
+                        .rating {
+                            opacity: 1;
+                            background-color: var(--terang);
+                            color: var(--gelap);
+                        }
+                        .judul {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            .showMore {
+                position: relative;
+
+                padding-top: 8px;
+
+                width: 100%;
+                height: 54px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                cursor: pointer;
+
+                border-radius:  0 0 32px 32px;
+                h1.atas {
+                    transition: transform .3s ease;
+                    position: absolute;
+
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                h1.shadow {
+                    position: absolute;
+                    opacity: .3;
+                    
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                .bayangan {
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    justify-content: space-between;
+
+                    .satu {
+                        height: 0;
+                        width: 154px;
+
+                        background-color: var(--gelap2tetap);
+                        background: linear-gradient(to bottom, var(--gelap2tetap), #00000000);
+
+                        transition: height .3s ease;
+                        transition-delay: .1s;
+                    }
+                }
+            }
+            .showMore:hover {
+                h1.atas {
+                    transform: translateX(-50%) translateY(12px);
+                }
+                .bayangan {
+                    .satu {
+                        height: 52px;
+                    }
+                }
+            }
+            
+        }
+        .container .footer {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="searchFormIni">
+            <form action="">
+                <input type="text" placeholder="'/' let me search...">
+                <div class="tombolSearch">🔍</div>
+            </form>
+        </div>
+        <div class="daftarmenu">
+            <div class="background2">
+                <ul>
+                    <li><h3><a href="">Home</a></h3></li>
+                    <li><h3><a href="page/about.html">About</a></h3></li>
+                    <li><h3><a href="#">Sosmed</a></h3></li>
+                    <li><h3><a href="#">Send Message</a></h3></li>
+                    <li><h3><a href="#">Donate us</a></h3></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navKiri">
+            <div class="atas">
+                <a href="page/login.html" class="photoP"></a>
+                <div class="darkmode">
+                    <img class="ligh" src="src/svg/icon/mode-light-svgrepo-com.svg" alt="">
+                    <img class="dark" src="src/svg/icon/mode-dark-svgrepo-com.svg" alt="">
+                </div>
+                <div class="menu">
+                    <div class="garis"></div>
+                    <div class="garis"></div>
+                    <div class="garis"></div>
+                </div>
+                <div class="manualGap"></div>
+                <div class="searchMenu">
+                    <h3>🔍</h3>
+                </div>
+                <a href="/" class="logo"></a>
+            </div>
+            <div class="bawah"></div>
+            
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="mode">
+                    <h2 class="yangterpilih bayang">
+                        MOVIES
+                    </h2>
+                    <h2 class="yangterpilih touch">
+                        MOVIES
+                    </h2>
+                    <div class="pilihan">
+                        <div class="asli">
+                            <h2>MOVIES</h2>
+                            <h2>SERIES</h2>
+                            <h2>ANIME</h2>
+                        </div>
+
+                        <div class="bola"></div>
+                    </div>
+                </div>
+                <div class="tanggal">
+                    <div class="dadatete">
+                        <small>da</small>
+                        <small>te</small>
+                    </div>
+                    <button onclick="tampilkanTanggal()">
+                        <h2>📅
+                        </h2>
+                    </button>
+                    <small class="angka">2025</small>
+                    <div class="pilihan">
+                        <small>2025</small>
+                        <small>2024</small>
+                        <small>2023</small>
+                        <small>2022</small>
+                        <small>2021</small>
+                        <small>2020</small>
+                        <small>2019</small>
+                        <small>2018</small>
+                        <small>2017</small>
+                        <small>2016</small>
+                        <small>2015</small>
+                        <small>2014</small>
+                        <small>2013</small>
+                        <small>2012</small>
+                        <small>2011</small>
+                        <small>2010</small>
+                    </div>
+                </div>
+            </div>
+            <div class="recomendation">
+                <h1>Recomendation of the day</h1>
+                <div class="putHere">
+                    <div class="kotakFoto"></div>
+                    <div class="katakata">
+                        <div class="judul">
+                            <a href="page/clickMovie.html"><h3>Mickey 17</h3></a>
+                            <small>⭐⭐⭐⭐⭐ 7.9</small>
+                        </div>
+                        <div class="sinopsis">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptatum, labore eaque voluptatibus ullam maiores sit laudantium magni iste reprehenderit neque ab maxime hic alias suscipit ut error itaque illo.</p>
+                        </div>
+                    </div>
+                    <div class="tombolan">
+                        <div class="tomb"><h4>next</h4></div>
+                        <div class="tomb"><h4>prev</h4></div>
+                    </div>
+                </div>
+                <small>⚠️ please login to make relatable content</small>
+            </div>
+            <div class="manualGap"></div>
+            <div class="trendingList">
+                <h2>List of Trending movies</h2>
+                <div class="urutanIni">
+                    <h3 class="shadow yangTerpilih">terbaru</h3>
+                    <h3 class="pilihx yangTerpilih">terbaru</h3>
+                    <div class="pilihan">
+                        <div class="asli">
+                            <h3>terbaru</h3>
+                            <h3>terlama</h3>
+                            <h3>terpopuler</h3>
+                            <h3>rating</h3>
+                        </div>
+                        <div class="bola"></div>
+                        <div class="reload">
+                            <div class="isi">🔄️</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="daftarMovie" id="gandakanIni">
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/arts.parasite-2.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="showMore">
+                    <div class="bayangan">
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                    </div>
+
+                    <h1 class="shadow">show more</h1>
+                    <h1 class="atas">show more</h1>
+                </div>
+            </div>
+            <div class="manualGap"></div>
+            
+            <div class="trendingList">
+                <h2>List of Trending All you can watch</h2>
+                <div class="urutanIni">
+                </div>
+                <div class="daftarMovie" id="gandakanIni">
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/arts.parasite-2.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/a-minecraft-movie.png" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="page/clickMovie.html" class="movie">
+                        <div class="fotoan">
+                            <div class="foto">
+                                <img src="src/imageMoviesBanner/mickey17.webp" alt="">
+                            </div>
+                            <div class="rating">
+                                <small>
+                                    ⭐⭐⭐⭐⭐ 8.9
+                                </small>
+                            </div>
+                            <div class="judul">
+                                <h3>JudulIni</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="showMore">
+                    <div class="bayangan">
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                        <div class="satu"></div>
+                    </div>
+
+                    <h1 class="shadow">show more >></h1>
+                    <h1 class="atas">show more >></h1>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="asli">
+                <h3>dindongtong.com</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        var adaYangBerubah = false
+
+        var tombol = document.querySelector(".mode .touch")
+        var pilihan = document.querySelector(".mode .pilihan .asli")
+        var pilihanSemua = document.querySelectorAll(".mode .pilihan .asli h2")
+
+        var modeTonton = false
+        function tampilkanPilihanMode(){
+            if (!modeTonton){
+                pilihan.style.width = "245px"
+                modeTonton = !modeTonton
+            } else {
+                pilihan.style.width = "0px"
+                modeTonton = !modeTonton
+            }
+        }
+        tombol.addEventListener("click", function(){
+            tampilkanPilihanMode()
+        })
+        pilihanSemua.forEach((ini) => {
+            ini.addEventListener("click",  function(){
+                tampilkanPilihanMode()
+                adaYangBerubah = true
+                document.querySelectorAll(".header .mode h2.yangterpilih").forEach((itu) => {
+                    itu.textContent = ini.textContent
+                })
+
+            })
+        })
+
+
+        // urusan tanggal pojok kanan atas
+        var tanggalAda = false
+        var daftarPilihanTahun = document.querySelector(".header .tanggal .pilihan")
+        var tampilkanPilihanTahun = document.querySelector(".header .tanggal .angka")
+
+        function tampilkanTanggal(){
+            if(!tanggalAda){
+                daftarPilihanTahun.style.visibility = "visible";
+                tanggalAda = !tanggalAda
+            } else {
+                daftarPilihanTahun.style.visibility = "hidden";
+                tanggalAda = !tanggalAda
+            }
+        }
+
+        var pilihanTahun = document.querySelectorAll(".header .tanggal .pilihan small")
+        pilihanTahun.forEach((ini, i) => {
+            ini.addEventListener("click", function(){
+                tampilkanTanggal()
+                adaYangBerubah = true
+                tampilkanPilihanTahun.innerHTML = `${ini.textContent}`
+                console.log(ini.textContent)
+            })
+        })
+
+    </script>
+    
+    <script>
+        var tombol2 = document.querySelector(".urutanIni .pilihx")
+        var pilihan2 = document.querySelector(".urutanIni .pilihan .asli")
+        var pilihan2Semua = document.querySelectorAll(".urutanIni .pilihan .asli h3")
+
+        var modeTonton2 = false
+        function tampilkanPilihan2Mode(){
+            if (!modeTonton2){
+                pilihan2.style.width = "320px"
+                modeTonton2 = !modeTonton2
+            } else {
+                pilihan2.style.width = "0px"
+                modeTonton2 = !modeTonton2
+            }
+        }
+        tombol2.addEventListener("click", function(){
+            tampilkanPilihan2Mode()
+        })
+        pilihan2Semua.forEach((ini) => {
+            ini.addEventListener("click",  function(){
+                tampilkanPilihan2Mode()
+                adaYangBerubah = true
+                document.querySelectorAll(".trendingList .urutanIni h3.yangTerpilih").forEach((itu) => {
+                    itu.textContent = ini.textContent
+                })
+
+            })
+        })
+
+        var reloadIni = document.querySelector(".pilihan .reload")
+        const intervalIni = setInterval(function(){
+            if(adaYangBerubah){
+                reloadIni.style.visibility = "visible";
+            }
+        }, 1000);
+
+    </script>
+
+<!-- show more -->
+    <script>
+        const deretanMovies = document.getElementById("gandakanIni")
+        const showMore = document.querySelector(".trendingList .showMore")
+
+        var berapaKali = 1
+        showMore.addEventListener("click", function(){
+            berapaKali += 1;
+            console.log(deretanMovies.parentNode)
+            // deretanMovies.style.height = `${((154 * 1.46) * 2 + 11) * berapaKali}px`;
+            deretanMovies.innerHTML += deretanMovies.innerHTML;
+        })
+    </script>
+
+    <link rel="stylesheet" href="mobileHome.css">
+    <link rel="stylesheet" href="mobile.css">
+    <script src="search.js"></script>
+    <script src="darkmode.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

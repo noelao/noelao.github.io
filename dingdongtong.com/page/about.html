@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="../css/bodyContainer.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <style>
+        :root {
+            --terang: #f0f0f0;
+            --gelap: #000;
+            --gelap2: #30343f; 
+
+            --terangtetap: #f0f0f0;
+            --gelap2tetap: #30343f;
+            --gelaptetap: #000;
+
+            --gelap3: #0a0a0a;
+            --terang3: #ededed;
+        }
+        .container .content {
+            width: calc(100% - var(--lebarNav));
+            transform: translateX(calc(var(--lebarNav) / 2));
+            max-width: 1440px;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            padding: 42px 82px;
+
+            .manualGap {
+                height: 130px;
+            }
+            ul.question {
+                li {
+                    transform: translateX(21px);
+                    width: 100%;
+                    
+                    .isi {
+                        position: relative;
+                        .judul {
+                            cursor: pointer;
+                            width: max-content;
+                            border-bottom: solid var(--gelap2tetap) 1px;
+                            display: flex;
+                            .arrow {
+                                margin-left: 24px;
+                            }
+                        }
+                        .kataKata {
+                            height: 0;
+                            overflow: hidden;
+                            margin-bottom: 0;
+                            width: calc(100% - 21px);
+
+                            transition: 
+                            height .3s ease,
+                            margin .1s ease
+                            ;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="searchFormIni">
+            <form action="">
+                <input type="text" placeholder="let me search...">
+            </form>
+        </div>
+        <div class="daftarmenu">
+            <div class="background2">
+                <ul>
+                    <li><h3><a href="/">Home</a></h3></li>
+                    <li><h3><a href="page/about.html">About</a></h3></li>
+                    <li><h3><a href="#">Sosmed</a></h3></li>
+                    <li><h3><a href="#">Send Message</a></h3></li>
+                    <li><h3><a href="#">Donate us</a></h3></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navKiri">
+            <div class="atas">
+                <a href="page/login.html" class="photoP"></a>
+                <div class="darkmode">
+                    <img class="ligh" src="../src/svg/icon/mode-light-svgrepo-com.svg" alt="">
+                    <img class="dark" src="../src/svg/icon/mode-dark-svgrepo-com.svg" alt="">
+                </div>
+                <div class="menu">
+                    <div class="garis"></div>
+                    <div class="garis"></div>
+                    <div class="garis"></div>
+                </div>
+                <div class="manualGap"></div>
+                <div class="searchMenu">
+                    <h3>🔍</h3>
+                </div>
+                <a href="/" class="logo"></a>
+            </div>
+            <div class="bawah"></div>
+            
+        </div>
+        <div class="content">
+            <h1>About DingDongTong.com</h1>
+            <br>
+            <p>
+This website is try to show you somthing to watch, next level effort to watch or maybe maximum effort like a Deadpool.
+In there you can talk each other, debate, critic, discusion about movies. Nest for a movies lover who have no money, and whant to enjoy the movies.
+<br>
+
+</p>
+
+            <br>
+            <h3>Most question</h3>
+            <ul class="question">
+                <li>
+                    <div class="isi">
+                        <div class="judul">
+                            <h4>
+                                How to make movies 
+                            </h4>
+                            <div class="arrow">⬇</div>
+                        </div>
+                        <div class="kataKata">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ad excepturi repellat optio quia quod fugiat cum autem sapiente, unde cupiditate recusandae fugit ipsam distinctio temporibus praesentium suscipit ducimus laborum magnam doloremque quos. Soluta repellat tempora labore itaque assumenda. Quis vero expedita quaerat recusandae et, minus harum cumque nostrum blanditiis magnam autem id, vel suscipit voluptatum nisi repellendus aut itaque in deleniti! Autem quam accusamus perferendis provident voluptatem totam qui nostrum porro. Tempore laborum quis expedita cum, odit tempora dolor, eum debitis illo ipsa cupiditate ab in? Atque, fugiat magnam?
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="isi">
+                        <div class="judul">
+                            <h4>
+                                How to create acount and login 
+                            </h4>
+                            <div class="arrow">⬇</div>
+                        </div>
+                        <div class="kataKata">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ad excepturi repellat optio quia quod fugiat cum autem sapiente, unde cupiditate recusandae fugit ipsam distinctio temporibus praesentium suscipit ducimus laborum magnam doloremque quos. Soluta repellat tempora labore itaque assumenda. Quis vero expedita quaerat recusandae et, minus harum cumque nostrum blanditiis magnam autem id, vel suscipit voluptatum nisi repellendus aut itaque in deleniti! Autem quam accusamus perferendis provident voluptatem totam qui nostrum porro. Tempore laborum quis expedita cum, odit tempora dolor, eum debitis illo ipsa cupiditate ab in? Atque, fugiat magnam?
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="isi">
+                        <div class="judul">
+                            <h4>
+                                Is this website legal ?
+                            </h4>
+                            <div class="arrow">⬇</div>
+                        </div>
+                        <div class="kataKata">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ad excepturi repellat optio quia quod fugiat cum autem sapiente, unde cupiditate recusandae fugit ipsam distinctio temporibus praesentium suscipit ducimus laborum magnam doloremque quos. Soluta repellat tempora labore itaque assumenda. Quis vero expedita quaerat recusandae et, minus harum cumque nostrum blanditiis magnam autem id, vel suscipit voluptatum nisi repellendus aut itaque in deleniti! Autem quam accusamus perferendis provident voluptatem totam qui nostrum porro. Tempore laborum quis expedita cum, odit tempora dolor, eum debitis illo ipsa cupiditate ab in? Atque, fugiat magnam?
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+<br>
+            <p>font in this website : Poppins, Inter, Raleway</p>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script>
+        var pertinyi = document.querySelectorAll("ul.question li .isi")
+
+        // buat array
+        var checkQuest = []
+        pertinyi.forEach((ini, i) => {
+            checkQuest[i] = false
+        })
+
+        pertinyi.forEach((ini, i) => {
+            ini.querySelector(".judul").addEventListener("click", function(){
+                if(!checkQuest[i]){
+                    pertinyi[i].querySelector(".kataKata").style.height = "max-content";
+                    pertinyi[i].querySelector(".kataKata").style.marginBottom = "12px";
+                    checkQuest[i] = !checkQuest[i]
+                } else {
+                    pertinyi[i].querySelector(".kataKata").style.height = "0";
+                    pertinyi[i].querySelector(".kataKata").style.marginBottom = "0";
+                    checkQuest[i] = !checkQuest[i]
+                }
+
+            })
+        })
+
+    </script>
+    
+    <link rel="stylesheet" href="../mobile.css">
+    <script src="../search.js"></script>
+    <script src="../darkmode.js"></script>
+    <script src="../menu.js"></script>
+</body>
+</html>
