@@ -7,11 +7,6 @@
     
     <style>
         :root {
-  --cur-default: url('/svg/cursor.svg') 5 0, auto;
-  --cur-pointer: url('/svg/cursor-pointer.svg') 8 8, pointer;
-  --cur-tunggu: url('https://cdn.icon-icons.com/icons2/1993/PNG/32/cursor_wait_icon_123181.png'), wait;
-  --cur-teks: url('/svg/cursor-text.svg') 16 16, text;
-
             --terang: #fff;
             --gelap: #000;
             --garis:  color-mix(in oklab, #000 5%, transparent);
@@ -22,20 +17,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-
-        html {
-            cursor: var(--cur-default);
-        }
-        p, h1, h2, h3 {
-            cursor: var(--cur-teks);
-        }
-        a {
-            cursor: var(--cur-pointer) !important;
-            h1, p, h2, h3 {
-                cursor: var(--cur-pointer) !important;
-            }
         }
 
         ::selection {
@@ -479,41 +460,8 @@ M 48 52 V 30 L 96 62 V 133L 128 112 V 30 L 176 62 V 144 L 160  133 V 53 L 144 43
         
         paths.setAttribute("d", this.value)
     })
-
-    const namaFont = window.location.href.split("/").pop();
-    tampilkanFont(namaFont);
     
-    async function tampilkanFont(namaFont) {
-        let paths = []
-        try {
-            const response = await fetch(`/api/dari/${namaFont}`);
-            if(!response.ok){
-                throw new Error("not ok");
-            }
-            
-
-            paths = await response.json();
-        } catch(err){
-            console.log(err);
-        } finally {
-            const ono = paths.map(ono => {
-                return `
-                <div class="ini">
-                <div class="copyy">
-                </div>
-                <svg width="18rem" id="${ono.id}" height="18rem" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
-                    
-                    <path d="${ono.path}"
-                    fill="black" />
-                    
-                </svg>
-                </div>
-                `
-            }).join("");
-            // tampilkan.insertAdjacentHTML("forened", ono);
-            tampilkan.innerHTML = ono;
-        }
-    }
+    
 </script>
 <script>
     const myForm = document.querySelector('form');
@@ -525,26 +473,7 @@ M 48 52 V 30 L 96 62 V 133L 128 112 V 30 L 176 62 V 144 L 160  133 V 53 L 144 43
             path: inputan.value
         }
         console.log(JSON.stringify(jsonIni))
-        try {
-            const response = await fetch('/api/dari/'+namaFont, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(jsonIni) 
-            });
-            if(!response.ok){
-                throw new Error("no okk");
-            }
-
-            const feedBack = await response.json();
-            console.log(feedBack);
-
-        } catch(err) {
-            console.log(err);
-        } finally {
-            tampilkanFont(namaFont);
-        }
+        tampilkanFont(namaFont);
     }
 
     submitBtn.addEventListener("click", handleFormSubmit);
