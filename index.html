@@ -57,7 +57,21 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-
+            align-items: center;
+            .ket {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                .lihat {
+                    transition: transform .3s ease;
+                }
+                .lihat:hover {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .listan .kiri a:hover {
+            background-color: #dedede;
         }
 
         .listan .kanan {
@@ -114,12 +128,24 @@
                 <div class="kiri">
                     <a href="portoBaru/index.html">portofolio</a>
                     
-                    <a href="dingdongtong.com/index.html">dingdongtong.com <small>mei 23 2025</small></a>
+                    <a href="dingdongtong.com/index.html">dingdongtong.com
+                        <div class="ket">
+                            <small>mei 23 2025</small>
+                            <div class="lihat">
+                                <svg width="2rem" height="2rem" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="
+                                        M 16 80 A 64 64, 0, 0, 0, 144 80
+                                        M 48 112 A 64 64, 0, 0, 1, 176 112" fill="#00000080">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
                     
-                    <a href="https://fontous.vercel.app/">fontous <small>november 4 2025</small></a>
+                    <a href="https://fontous.vercel.app/">fontous(vercel)<small>november 4 2025</small></a>
                     
                     <a href="buatSvg/buatSvg.html">buatsvg <small>september 18 2025</small></a>
-                    <a href="https://svg-noelao.vercel.app/">buatsvg(vercell)<small>november 4 2025</small></a>
+                    <a href="https://svg-noelao.vercel.app/">buatsvg(vercel)<small>november 4 2025</small></a>
                     
                     <a href="pertamax/index.html">colorous</a>
                     <a href="pustakaMovies/home.html">pustakaMovies</a>
@@ -146,12 +172,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
