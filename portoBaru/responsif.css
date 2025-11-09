@@ -1,4 +1,4 @@
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 768px) {
     .menu {
         height: 55px !important;
         width: 100% !important;
@@ -20,9 +20,9 @@
             max-width: 89% !important;
 
             min-height: 76vh;
+            gap: 1rem;
 
             .kiri {
-                flex: 1;
                 height: 500px !important;
                 justify-content: center;
 
@@ -37,28 +37,114 @@
                     p {
                         font-size: .7rem;
                     }
-
+                }
+                .ha {
+                    width: 100%;
+                    align-items: end;
+                    svg {
+                        height: 6rem;
+                    }
+                }
+                .pernik {
+                    transform: translateY(54px);
+                    right: 0;
+                    left: auto;
+                    width: 100px;
+                    height: 10px;
                 }
             }
             .kanan {
                 flex: 1.3;
                 width: 100%;
+                .background1 {
+                    width: 110%;
+                }
             }
         }
     }
     .projectIni {
+        padding: 0;
         .wrapper {
             .judul {
                 h1 {
                     width: 100%;
                     background-color: var(--warna1);
-                    color: var(--terang);
-                    padding: 12px 28px 12px 18px;
+                    padding: 8px 28px 8px 18px;
+                    font-size: 1.3rem;
+                }
+                .pencetan {
+                    padding-right: 8px;
                 }
             }
             .isian {
-                .project {
-                    width: 100%;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr auto;
+
+                .kirie {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: 1fr;
+                    gap: 2rem;
+
+                    .tombolan {
+                        height: auto;
+                        width: auto;
+                        .tebal {
+                            position: absolute;
+                            top: -30%;
+                            border-radius: 100px;
+
+                            z-index: -1;
+
+                            width: 100%;
+                            height: 200%;
+                            transform: translateY(-100%);
+                        }
+                        .tombolIni {
+                            top: -30%;
+                            border-radius: 100px;
+                            z-index: -1;
+                            height: 115%;
+                            width: 100%;
+                            transform: translateY(-100%);
+                        }
+                        .pilihIni {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                        
+                        .move-center {
+                            transform: translateY(-10%);
+                            opacity: .5;
+                            width: 100%;
+                        }
+                        .move-right {
+                            transform: translateY(100%);
+                            opacity: 0;
+
+                        }
+                        .no-transition {
+                            transition:none;
+                        }
+                    }
+                    .tombolan:hover {
+                        svg {
+                            transform: translateY(-1px) !important;
+                        }
+                    }
+                }
+                .kanane {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    .wadah {
+                        width: 111%;
+                        background-color: #fff;
+                        position: absolute;
+                        padding: 1rem 0;
+                        .pro {
+                        }
+                    }
                 }
             }
         }

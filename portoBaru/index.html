@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>noelao still learning</title>
+    <title>hi and welcome</title>
     <style>
         :root {
             --terang: #fff;
@@ -90,8 +90,13 @@
                 .kiri {
                     display: flex;
                     flex-direction: column;
+                    justify-content: center;
+
+                    height: 100%;
 
                     gap: 12px;
+
+                    position: relative;
 
                     flex: 1;
                     .hello {
@@ -123,8 +128,18 @@
                     .subJudul {
                         font-family: poppins;
                         font-weight: 100;
-                        line-height: 1rem;
+                        line-height: 1.1;
+                        letter-spacing: .5px;
                         width: 48%;
+                    }
+                    .ha {
+                        width: 90%;
+                        display: flex;
+                        align-items: end;
+                        flex-direction: column;
+                        svg {
+                            height: 8rem;
+                        }
                     }
                     .socialMedia {
                         display: flex;
@@ -139,6 +154,38 @@
                                 width: 100%;
                                 fill: var(--gelap);
                             }
+                        }
+                    }
+                    .pernik {
+                        margin-top: 42px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        display: grid;
+
+                        height: 1rem;
+                        width: 13rem;
+
+                        grid-template-columns: 8fr 5fr 3fr;
+
+                        .kotak {
+                            height: 100%;
+                            width: 100%;
+                            background-color: var(--gelap);
+                            transition: background-color .3s ease-in;
+                        }
+                        .kosong {
+                            background-color: var(--terang);
+                            transition: background-color .3s ease-in;
+                        }
+                    }
+                    .pernik:hover {
+                        .kotak {
+                            background-color: var(--terang);
+                        }
+                        .kosong {
+                            background-color: var(--gelap);
                         }
                     }
                 }
@@ -160,6 +207,11 @@
 
                         width: 103%;
 
+                        animation-name: ombak;
+                        animation-duration: 8s;
+                        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                        animation-iteration-count: infinite;
+
 
                         svg {
                             fill: var(--terang);
@@ -167,7 +219,8 @@
                         }
                     }
 
-                    .gunungan {
+
+                    .ggunung {
                         height: 42%;
                         min-width: 28%;
 
@@ -179,16 +232,18 @@
                         justify-content: center;
                         align-items: center;
         
-                        z-index: 10;
-                        transition: transform .3s ease-in;
-                        cursor: pointer;
-
-                        transform: translateX(-50%) translateY(-50%);
+                        z-index: 9;
+                        transition: 
+                        transform .3s ease-in;
+                        
+                        transform: translateX(calc(-50%)) translateY(calc(-50%));
                         .gunung1 {
                             position: absolute;
                             height: 100%;
-                            fill: var(--trico2);
-                            transition: transform .3s ease-in;
+                            fill: var(--terang);
+                            transition: 
+                            transform .3s ease-in,
+                            fill .3s ease-in;
                         }
                         .isi {
                             position: absolute;
@@ -200,78 +255,100 @@
                             }
                         }
                     }
+                    .gunungan {
+                        z-index: 10;
+                        cursor: pointer;
+
+                        transform: translateX(-50%) translateY(-50%) scale(1.2, 1.2);
+                        .gunung1 {
+                            fill: var(--trico2);
+                        }
+                    }
+
+
                     .gunungan:hover {
                         transform: translateX(-50%) translateY(-45%);
                         .gunung1 {
-                            transform: scale(-1.3, 1.3);
+                            transform: scale(-1.6, 1.6);
                         }
                         .isi {
-                            transform: scale(-1.3, 1.3);
+                            transform: scale(-1.6, 1.6) translateY(12px);
                         }
                     }
                     .gunungan:active {
                         .gunung1 {
+                            transform: scale(-1.5, 1.5);
+                        }
+                        .isi {
+                            transform: scale(-1.5, 1.5);
+                        }
+                    }
+                    .gunungan2 {
+                        transform: translateX(calc(-50% + 54px)) translateY(calc(-50%)) rotate(30deg);
+                        transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                        .isi {
                             transform: scale(-1, 1);
                         }
                     }
-
-                    .gelombang {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-
-                        height: 100%;
-                        width: 100%;
-
-                        display: flex;
-
-                        .wave1 {
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-
-                            width: 100%;
-                            fill: var(--trico3);
-
-                            transform: translateX(-30%) translateY(65%);
-                            rotate: -8deg;
+                    .gunungan2:nth-child(3){
+                        transform: translateX(calc(-50% - 54px)) translateY(calc(-50%)) rotate(-30deg);
+                        transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                        .isi {
+                            transform: scale(1, 1);
                         }
-                        .wave2 {
-                            position: absolute;
-                            bottom: 0;
-                            right: 0;
+                    }
 
-                            width: 100%;
-                            fill: var(--trico2);
-                            transform: scale(-1, 1) translateX(-30%) translateY(65%);
-                            rotate: 8deg;
-                        }
-
-                        .wave3 {
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-
-                            width: 100%;
-                            fill: #2ec4b6;
-
-                            transform: translateX(-30%) translateY(55%);
-                        }
-                        .wave4 {
-                            position: absolute;
-                            bottom: 0;
-                            right: 0;
-
-                            width: 100%;
-                            fill: var(--trico3);
-                            transform: scale(-1, 1) translateX(-30%) translateY(55%);
-                        }
+                    .kasih {
+                        transform: translateX(calc(-50% - 162px)) translateY(calc(-50%)) rotate(-30deg)  scale(-1, 1) !important;
+                    }
+                    .kasih2 {
+                        /* animation-name: putar2;
+                        animation-duration: 2s;
+                        animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+                        animation-iteration-count: 1;
+                        animation-fill-mode: forwards; */
+                        transform: translateX(calc(-50% + 162px)) translateY(calc(-50%)) rotate(30deg)  scale(-1, 1) !important;
                     }
                 }
             }
         }
     </style>
+    <!-- keyframes -->
     <style>
+        @keyframes putar {
+            0% {
+                transform: translateX(calc(-50% + 54px)) translateY(calc(-50%)) rotate(30deg) scale(-1, 1);
+            }
+            /* 25% {
+                transform: translateX(calc(-50% + 54px - 52px)) translateY(calc(-50%)) rotate(calc(30deg - 15deg));
+            } */
+            50% {
+                transform: translateX(calc(-50% + 54px - 104px)) translateY(calc(-50%)) rotate(calc(30deg - 30deg)) scale(-1, 1);
+            }
+            75% {
+                transform: translateX(calc(-50% + 54px - 156px)) translateY(calc(-50%)) rotate(calc(30deg - 45deg));
+            }
+            100% {
+                transform: translateX(calc(-50% - 162px)) translateY(calc(-50%)) rotate(-30deg)  scale(1, 1);
+            }
+        }
+        @keyframes putar2 {
+            0% {
+                transform: translateX(calc(-50% - 54px)) translateY(calc(-50%)) rotate(-30deg) scale(-1, 1);
+            }
+            /* 25% {
+                transform: translateX(calc(-50% - 54px + 52px)) translateY(calc(-50%)) rotate(calc(-30deg + 15deg));
+            } */
+            50% {
+                transform: translateX(calc(-50% - 54px + 104px)) translateY(calc(-50%)) rotate(calc(-30deg + 30deg)) scale(-1, 1);
+            }
+            75% {
+                transform: translateX(calc(-50% - 54px + 156px)) translateY(calc(-50%)) rotate(calc(-30deg + 45deg));
+            }
+            100% {
+                transform: translateX(calc(-50% + 162px)) translateY(calc(-50%)) rotate(30deg)  scale(1, 1);
+            }
+        }
         @keyframes kedip {
             0% {
                 height: 100%;
@@ -290,6 +367,29 @@
             }
             100% {
                 height: 100%;
+            }
+        }
+        @keyframes ombak {
+            0% {
+                transform: translateX(calc(-50%)) translateY(calc(-50%));
+            }
+            16.2% {
+                transform: translateX(calc(-50% + 6px)) translateY(calc(-50% + 6px));
+            }
+            32.4% {
+                transform: translateX(calc(-50% + 10px)) translateY(calc(-50%));
+            }
+            48.6% {
+                transform: translateX(calc(-50% + 6px)) translateY(calc(-50% - 6px));
+            }
+            64.8% {
+                transform: translateX(calc(-50% - 6px)) translateY(calc(-50% + 6px));
+            }
+            81% {
+                transform: translateX(calc(-50% - 10px)) translateY(calc(-50%));
+            }
+            100% {
+                transform: translateX(calc(-50% - 6px)) translateY(calc(-50% - 6px));
             }
         }
     </style>
@@ -424,70 +524,242 @@
                     .pencetan {
                         width: 100px;
                         background-color: var(--warna1);
-                        border-radius: 0 50% 50% 0;
+                        border-radius: 0 130px 130px 0;
 
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        justify-content: end;
+                        padding-right: 12px;
                         .lingkaran {
                             height: 64%;
                             aspect-ratio: 1;
-                            background-color: var(--terang);
+                            background-color: var(--warna2);
                             border-radius: 100%;
+                            
+                            cursor: pointer;
+                            
+                            transition: 
+                                border .1s,
+                                background-color .3s,
+                                scale .2s;
+                        }
+                        .lingkaran:hover {
+                            border: solid var(--warna2) 20px;
+                            background-color: var(--warna1);
+                            border-style:double;
+                        }
+                        .lingkaran:active {
+                            scale: 1.2;
                         }
                     }
                 }
                 .isian {
                     width: 100%;
 
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 16px;
-                    justify-content: space-between;
+                    display: grid;
+                    grid-template-columns: 1fr 3fr;
 
-                    .project {
-                        width: 49%;
-                        aspect-ratio: 1.4;
-                        background-color: var(--warna1);
+                    margin-bottom: 320px;
 
-                        border-radius: 12px;
-
+                    .kirie {
+                        /* background-color: var(--gelap); */
+                        min-height: 120px;
+                        height: max-content;
                         display: flex;
                         flex-direction: column;
-                        justify-content: start;
                         align-items: center;
+                        gap:1rem;
 
-                        padding: 4px;
+                        .tombolan {
+                            width: 5rem;
+                            height: 5rem;
+                            aspect-ratio: 1;
+                            position: relative;
 
-                        .photo {
-                            width: 100%;
-                            border-radius: 8px;
-                            overflow: hidden;
-                            overflow-x: scroll;
-
-                            scrollbar-width: none;
-
-                            gap: 5px;
-
-                            display: flex;
-                            height: 78%;
-
-                            img {
+                            svg {
+                                cursor: pointer;
+                                width: 100%;
                                 height: 100%;
+                                transition: transform .2s ease;
                             }
+                            
+                            .tebal {
+                                position: absolute;
+                                left: -30%;
+                                border-radius: 100px;
+
+                                z-index: -1;
+                                opacity: 0;
+
+                                height: 115%;
+                                width: 200%;
+                                background-color: var(--trico2);
+                                transition: 
+                                    transform .4s ease,
+                                    width .5s ease,
+                                    opacity .6s ease
+                                ;
+                                transform: translateX(-100%);
+                            }
+                            .tombolIni {
+                                position: absolute;
+                                left: -30%;
+                                border-radius: 100px;
+                                z-index: -1;
+                                height: 115%;
+                                width: 200%;
+                                background-color: color-mix(in oklab, var(--terang) 55%, var(--trico2) 45%);
+                                opacity: 0;
+                                transition: transform .3s ease, opacity .3s ease;
+                                transform: translateX(-100%);
+                            }
+                            .pilihIni {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                            
+                            .move-center {
+                                transform: translateX(-10%);
+                                opacity: .5;
+                                width: 180%;
+                            }
+                            .move-right {
+                                transform: translateX(100%);
+                                opacity: 0;
+
+                            }
+                            .no-transition {
+                                transition:none;
+                            }
+                        }
+                        .tombolan:hover {
+                            svg {
+                                transform: translateX(12px);
+                            }
+                        }
+                    }
+                    .kanane {
+                        display: grid;
+                        .wadah {
+                            padding: 1rem;
+                            width: 100%;
+                            background-color: color-mix(in oklab, var(--gelap) 95%, var(--terang) 5%);
+                            .pro {
+                                background-color: var(--terang);
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    </style>
+
+    <style>
+        .penjelasan {
+            width: 100%;
+            height: max-content;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: poppins;
+            font-weight: 100;
+            line-height: 1.1;
+            letter-spacing: .5px;
+
+            .wrapper {
+                align-items: start;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                .paragraph {
+
+                }
+
+            }
+        }
+    </style>
+
+    <!-- contact me -->
+    <style>
+        .contactMe {
+            margin-top: 180px;
+            width: 100%;
+            height: max-content;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .wrapper {
+                align-items: start;
+                justify-content: start;
+                flex-direction: row;
+                height: max-content;
+
+                gap: 34px;
+                .tulisan {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    margin-right: 32px;
+                    h1 {
+                        rotate: -90deg;
+                    }
+                }
+                .gambaran {
+                    display: flex;
+                    gap: 18px;
+                    .gambar {
+                        .kotak {
+                            height: 124px;
+                            border-radius: 12px;
+                            aspect-ratio: 1;
+                            background-color: var(--warna3);
+                            position: relative;
+                        }
+                        .kotak::before {
+                            content: '';
+                            height: 100%;
+                            width: 100%;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            border-radius: 12px;
+                            /* padding: 3px; */
+                            background-color: var(--warna3);
+
+                            
+                            filter: blur(1.5rem);
+                            opacity: 0;
+
+                            z-index: -1;
+                            
+                            transition: opacity .3s ;
+                        }
+                        .coba {
+                            border: 0;
+                        }
+                    }
+                    .gambar:hover {
+                        .kotak::before {
+                            opacity: 1;
                         }
                     }
                 }
             }
         }
     </style>
+
+    <!-- footer -->
     <style>
         footer {
             width: 100%;
             position: relative;
             min-height: 20vh;
-            height: 500px;
-            margin-top: 144px;
+            height: 820px;
+            margin-top: 314px;
             /* overflow: hidden; */
             background-color: var(--warna1);
 
@@ -507,14 +779,6 @@
                     transition: fill .3s ease-in;
                 }
             }
-            /* .background3 {
-                position: absolute;
-                left: 0;
-                top: 50%;
-                background-color: var(--warna1);
-                height: 50%;
-                width: 100%;
-            } */
             .wrapper {
                 color: var(--warna2);
                 display: flex;
@@ -531,6 +795,9 @@
 
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-between;
+                    padding: 42px 0;
+
                     gap: 34px;
 
                     .judul {
@@ -540,7 +807,7 @@
                         flex-direction: column;
 
                         h2 {
-                            line-height: 1rem;
+                            line-height: 2rem;
                         }
                         p {
                             color: var(--warna3);
@@ -549,7 +816,7 @@
                     }
                     .socialMedia {
                         display: flex;
-                        gap: 6px;
+                        gap: 18px;
                         width: 100%;
                         .iconIni {
                             height: 18px;
@@ -569,6 +836,8 @@
                     gap: 18px;
 
                     font-family: poppins;
+                    justify-content: space-between;
+                    padding: 42px 0;
 
                     height: 100%;
 
@@ -588,6 +857,10 @@
                         }
                     }
                     .kataKata {
+                        display: flex;
+                        flex-direction: column;
+                        padding-top: 32px;
+                        flex: 1;
                         p {
                             font-size: .9rem;
                         }
@@ -601,6 +874,9 @@
                     display: flex;
                     align-items: end;
                     flex-direction: column;
+                    
+                    justify-content: space-between;
+                    padding: 42px 0;
 
                     .aturBahasa {
                         width: 50%;
@@ -609,6 +885,7 @@
                         gap: 2px;
                         h3 {
                             opacity: .7;
+                            line-height: 2rem;
                         }
 
                         .pilihan {
@@ -618,7 +895,59 @@
                         }
                     }
                     .donation {
+                        font-family: enak;
+                        background-color: #03a33e;
+                        padding: 18px 21px;
+                        border-radius: 8px;
+                        cursor: pointer;
 
+                        overflow: hidden;
+
+                        position: relative;
+
+                        h3 {
+                            line-height: 1.5;
+                            border-bottom: solid 2px;
+                            font-weight: 600;
+                        }
+
+                        .penutup {
+                            height: 42px;
+                            width: 100%;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            position: absolute;
+                            left: -113%;
+                            background-color: #000000;
+                            background-color: #03a33e;
+                            background-color: var(--gelap);
+
+                            transition: left 6s linear;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .bundar {
+                                height: 42px;
+                                transform: translateX(50%);
+                                border-radius: 100%;
+                                aspect-ratio: 1;
+                                background-color: var(--gelap);
+                            }
+                            .bundar:nth-child(1) {
+                                transform: translateX(-50%);
+                            }
+                        }
+
+                    }
+                    .donation:hover {
+                        .penutup {
+                            left: 113%;
+                        }
+                    }
+                    .donation:active {
+                        scale: .92;
                     }
                 }
             }
@@ -646,11 +975,24 @@
             <div class="wrapper">
                 <div class="kiri">
                     <div class="hello">🖐️Hello</div>
-                    <h1>Hi Welcome to my page</h1>
-                    <div class="subJudul">
-                        <p>im a freelancer, what i can do is make a front end design, make a game with godot, create a pixel animation, and more if you want me to push my luck.</p>
+                    <h1>Hi. Welcome to my page</h1>
+                    <div class="subJudul" style="border-color: var();">
+                        <!-- <p>im a freelancer, what i can do is make a front end design, make a game with godot, create a pixel animation, and more if you want me to push my luck.</p> -->
+                        <p>i do coding and developer stuf.</p>
+                        <p>do design, write html css styling, handle api and database with <strong style="color: rgb(129, 207, 255);">react next</strong> and <strong style="color: #ed9981;">ejs express.</strong></p>
+                        <p>i realy love java-script.</p>
+                        
+                        
                         <!-- <p>im a freelancer, what i can do is make a front end web, make a game with godot and some knowledge and still grow up on a progress.</p> -->
                         <!-- <p>i spend most of my time to help my father in the farm, but thats not make me stop to explore.</p> -->
+                    </div>
+                    <div class="ha">
+                        <svg style="margin-top: 2rem;" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 160 144 V 62 L 112 30 V 52 L 128 62 V 43 L 144 54 V 133 M 80 128 V 30 L 128 62 V 128
+                            L 112 117 V 54 L 96 43 V 117 M 16 144 V 62 L 64 30
+                            V 117 L 48 128 V 43 L 32 54 V 133 M 64 96 H 103 V 112 L 80 128 V 112
+                            L 101 112 V 98 H 64" fill="var(--warna3)"></path>
+                        </svg>
                     </div>
                     <div class="socialMedia">
                         <a href="https://noelao.github.io/" target="_blank" class="iconIni">
@@ -726,6 +1068,14 @@
                             </svg>
                         </a>
                     </div>
+                    <div class="pernik">
+                        <div class="kosong"></div>
+                        <div class="kotak"></div>
+                        <div class="kosong"></div>
+                        <div class="kotak"></div>
+                        <div class="kosong"></div>
+                        <div class="kotak"></div>
+                    </div>
                 </div>
                 <div class="kanan">
                     <div class="background1">
@@ -735,29 +1085,111 @@
                         <svg id="b501a324-b20f-4fd0-b47c-67515f930802" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 411.13 70.61"><defs><style>.aff0e3f9-f221-4fb3-9986-9884dd21814c</style></defs><path class="aff0e3f9-f221-4fb3-9986-9884dd21814c" d="M610.5,389.41c-12.78,0-22.76-4.27-32.41-8.4s-18.68-8-30.44-8-20.84,3.88-30.45,8-19.62,8.4-32.41,8.4S462,385.14,452.38,381s-18.68-8-30.45-8a52.49,52.49,0,0,0-5.84.32c-9.06,1-16.64,4.27-24.6,7.68-9.65,4.13-19.63,8.4-32.41,8.4s-22.76-4.27-32.41-8.4-18.69-8-30.45-8-20.83,3.88-30.44,8-19.63,8.4-32.41,8.4a59.56,59.56,0,0,1-17-2.54l1.4-4.8a54.83,54.83,0,0,0,15.6,2.34c11.76,0,20.83-3.89,30.44-8s19.63-8.4,32.41-8.4,22.77,4.27,32.41,8.4,18.69,8,30.45,8,20.83-3.89,30.44-8,19.63-8.4,32.41-8.4,22.77,4.27,32.42,8.4,18.68,8,30.44,8,20.84-3.89,30.44-8,19.63-8.4,32.42-8.4,22.76,4.27,32.41,8.4,18.68,8,30.44,8a54.71,54.71,0,0,0,15.59-2.34l1.41,4.8A59.56,59.56,0,0,1,610.5,389.41Z" transform="translate(-216.37 -318.8)"/><path class="aff0e3f9-f221-4fb3-9986-9884dd21814c" d="M610.5,364.8c-12.78,0-22.76-4.27-32.41-8.4s-18.68-8-30.44-8-20.84,3.89-30.45,8-19.62,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.68-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.69-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4a59.54,59.54,0,0,1-17-2.53l1.4-4.8a54.81,54.81,0,0,0,15.6,2.33c11.76,0,20.83-3.88,30.44-8s19.63-8.41,32.41-8.41,22.77,4.27,32.41,8.41,18.69,8,30.45,8,20.83-3.88,30.44-8,19.63-8.41,32.41-8.41,22.77,4.27,32.42,8.41,18.68,8,30.44,8,20.84-3.88,30.44-8,19.63-8.41,32.42-8.41,22.76,4.27,32.41,8.41,18.68,8,30.44,8a54.69,54.69,0,0,0,15.59-2.33l1.41,4.8A59.54,59.54,0,0,1,610.5,364.8Z" transform="translate(-216.37 -318.8)"/><path class="aff0e3f9-f221-4fb3-9986-9884dd21814c" d="M610.5,340.2c-12.78,0-22.76-4.27-32.41-8.4s-18.68-8-30.44-8-20.84,3.89-30.45,8-19.62,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.68-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.69-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4a59.89,59.89,0,0,1-17-2.53l1.4-4.8a54.81,54.81,0,0,0,15.6,2.33c11.76,0,20.83-3.88,30.44-8s19.63-8.4,32.41-8.4,22.77,4.27,32.41,8.4,18.69,8,30.45,8,20.83-3.88,30.44-8,19.63-8.4,32.41-8.4,22.77,4.27,32.42,8.4,18.68,8,30.44,8,20.84-3.88,30.44-8,19.63-8.4,32.42-8.4,22.76,4.27,32.41,8.4,18.68,8,30.44,8a54.69,54.69,0,0,0,15.59-2.33l1.41,4.8A59.89,59.89,0,0,1,610.5,340.2Z" transform="translate(-216.37 -318.8)"/></svg>
                         <svg id="b501a324-b20f-4fd0-b47c-67515f930802" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 411.13 70.61"><defs><style>.aff0e3f9-f221-4fb3-9986-9884dd21814c</style></defs><path class="aff0e3f9-f221-4fb3-9986-9884dd21814c" d="M610.5,389.41c-12.78,0-22.76-4.27-32.41-8.4s-18.68-8-30.44-8-20.84,3.88-30.45,8-19.62,8.4-32.41,8.4S462,385.14,452.38,381s-18.68-8-30.45-8a52.49,52.49,0,0,0-5.84.32c-9.06,1-16.64,4.27-24.6,7.68-9.65,4.13-19.63,8.4-32.41,8.4s-22.76-4.27-32.41-8.4-18.69-8-30.45-8-20.83,3.88-30.44,8-19.63,8.4-32.41,8.4a59.56,59.56,0,0,1-17-2.54l1.4-4.8a54.83,54.83,0,0,0,15.6,2.34c11.76,0,20.83-3.89,30.44-8s19.63-8.4,32.41-8.4,22.77,4.27,32.41,8.4,18.69,8,30.45,8,20.83-3.89,30.44-8,19.63-8.4,32.41-8.4,22.77,4.27,32.42,8.4,18.68,8,30.44,8,20.84-3.89,30.44-8,19.63-8.4,32.42-8.4,22.76,4.27,32.41,8.4,18.68,8,30.44,8a54.71,54.71,0,0,0,15.59-2.34l1.41,4.8A59.56,59.56,0,0,1,610.5,389.41Z" transform="translate(-216.37 -318.8)"/><path class="aff0e3f9-f221-4fb3-9986-9884dd21814c" d="M610.5,364.8c-12.78,0-22.76-4.27-32.41-8.4s-18.68-8-30.44-8-20.84,3.89-30.45,8-19.62,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.68-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.69-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4a59.54,59.54,0,0,1-17-2.53l1.4-4.8a54.81,54.81,0,0,0,15.6,2.33c11.76,0,20.83-3.88,30.44-8s19.63-8.41,32.41-8.41,22.77,4.27,32.41,8.41,18.69,8,30.45,8,20.83-3.88,30.44-8,19.63-8.41,32.41-8.41,22.77,4.27,32.42,8.41,18.68,8,30.44,8,20.84-3.88,30.44-8,19.63-8.41,32.42-8.41,22.76,4.27,32.41,8.41,18.68,8,30.44,8a54.69,54.69,0,0,0,15.59-2.33l1.41,4.8A59.54,59.54,0,0,1,610.5,364.8Z" transform="translate(-216.37 -318.8)"/><path class="aff0e3f9-f221-4fb3-9986-9884dd21814c" d="M610.5,340.2c-12.78,0-22.76-4.27-32.41-8.4s-18.68-8-30.44-8-20.84,3.89-30.45,8-19.62,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.68-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4-22.76-4.27-32.41-8.4-18.69-8-30.45-8-20.83,3.89-30.44,8-19.63,8.4-32.41,8.4a59.89,59.89,0,0,1-17-2.53l1.4-4.8a54.81,54.81,0,0,0,15.6,2.33c11.76,0,20.83-3.88,30.44-8s19.63-8.4,32.41-8.4,22.77,4.27,32.41,8.4,18.69,8,30.45,8,20.83-3.88,30.44-8,19.63-8.4,32.41-8.4,22.77,4.27,32.42,8.4,18.68,8,30.44,8,20.84-3.88,30.44-8,19.63-8.4,32.42-8.4,22.76,4.27,32.41,8.4,18.68,8,30.44,8a54.69,54.69,0,0,0,15.59-2.33l1.41,4.8A59.89,59.89,0,0,1,610.5,340.2Z" transform="translate(-216.37 -318.8)"/></svg>
                     </div>
-                    <div class="gunungan">
+                    <div class="gunungan ggunung pencet">
+
+                        <svg id="gunung" class="gunung1" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 96 0 
+
+                                L 152 104 A 56 34, 0, 0, 1, 152 128 
+
+                                L 136 144 V 168 
+
+                                A 8 8 ,0 ,0 1, 128 176
+
+                                H 88
+                                A 8 8, 0, 0, 0, 104 176 H 64
+
+                                A 8 8, 0, 0, 1, 56 168
+                                V 144 
+                                L 40 128 A 56 34, 0, 0, 1, 40 104 
+                                V 104
+
+                                ">
+                            </path>
+                        </svg>
+                        
+                        </svg>
+                        <div class="isi">
+                            
+                            <!-- <img src="animation/svg/gunungan/Layer 1.svg" alt=""> -->
+                        </div>
+                    </div>
+                    
+                    <div class="gunungan2 ggunung">
                         <svg id="gunung" class="gunung1" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176.42 298.19"><path d="M151.53,148.62c-.77,1-1.58,1.87-2.42,2.76C149.88,150.42,150.69,149.51,151.53,148.62Z" transform="translate(-62.11 -0.9)"/><path d="M151.53,148.62c-.77,1-1.58,1.87-2.42,2.76C149.88,150.42,150.69,149.51,151.53,148.62Z" transform="translate(-62.11 -0.9)"/><path d="M150.4,149.41c0,1-.05,2-.15,3l.09-4.84C150.38,148.17,150.4,148.79,150.4,149.41Z" transform="translate(-62.11 -0.9)"/><line x1="88.26" y1="149.19" x2="88.16" y2="149"/><path d="M151.56,151.41c-.86-.91-1.68-1.85-2.47-2.82C150,149.49,150.77,150.43,151.56,151.41Z" transform="translate(-62.11 -0.9)"/><path d="M151.56,151.41c-.86-.91-1.68-1.85-2.47-2.82C150,149.49,150.77,150.43,151.56,151.41Z" transform="translate(-62.11 -0.9)"/><path d="M150.4,152.51a28.61,28.61,0,0,1-.16-3.08c0-.65,0-1.3.07-1.94Z" transform="translate(-62.11 -0.9)"/><line x1="88.26" y1="149" x2="88.16" y2="149.19"/><path d="M238.53,180.65a48,48,0,0,1-10.7,30.29l-.07.08c-.84.88-1.65,1.8-2.42,2.75l0,0a47.94,47.94,0,0,0-10.77,30.36l-.19,10.65v0l-.09,4.84v.06a29.74,29.74,0,0,1-28.08,26.62h0l-20,1.89a7.09,7.09,0,0,0-5.6,2.75l-4.77,5.5-.06.07a7.06,7.06,0,0,1-10.91-.12l0,0-4.66-5.36,0-.05a7.06,7.06,0,0,0-5.6-2.75l-20-1.89h0a29.73,29.73,0,0,1-28.08-26.62l-.09-5-.19-10.57A47.93,47.93,0,0,0,75.4,213.88s0,0-.05,0c-.79-1-1.61-1.91-2.47-2.82a48.19,48.19,0,0,1-5.82-51.64l.1-.2,1-1.84L150.32.9l82.13,156.3,1.13,2.17A47.89,47.89,0,0,1,238.53,180.65Z" transform="translate(-62.11 -0.9)"/>
                         
                         </svg>
                         <div class="isi">
-                            <img src="animation/svg/gunungan/Layer 1.svg" alt="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.18 160.98"><defs>
+                            <style>.b779fea4-9d78-4f32-9791-ddd0892b1e6b{fill:var(--gelap);}.b1024eff-3dd4-498f-b16f-8e662b52f5db{fill:none;stroke:var(--gelap);stroke-miterlimit:10;}</style>
+                            </defs><g id="abaa80b2-3ad7-4eaf-8b41-4cc80c20ed43" data-name="Layer 2"><g id="f5004ed2-b849-438e-acb4-82da42eb4a2f" data-name="Layer 1">
+                            <path class="b779fea4-9d78-4f32-9791-ddd0892b1e6b" d="M44.59,62.38a9.73,9.73,0,1,1,9.73-9.73A9.73,9.73,0,0,1,44.59,62.38Z"/>
+                            <path d="M44.59,43.42a9.23,9.23,0,1,1-9.23,9.23,9.24,9.24,0,0,1,9.23-9.23m0-1A10.23,10.23,0,1,0,54.82,52.65,10.23,10.23,0,0,0,44.59,42.42Z"/>
+                            <path class="b779fea4-9d78-4f32-9791-ddd0892b1e6b" d="M89.55,62.38a9.73,9.73,0,1,1,9.73-9.73A9.73,9.73,0,0,1,89.55,62.38Z"/>
+                            <path d="M89.55,43.42a9.23,9.23,0,1,1-9.23,9.23,9.24,9.24,0,0,1,9.23-9.23m0-1A10.23,10.23,0,1,0,99.78,52.65,10.23,10.23,0,0,0,89.55,42.42Z"/>
+                            <path d="M30.62,81.32c.93.49,3.44,4.54,4.52,6.28.54.86.93,1.5,1.25,2-5.87,2.9-11.14,4.34-16.1,4.41H20a21.52,21.52,0,0,1-13.38-4.4c1,.09,2,.13,3,.13a34,34,0,0,0,13-2.6,19.2,19.2,0,0,0,3.83-2.81c1.29-1.09,3.43-2.89,4.17-3m.05-1c-1.79,0-6.47,5.07-8.44,5.89a32.85,32.85,0,0,1-18.55,2C7.64,92.78,13.88,95,20,95h.34C26.48,94.9,32.47,92.75,38,89.9h0c-.53,0-5.45-9.45-7.2-9.6Z"/>
+                            <path d="M100.94,81.17c.73.1,2.87,1.91,4.17,3A18.65,18.65,0,0,0,108.94,87a34,34,0,0,0,13,2.6c1,0,2,0,3-.13a21.56,21.56,0,0,1-13.38,4.4h-.33c-5-.07-10.24-1.51-16.1-4.41.31-.48.71-1.12,1.24-2,1.09-1.74,3.6-5.79,4.53-6.28m0-1h-.08c-1.74.15-6.66,9.6-7.2,9.6a0,0,0,0,1,0,0c5.48,2.85,11.47,5,17.65,5.09h.35c6.07,0,12.32-2.21,16.27-6.81a32.85,32.85,0,0,1-18.55-2c-2-.82-6.65-5.89-8.43-5.89Z"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M31.08,78.47c-.56,7.09,4.42,13.75,10.72,17s13.68,3.82,20.79,3.65A122.48,122.48,0,0,0,83.43,96.9c5-1,10-2.32,14.18-5.18S105,84.19,105,79.13"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M35.2,92a3.35,3.35,0,0,0-2.14,3.82,7,7,0,0,0,2.58,4,8.13,8.13,0,0,0,5.63,2.29c2.07-.14,4.11-1.85,4-3.93a5.06,5.06,0,0,0,2.35,5.16,11.44,11.44,0,0,0,5.77,1.58,8.47,8.47,0,0,0,5.26-1c1.5-1,2.29-3.28,1.17-4.72a4.9,4.9,0,0,0,2.91,4.42,14.43,14.43,0,0,0,5.46,1.15c1.8.14,3.73.25,5.31-.64s2.48-3.19,1.3-4.56c1.14-.32,2.13.9,2.42,2s.29,2.43,1,3.34,2.34,1.19,3.67,1.28l10.84.66A20.75,20.75,0,0,0,88.72,95.4c2.06,2,4.84,4.1,7.48,3s3.61-4.8,6.37-5.16"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M36.32,89.54C38,94,36.25,99,33.8,103.1s-5.65,7.78-7.27,12.26c-2.73,7.55-.42,16.2,4.07,22.86S41.53,150,47.85,154.91a5,5,0,0,0,1.75,1c1.56.4,3.12-.85,3.85-2.29s.94-3.09,1.57-4.58c1.47-3.44,5.15-5.56,8.86-6s7.45.48,11,1.76A58.43,58.43,0,0,1,87,150.91c4.88,3.21,10.19,7.36,15.86,6,3.5-.84,6.18-3.67,8.05-6.74,5.76-9.48,5.31-21.72,1.46-32.13s-10.7-19.39-17.46-28.19"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M37.82,146.31c6.24,8.28,17.54,10.48,27.79,12.08,13.43,2.1,27.82,4.06,40.1-1.78"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M86.6,59.77a5.23,5.23,0,0,1-3.71.39c-1.8-.71-2.34-3.08-1.93-5a8.21,8.21,0,0,1,7.62-6.28,7.84,7.84,0,0,1,7.61,6.16,6.39,6.39,0,0,1-1.68,5.73,4.94,4.94,0,0,1-5.74.83"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M46.31,61.18A5.14,5.14,0,0,1,39.84,61c-2-1.82-2.22-5-1.63-7.63a5.77,5.77,0,0,1,.8-2c1.3-1.87,4-2,6.25-1.88s4.58.33,5.83,2.06a7.07,7.07,0,0,1,1,2.81l1.18,5.82"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M26.74,113a15.6,15.6,0,0,0-3.37-2.5,6.75,6.75,0,0,1-2.5-1.79c-1.1-1.59-.29-3.76-.51-5.69-.29-2.56-2.4-4.49-4.36-6.17l-5.16-4.4"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M8.46,87.17c-1.93-5-6.88-9.06-6.56-14.4.2-3.22,2.44-6.07,5.23-7.7a20.85,20.85,0,0,1,9.3-2.36,46.12,46.12,0,0,1,11.13.69"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M106.35,104.91a12.69,12.69,0,0,0,9.15-8.4"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M117.51,87.34A17.71,17.71,0,0,1,121,85.57a12.43,12.43,0,0,0,6.36-8.75,18.53,18.53,0,0,0-1.47-10.94,11.2,11.2,0,0,0-2.4-3.69c-2.81-2.66-7.14-2.63-11-2.43-1.36.07-3,.3-3.58,1.52-.42.87-.14,1.93-.46,2.84"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M56.65,81.69a7.2,7.2,0,0,1-4-.07c-1.25-.53-2.16-2.13-1.46-3.31A3.19,3.19,0,0,1,54,77.15a4.43,4.43,0,0,1,2.25.47c1.37.8,1.73,2.57,2.21,4.08.81,2.52,2.46,4.94,4.93,5.87,4,1.51,8.68-1.73,9.59-5.88a22,22,0,0,1,.66-3.15,2.85,2.85,0,0,1,2.3-2A4,4,0,0,1,78,77.3c.68.41,1.44,1,1.46,1.75a1.65,1.65,0,0,1-1.69,1.47,4.79,4.79,0,0,1-2.33-.8"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M60.05,83.8l-7.59,1.57a5.52,5.52,0,0,1-3.68-.08c-1.79-.92-2-3.34-2-5.35,0-3,.26-6.56,2.75-8.29,1.82-1.26,4.23-1.1,6.43-.89l6.29.6c.49,0,1.13,0,1.25-.49a.9.9,0,0,0-.23-.72A3.43,3.43,0,0,0,59.46,69c-1.25.43-2.45,1.63-3.7,1.15s-1.22-2.65-.1-3.55,2.68-.91,4.11-.88c-1.8-1.19-1.5-4-.24-5.77S62.72,57,64,55.29a8.28,8.28,0,0,0,1.62-4.12c-.15,3.61,0,7.87,3,9.94A6.24,6.24,0,0,1,70,62.18a2,2,0,0,1-2.59,2.94c1.17,1.13,3,1.09,4.54,1.65s2.78,2.72,1.5,3.72-3.18-.65-4.81-.31a1.81,1.81,0,0,0,.66,2.64,5.2,5.2,0,0,0,3.06.36l5.83-.49a1.56,1.56,0,0,1,2,1.59A37.13,37.13,0,0,1,81,82.14a2.5,2.5,0,0,1-.63,2,2.2,2.2,0,0,1-1.38.38,7.28,7.28,0,0,1-5.81-2.88"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M22.4,78c1.57-1.07,3.86-2,5.18-.65,1,1,.72,2.7,0,3.92a7,7,0,0,1-7.16,3.53,5.81,5.81,0,0,1-4.6-6.22c.5-3.36,4.3-5.42,7.69-5.18s6.41,2.15,9.23,4a66.22,66.22,0,0,1,10.08,7.94c2.55,2.57,5.49,5.79,9,5.09,2.5-.49,4.44-2.9,7-2.89a9.24,9.24,0,0,1,3.66,1.17c11.07,5,24.51.59,33.65-7.39a7.12,7.12,0,0,0,2.25-2.84c.45-1.32.15-2.78.35-4.16a5.83,5.83,0,0,1,11.42-.67,4.49,4.49,0,0,1-1.85,5c-1.7.92-4.27-.17-4.39-2.1l2.32-1"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M27.7,62.33A86,86,0,0,1,19.05,56a11.9,11.9,0,0,1-2.41-2.45c-1.53-2.3-1.4-5.28-1.22-8A3.19,3.19,0,0,1,15.77,44c.66-1.05,2.21-1,3.39-.61a9.58,9.58,0,0,1,6.19,7.17,2.22,2.22,0,0,1-.21,1.74c-.7.92-2.15.47-3.17-.06a6.09,6.09,0,0,1-2.5-1.93,2.07,2.07,0,0,1,.43-2.84c1.16-.67,2.53.39,3.45,1.37"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M108.2,60.17a16.73,16.73,0,0,0,15.12-3.53,6.83,6.83,0,0,0,1.69-2,7.46,7.46,0,0,0,.66-2.23,13.31,13.31,0,0,0,0-5.37,6.15,6.15,0,0,0-3.15-4.17c-2-.94-4.36-.4-6.5.17l-3.13.82a14.77,14.77,0,0,0-4.39,1.67,5,5,0,0,0-2.43,3.82c-.07,2.28,1.9,4.05,3.69,5.47.59-1.23,2-.64,2.62-1.87-.27,0,.08.45.23.22s-.05-.5-.23-.71c-1.42-1.59-1.09-3.8-2.19-5.54-1.31-2.08-3.92-3.8-6-5a32.21,32.21,0,0,0-15.75-4.11c-3.24-.07-6.63.27-9.38,2S74.46,44.92,75.39,48c-2.6-2.46-.84-6.92-2.09-10.28a16.12,16.12,0,0,0-2.88-4.17A21.09,21.09,0,0,1,66,19.09c-2.12,1.79-1.46,5.18-2.38,7.79a20.21,20.21,0,0,1-2.36,4,17.54,17.54,0,0,0-1.92,14.28c.08-4.85-4-9-8.68-10.44s-9.67-.67-14.39.45c-5.67,1.34-12,4-13.61,9.56"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M127.65,76.72a7,7,0,0,0,6.63-.37,13.68,13.68,0,0,0,4.7-5c2.87-4.77,4.19-10.3,5.47-15.72l3.15-13.36c-1.46-.71-3,.64-4.2,1.76a24.71,24.71,0,0,1-16,6.76,45.15,45.15,0,0,0-6,.24,7,7,0,0,0-5,3.06"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M6.34,64.9c-3.32-.41-5-4.2-5.48-7.51a25,25,0,0,1,.77-10.06,13.9,13.9,0,0,0,.86-4c0-1.72-.85-3.31-1.36-5A14,14,0,0,1,.88,31c2.6,1.18,4.48,3.48,6.51,5.49a36,36,0,0,0,9.67,6.77"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M108.41,44.56a27.21,27.21,0,0,0,12.18-19.19,33.75,33.75,0,0,0-5.1-22.43c-.26-.41-.69-.87-1.14-.68s-.43.64-.45,1c-.32,4.59-3.75,8.47-7.77,10.7S97.51,17.11,93,18.14s-9,2.31-12.67,5.14a17.7,17.7,0,0,0-6.42,16.45"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M57.88,39.91a33.79,33.79,0,0,0,1.45-10.38,6.68,6.68,0,0,0-.4-2.51,8.19,8.19,0,0,0-2.35-2.7A38.35,38.35,0,0,1,44.28,2.47c-.15-.84-.47-1.87-1.31-2a1.89,1.89,0,0,0-1,.26C34.24,4.37,26,8.46,22.05,16c-2.81,5.41-2.93,11.76-3,17.86,0,4.13,0,8.59,2.47,11.91"/></g></g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="gunungan2 ggunung">
+                        <svg id="gunung" class="gunung1" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176.42 298.19">
+                            <path d="M151.53,148.62c-.77,1-1.58,1.87-2.42,2.76C149.88,150.42,150.69,149.51,151.53,148.62Z" transform="translate(-62.11 -0.9)"/><path d="M151.53,148.62c-.77,1-1.58,1.87-2.42,2.76C149.88,150.42,150.69,149.51,151.53,148.62Z" transform="translate(-62.11 -0.9)"/><path d="M150.4,149.41c0,1-.05,2-.15,3l.09-4.84C150.38,148.17,150.4,148.79,150.4,149.41Z" transform="translate(-62.11 -0.9)"/><line x1="88.26" y1="149.19" x2="88.16" y2="149"/><path d="M151.56,151.41c-.86-.91-1.68-1.85-2.47-2.82C150,149.49,150.77,150.43,151.56,151.41Z" transform="translate(-62.11 -0.9)"/><path d="M151.56,151.41c-.86-.91-1.68-1.85-2.47-2.82C150,149.49,150.77,150.43,151.56,151.41Z" transform="translate(-62.11 -0.9)"/><path d="M150.4,152.51a28.61,28.61,0,0,1-.16-3.08c0-.65,0-1.3.07-1.94Z" transform="translate(-62.11 -0.9)"/><line x1="88.26" y1="149" x2="88.16" y2="149.19"/><path d="M238.53,180.65a48,48,0,0,1-10.7,30.29l-.07.08c-.84.88-1.65,1.8-2.42,2.75l0,0a47.94,47.94,0,0,0-10.77,30.36l-.19,10.65v0l-.09,4.84v.06a29.74,29.74,0,0,1-28.08,26.62h0l-20,1.89a7.09,7.09,0,0,0-5.6,2.75l-4.77,5.5-.06.07a7.06,7.06,0,0,1-10.91-.12l0,0-4.66-5.36,0-.05a7.06,7.06,0,0,0-5.6-2.75l-20-1.89h0a29.73,29.73,0,0,1-28.08-26.62l-.09-5-.19-10.57A47.93,47.93,0,0,0,75.4,213.88s0,0-.05,0c-.79-1-1.61-1.91-2.47-2.82a48.19,48.19,0,0,1-5.82-51.64l.1-.2,1-1.84L150.32.9l82.13,156.3,1.13,2.17A47.89,47.89,0,0,1,238.53,180.65Z" transform="translate(-62.11 -0.9)"/>
+                        
+                        </svg>
+                        <div class="isi">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.18 160.98"><defs>
+                            <style>.b779fea4-9d78-4f32-9791-ddd0892b1e6b{fill:var(--gelap);}.b1024eff-3dd4-498f-b16f-8e662b52f5db{fill:none;stroke:var(--gelap);stroke-miterlimit:10;}</style>
+                            </defs><g id="abaa80b2-3ad7-4eaf-8b41-4cc80c20ed43" data-name="Layer 2"><g id="f5004ed2-b849-438e-acb4-82da42eb4a2f" data-name="Layer 1">
+                            <path class="b779fea4-9d78-4f32-9791-ddd0892b1e6b" d="M44.59,62.38a9.73,9.73,0,1,1,9.73-9.73A9.73,9.73,0,0,1,44.59,62.38Z"/>
+                            <path d="M44.59,43.42a9.23,9.23,0,1,1-9.23,9.23,9.24,9.24,0,0,1,9.23-9.23m0-1A10.23,10.23,0,1,0,54.82,52.65,10.23,10.23,0,0,0,44.59,42.42Z"/>
+                            <path class="b779fea4-9d78-4f32-9791-ddd0892b1e6b" d="M89.55,62.38a9.73,9.73,0,1,1,9.73-9.73A9.73,9.73,0,0,1,89.55,62.38Z"/>
+                            <path d="M89.55,43.42a9.23,9.23,0,1,1-9.23,9.23,9.24,9.24,0,0,1,9.23-9.23m0-1A10.23,10.23,0,1,0,99.78,52.65,10.23,10.23,0,0,0,89.55,42.42Z"/>
+                            <path d="M30.62,81.32c.93.49,3.44,4.54,4.52,6.28.54.86.93,1.5,1.25,2-5.87,2.9-11.14,4.34-16.1,4.41H20a21.52,21.52,0,0,1-13.38-4.4c1,.09,2,.13,3,.13a34,34,0,0,0,13-2.6,19.2,19.2,0,0,0,3.83-2.81c1.29-1.09,3.43-2.89,4.17-3m.05-1c-1.79,0-6.47,5.07-8.44,5.89a32.85,32.85,0,0,1-18.55,2C7.64,92.78,13.88,95,20,95h.34C26.48,94.9,32.47,92.75,38,89.9h0c-.53,0-5.45-9.45-7.2-9.6Z"/>
+                            <path d="M100.94,81.17c.73.1,2.87,1.91,4.17,3A18.65,18.65,0,0,0,108.94,87a34,34,0,0,0,13,2.6c1,0,2,0,3-.13a21.56,21.56,0,0,1-13.38,4.4h-.33c-5-.07-10.24-1.51-16.1-4.41.31-.48.71-1.12,1.24-2,1.09-1.74,3.6-5.79,4.53-6.28m0-1h-.08c-1.74.15-6.66,9.6-7.2,9.6a0,0,0,0,1,0,0c5.48,2.85,11.47,5,17.65,5.09h.35c6.07,0,12.32-2.21,16.27-6.81a32.85,32.85,0,0,1-18.55-2c-2-.82-6.65-5.89-8.43-5.89Z"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M31.08,78.47c-.56,7.09,4.42,13.75,10.72,17s13.68,3.82,20.79,3.65A122.48,122.48,0,0,0,83.43,96.9c5-1,10-2.32,14.18-5.18S105,84.19,105,79.13"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M35.2,92a3.35,3.35,0,0,0-2.14,3.82,7,7,0,0,0,2.58,4,8.13,8.13,0,0,0,5.63,2.29c2.07-.14,4.11-1.85,4-3.93a5.06,5.06,0,0,0,2.35,5.16,11.44,11.44,0,0,0,5.77,1.58,8.47,8.47,0,0,0,5.26-1c1.5-1,2.29-3.28,1.17-4.72a4.9,4.9,0,0,0,2.91,4.42,14.43,14.43,0,0,0,5.46,1.15c1.8.14,3.73.25,5.31-.64s2.48-3.19,1.3-4.56c1.14-.32,2.13.9,2.42,2s.29,2.43,1,3.34,2.34,1.19,3.67,1.28l10.84.66A20.75,20.75,0,0,0,88.72,95.4c2.06,2,4.84,4.1,7.48,3s3.61-4.8,6.37-5.16"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M36.32,89.54C38,94,36.25,99,33.8,103.1s-5.65,7.78-7.27,12.26c-2.73,7.55-.42,16.2,4.07,22.86S41.53,150,47.85,154.91a5,5,0,0,0,1.75,1c1.56.4,3.12-.85,3.85-2.29s.94-3.09,1.57-4.58c1.47-3.44,5.15-5.56,8.86-6s7.45.48,11,1.76A58.43,58.43,0,0,1,87,150.91c4.88,3.21,10.19,7.36,15.86,6,3.5-.84,6.18-3.67,8.05-6.74,5.76-9.48,5.31-21.72,1.46-32.13s-10.7-19.39-17.46-28.19"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M37.82,146.31c6.24,8.28,17.54,10.48,27.79,12.08,13.43,2.1,27.82,4.06,40.1-1.78"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M86.6,59.77a5.23,5.23,0,0,1-3.71.39c-1.8-.71-2.34-3.08-1.93-5a8.21,8.21,0,0,1,7.62-6.28,7.84,7.84,0,0,1,7.61,6.16,6.39,6.39,0,0,1-1.68,5.73,4.94,4.94,0,0,1-5.74.83"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M46.31,61.18A5.14,5.14,0,0,1,39.84,61c-2-1.82-2.22-5-1.63-7.63a5.77,5.77,0,0,1,.8-2c1.3-1.87,4-2,6.25-1.88s4.58.33,5.83,2.06a7.07,7.07,0,0,1,1,2.81l1.18,5.82"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M26.74,113a15.6,15.6,0,0,0-3.37-2.5,6.75,6.75,0,0,1-2.5-1.79c-1.1-1.59-.29-3.76-.51-5.69-.29-2.56-2.4-4.49-4.36-6.17l-5.16-4.4"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M8.46,87.17c-1.93-5-6.88-9.06-6.56-14.4.2-3.22,2.44-6.07,5.23-7.7a20.85,20.85,0,0,1,9.3-2.36,46.12,46.12,0,0,1,11.13.69"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M106.35,104.91a12.69,12.69,0,0,0,9.15-8.4"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M117.51,87.34A17.71,17.71,0,0,1,121,85.57a12.43,12.43,0,0,0,6.36-8.75,18.53,18.53,0,0,0-1.47-10.94,11.2,11.2,0,0,0-2.4-3.69c-2.81-2.66-7.14-2.63-11-2.43-1.36.07-3,.3-3.58,1.52-.42.87-.14,1.93-.46,2.84"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M56.65,81.69a7.2,7.2,0,0,1-4-.07c-1.25-.53-2.16-2.13-1.46-3.31A3.19,3.19,0,0,1,54,77.15a4.43,4.43,0,0,1,2.25.47c1.37.8,1.73,2.57,2.21,4.08.81,2.52,2.46,4.94,4.93,5.87,4,1.51,8.68-1.73,9.59-5.88a22,22,0,0,1,.66-3.15,2.85,2.85,0,0,1,2.3-2A4,4,0,0,1,78,77.3c.68.41,1.44,1,1.46,1.75a1.65,1.65,0,0,1-1.69,1.47,4.79,4.79,0,0,1-2.33-.8"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M60.05,83.8l-7.59,1.57a5.52,5.52,0,0,1-3.68-.08c-1.79-.92-2-3.34-2-5.35,0-3,.26-6.56,2.75-8.29,1.82-1.26,4.23-1.1,6.43-.89l6.29.6c.49,0,1.13,0,1.25-.49a.9.9,0,0,0-.23-.72A3.43,3.43,0,0,0,59.46,69c-1.25.43-2.45,1.63-3.7,1.15s-1.22-2.65-.1-3.55,2.68-.91,4.11-.88c-1.8-1.19-1.5-4-.24-5.77S62.72,57,64,55.29a8.28,8.28,0,0,0,1.62-4.12c-.15,3.61,0,7.87,3,9.94A6.24,6.24,0,0,1,70,62.18a2,2,0,0,1-2.59,2.94c1.17,1.13,3,1.09,4.54,1.65s2.78,2.72,1.5,3.72-3.18-.65-4.81-.31a1.81,1.81,0,0,0,.66,2.64,5.2,5.2,0,0,0,3.06.36l5.83-.49a1.56,1.56,0,0,1,2,1.59A37.13,37.13,0,0,1,81,82.14a2.5,2.5,0,0,1-.63,2,2.2,2.2,0,0,1-1.38.38,7.28,7.28,0,0,1-5.81-2.88"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M22.4,78c1.57-1.07,3.86-2,5.18-.65,1,1,.72,2.7,0,3.92a7,7,0,0,1-7.16,3.53,5.81,5.81,0,0,1-4.6-6.22c.5-3.36,4.3-5.42,7.69-5.18s6.41,2.15,9.23,4a66.22,66.22,0,0,1,10.08,7.94c2.55,2.57,5.49,5.79,9,5.09,2.5-.49,4.44-2.9,7-2.89a9.24,9.24,0,0,1,3.66,1.17c11.07,5,24.51.59,33.65-7.39a7.12,7.12,0,0,0,2.25-2.84c.45-1.32.15-2.78.35-4.16a5.83,5.83,0,0,1,11.42-.67,4.49,4.49,0,0,1-1.85,5c-1.7.92-4.27-.17-4.39-2.1l2.32-1"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M27.7,62.33A86,86,0,0,1,19.05,56a11.9,11.9,0,0,1-2.41-2.45c-1.53-2.3-1.4-5.28-1.22-8A3.19,3.19,0,0,1,15.77,44c.66-1.05,2.21-1,3.39-.61a9.58,9.58,0,0,1,6.19,7.17,2.22,2.22,0,0,1-.21,1.74c-.7.92-2.15.47-3.17-.06a6.09,6.09,0,0,1-2.5-1.93,2.07,2.07,0,0,1,.43-2.84c1.16-.67,2.53.39,3.45,1.37"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M108.2,60.17a16.73,16.73,0,0,0,15.12-3.53,6.83,6.83,0,0,0,1.69-2,7.46,7.46,0,0,0,.66-2.23,13.31,13.31,0,0,0,0-5.37,6.15,6.15,0,0,0-3.15-4.17c-2-.94-4.36-.4-6.5.17l-3.13.82a14.77,14.77,0,0,0-4.39,1.67,5,5,0,0,0-2.43,3.82c-.07,2.28,1.9,4.05,3.69,5.47.59-1.23,2-.64,2.62-1.87-.27,0,.08.45.23.22s-.05-.5-.23-.71c-1.42-1.59-1.09-3.8-2.19-5.54-1.31-2.08-3.92-3.8-6-5a32.21,32.21,0,0,0-15.75-4.11c-3.24-.07-6.63.27-9.38,2S74.46,44.92,75.39,48c-2.6-2.46-.84-6.92-2.09-10.28a16.12,16.12,0,0,0-2.88-4.17A21.09,21.09,0,0,1,66,19.09c-2.12,1.79-1.46,5.18-2.38,7.79a20.21,20.21,0,0,1-2.36,4,17.54,17.54,0,0,0-1.92,14.28c.08-4.85-4-9-8.68-10.44s-9.67-.67-14.39.45c-5.67,1.34-12,4-13.61,9.56"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M127.65,76.72a7,7,0,0,0,6.63-.37,13.68,13.68,0,0,0,4.7-5c2.87-4.77,4.19-10.3,5.47-15.72l3.15-13.36c-1.46-.71-3,.64-4.2,1.76a24.71,24.71,0,0,1-16,6.76,45.15,45.15,0,0,0-6,.24,7,7,0,0,0-5,3.06"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M6.34,64.9c-3.32-.41-5-4.2-5.48-7.51a25,25,0,0,1,.77-10.06,13.9,13.9,0,0,0,.86-4c0-1.72-.85-3.31-1.36-5A14,14,0,0,1,.88,31c2.6,1.18,4.48,3.48,6.51,5.49a36,36,0,0,0,9.67,6.77"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M108.41,44.56a27.21,27.21,0,0,0,12.18-19.19,33.75,33.75,0,0,0-5.1-22.43c-.26-.41-.69-.87-1.14-.68s-.43.64-.45,1c-.32,4.59-3.75,8.47-7.77,10.7S97.51,17.11,93,18.14s-9,2.31-12.67,5.14a17.7,17.7,0,0,0-6.42,16.45"/>
+                            <path class="b1024eff-3dd4-498f-b16f-8e662b52f5db" d="M57.88,39.91a33.79,33.79,0,0,0,1.45-10.38,6.68,6.68,0,0,0-.4-2.51,8.19,8.19,0,0,0-2.35-2.7A38.35,38.35,0,0,1,44.28,2.47c-.15-.84-.47-1.87-1.31-2a1.89,1.89,0,0,0-1,.26C34.24,4.37,26,8.46,22.05,16c-2.81,5.41-2.93,11.76-3,17.86,0,4.13,0,8.59,2.47,11.91"/></g></g>
+                            </svg>
                         </div>
                     </div>
 
-                    <!-- <div class="gelombang">
-                        <div class="wave4">
-                            <svg id="b6e894c7-7c41-471c-8428-a37bff9b3071" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.34 404.23"><path d="M1178.55,552.39c0-6.77,6.68-9.12,6.3-15.7-.4-6.75-10.93-12.55-11.68-19.1-.76-6.71,8.17-14.75,7-21.25s-12.31-11.15-13.86-17.58,6.29-15.64,4.32-22-13.64-9.42-16-15.61,4.12-16.33,1.29-22.35-14.79-7.41-18.05-13.23,1.82-16.71-1.84-22.31-15.67-5.26-19.71-10.61-.45-16.77-4.85-21.85-16.21-3.14-20.93-7.94-2.54-16.55-7.53-21.07-16.48-1.17-21.73-5.41-4.35-16.15-9.82-20.12-16.51.56-22.16-3.15-5.89-15.63-11.7-19.08-16.41,2-22.35-1.18S988.1,257.8,982,254.81s-16.22,3.28-22.38.5-8.19-14.53-14.43-17.11-16,4.33-22.31,1.93c-6.17-2.33-9-14-15.42-16.23-6.23-2.17-15.73,5.2-22.16,3.15s-9.74-13.53-16.22-15.44-15.48,5.95-22,4.19-10.32-13.08-16.87-14.71-15.23,6.58-21.81,5.07S797.63,193.49,791,192.1s-15,7.12-21.62,5.85-11.24-12.3-17.88-13.48-14.77,7.59-21.42,6.52-11.6-12-18.26-13-14.56,8-21.24,7.11S678.71,173.5,672,172.69s-14.36,8.36-21,7.63-12.19-11.37-18.88-12-14.18,8.68-20.88,8.09-12.43-11.1-19.13-11.62-14,9-20.72,8.5S558.73,162.4,552,162s-13.84,9.23-20.55,8.88S518.64,160.25,511.93,160s-13.69,9.45-20.41,9.22-13-10.43-19.72-10.61-13.54,9.66-20.26,9.52-13.15-10.24-19.87-10.32-13.42,9.85-20.13,9.81-17.13-8.27-23.85-8.27c-2.58,3.09,8.84,7.23,8.84,11.25s-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8,10,4,10,8.05-10,4-10,8.06,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8.06,10,4,10,8-10,4-10,8.06,3.63,1.78,7.23,3.59c7.2,3.6,5.82,9.47,13.87,9.47s8.05-10,16.1-10,8,10,16.09,10,8.05-10,16.1-10S464,562,472,562s8.05-10,16.11-10,8,10,16.09,10,8.05-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.09,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S625,562,633,562s8-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S786,562,794,562s8-10,16.1-10,8.06,10,16.11,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.11,10,8-10,16.1-10,8,10,16.1,10,8-10,16.1-10S947,562,955,562s8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.06-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,8.05-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,7.75-9.47,15.79-10C1171.5,551.53,1171.13,555.52,1178.55,552.39Z" transform="translate(-386.53 -157.77)"/></svg>
-                        </div>
-                        <div class="wave3">
-                            <svg id="b6e894c7-7c41-471c-8428-a37bff9b3071" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.34 404.23"><path d="M1178.55,552.39c0-6.77,6.68-9.12,6.3-15.7-.4-6.75-10.93-12.55-11.68-19.1-.76-6.71,8.17-14.75,7-21.25s-12.31-11.15-13.86-17.58,6.29-15.64,4.32-22-13.64-9.42-16-15.61,4.12-16.33,1.29-22.35-14.79-7.41-18.05-13.23,1.82-16.71-1.84-22.31-15.67-5.26-19.71-10.61-.45-16.77-4.85-21.85-16.21-3.14-20.93-7.94-2.54-16.55-7.53-21.07-16.48-1.17-21.73-5.41-4.35-16.15-9.82-20.12-16.51.56-22.16-3.15-5.89-15.63-11.7-19.08-16.41,2-22.35-1.18S988.1,257.8,982,254.81s-16.22,3.28-22.38.5-8.19-14.53-14.43-17.11-16,4.33-22.31,1.93c-6.17-2.33-9-14-15.42-16.23-6.23-2.17-15.73,5.2-22.16,3.15s-9.74-13.53-16.22-15.44-15.48,5.95-22,4.19-10.32-13.08-16.87-14.71-15.23,6.58-21.81,5.07S797.63,193.49,791,192.1s-15,7.12-21.62,5.85-11.24-12.3-17.88-13.48-14.77,7.59-21.42,6.52-11.6-12-18.26-13-14.56,8-21.24,7.11S678.71,173.5,672,172.69s-14.36,8.36-21,7.63-12.19-11.37-18.88-12-14.18,8.68-20.88,8.09-12.43-11.1-19.13-11.62-14,9-20.72,8.5S558.73,162.4,552,162s-13.84,9.23-20.55,8.88S518.64,160.25,511.93,160s-13.69,9.45-20.41,9.22-13-10.43-19.72-10.61-13.54,9.66-20.26,9.52-13.15-10.24-19.87-10.32-13.42,9.85-20.13,9.81-17.13-8.27-23.85-8.27c-2.58,3.09,8.84,7.23,8.84,11.25s-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8,10,4,10,8.05-10,4-10,8.06,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8.06,10,4,10,8-10,4-10,8.06,3.63,1.78,7.23,3.59c7.2,3.6,5.82,9.47,13.87,9.47s8.05-10,16.1-10,8,10,16.09,10,8.05-10,16.1-10S464,562,472,562s8.05-10,16.11-10,8,10,16.09,10,8.05-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.09,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S625,562,633,562s8-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S786,562,794,562s8-10,16.1-10,8.06,10,16.11,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.11,10,8-10,16.1-10,8,10,16.1,10,8-10,16.1-10S947,562,955,562s8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.06-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,8.05-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,7.75-9.47,15.79-10C1171.5,551.53,1171.13,555.52,1178.55,552.39Z" transform="translate(-386.53 -157.77)"/></svg>
-                        </div>
-                        <div class="wave2">
-                            <svg id="b6e894c7-7c41-471c-8428-a37bff9b3071" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.34 404.23"><path d="M1178.55,552.39c0-6.77,6.68-9.12,6.3-15.7-.4-6.75-10.93-12.55-11.68-19.1-.76-6.71,8.17-14.75,7-21.25s-12.31-11.15-13.86-17.58,6.29-15.64,4.32-22-13.64-9.42-16-15.61,4.12-16.33,1.29-22.35-14.79-7.41-18.05-13.23,1.82-16.71-1.84-22.31-15.67-5.26-19.71-10.61-.45-16.77-4.85-21.85-16.21-3.14-20.93-7.94-2.54-16.55-7.53-21.07-16.48-1.17-21.73-5.41-4.35-16.15-9.82-20.12-16.51.56-22.16-3.15-5.89-15.63-11.7-19.08-16.41,2-22.35-1.18S988.1,257.8,982,254.81s-16.22,3.28-22.38.5-8.19-14.53-14.43-17.11-16,4.33-22.31,1.93c-6.17-2.33-9-14-15.42-16.23-6.23-2.17-15.73,5.2-22.16,3.15s-9.74-13.53-16.22-15.44-15.48,5.95-22,4.19-10.32-13.08-16.87-14.71-15.23,6.58-21.81,5.07S797.63,193.49,791,192.1s-15,7.12-21.62,5.85-11.24-12.3-17.88-13.48-14.77,7.59-21.42,6.52-11.6-12-18.26-13-14.56,8-21.24,7.11S678.71,173.5,672,172.69s-14.36,8.36-21,7.63-12.19-11.37-18.88-12-14.18,8.68-20.88,8.09-12.43-11.1-19.13-11.62-14,9-20.72,8.5S558.73,162.4,552,162s-13.84,9.23-20.55,8.88S518.64,160.25,511.93,160s-13.69,9.45-20.41,9.22-13-10.43-19.72-10.61-13.54,9.66-20.26,9.52-13.15-10.24-19.87-10.32-13.42,9.85-20.13,9.81-17.13-8.27-23.85-8.27c-2.58,3.09,8.84,7.23,8.84,11.25s-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8,10,4,10,8.05-10,4-10,8.06,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8.06,10,4,10,8-10,4-10,8.06,3.63,1.78,7.23,3.59c7.2,3.6,5.82,9.47,13.87,9.47s8.05-10,16.1-10,8,10,16.09,10,8.05-10,16.1-10S464,562,472,562s8.05-10,16.11-10,8,10,16.09,10,8.05-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.09,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S625,562,633,562s8-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S786,562,794,562s8-10,16.1-10,8.06,10,16.11,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.11,10,8-10,16.1-10,8,10,16.1,10,8-10,16.1-10S947,562,955,562s8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.06-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,8.05-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,7.75-9.47,15.79-10C1171.5,551.53,1171.13,555.52,1178.55,552.39Z" transform="translate(-386.53 -157.77)"/></svg>
-                        </div>
-                        <div class="wave1">
-                            <svg id="b6e894c7-7c41-471c-8428-a37bff9b3071" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.34 404.23"><path d="M1178.55,552.39c0-6.77,6.68-9.12,6.3-15.7-.4-6.75-10.93-12.55-11.68-19.1-.76-6.71,8.17-14.75,7-21.25s-12.31-11.15-13.86-17.58,6.29-15.64,4.32-22-13.64-9.42-16-15.61,4.12-16.33,1.29-22.35-14.79-7.41-18.05-13.23,1.82-16.71-1.84-22.31-15.67-5.26-19.71-10.61-.45-16.77-4.85-21.85-16.21-3.14-20.93-7.94-2.54-16.55-7.53-21.07-16.48-1.17-21.73-5.41-4.35-16.15-9.82-20.12-16.51.56-22.16-3.15-5.89-15.63-11.7-19.08-16.41,2-22.35-1.18S988.1,257.8,982,254.81s-16.22,3.28-22.38.5-8.19-14.53-14.43-17.11-16,4.33-22.31,1.93c-6.17-2.33-9-14-15.42-16.23-6.23-2.17-15.73,5.2-22.16,3.15s-9.74-13.53-16.22-15.44-15.48,5.95-22,4.19-10.32-13.08-16.87-14.71-15.23,6.58-21.81,5.07S797.63,193.49,791,192.1s-15,7.12-21.62,5.85-11.24-12.3-17.88-13.48-14.77,7.59-21.42,6.52-11.6-12-18.26-13-14.56,8-21.24,7.11S678.71,173.5,672,172.69s-14.36,8.36-21,7.63-12.19-11.37-18.88-12-14.18,8.68-20.88,8.09-12.43-11.1-19.13-11.62-14,9-20.72,8.5S558.73,162.4,552,162s-13.84,9.23-20.55,8.88S518.64,160.25,511.93,160s-13.69,9.45-20.41,9.22-13-10.43-19.72-10.61-13.54,9.66-20.26,9.52-13.15-10.24-19.87-10.32-13.42,9.85-20.13,9.81-17.13-8.27-23.85-8.27c-2.58,3.09,8.84,7.23,8.84,11.25s-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8,10,4,10,8.05-10,4-10,8.06,10,4,10,8.05-10,4-10,8.05,10,4,10,8.05-10,4-10,8.05,10,4,10,8.06-10,4-10,8.06,10,4,10,8-10,4-10,8.06,3.63,1.78,7.23,3.59c7.2,3.6,5.82,9.47,13.87,9.47s8.05-10,16.1-10,8,10,16.09,10,8.05-10,16.1-10S464,562,472,562s8.05-10,16.11-10,8,10,16.09,10,8.05-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.09,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S625,562,633,562s8-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.05-10,16.1-10S786,562,794,562s8-10,16.1-10,8.06,10,16.11,10,8-10,16.1-10,8.05,10,16.1,10,8.05-10,16.1-10,8,10,16.11,10,8-10,16.1-10,8,10,16.1,10,8-10,16.1-10S947,562,955,562s8.05-10,16.1-10,8,10,16.1,10,8-10,16.1-10,8,10,16.1,10,8.06-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,8.05-10,16.11-10,8,10,16.1,10,8-10,16.11-10,8,10,16.1,10,7.75-9.47,15.79-10C1171.5,551.53,1171.13,555.52,1178.55,552.39Z" transform="translate(-386.53 -157.77)"/></svg>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -775,23 +1207,175 @@
                     </div>
                 </div>
                 <div class="isian">
-                    <div class="project">
-                        <div class="photo">
-                            <img src="project/image/ss for port2.png" alt="">
-                            <img src="project/image/ss for port mobile.png" alt="">
+
+                    <div class="kirie">
+                        <div class="tombolan">
+                            <div class="tebal"></div>
+                            <div class="tombolIni pilihIni"></div>
+                                <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                <svg viewBox="-3.8 -1.5 40.921 40.921" xmlns="http://www.w3.org/2000/svg">
+
+                                <defs>
+
+                                <linearGradient id="b" x1="271.97" x2="211.104" y1="217.606" y2="341.772" gradientUnits="userSpaceOnUse">
+
+                                <stop offset=".3" stop-color="#3e863d"/>
+
+                                <stop offset=".5" stop-color="#55934f"/>
+
+                                <stop offset=".8" stop-color="#5aad45"/>
+
+                                </linearGradient>
+
+                                <linearGradient id="d" x1="186.484" x2="297.349" y1="321.381" y2="239.465" gradientUnits="userSpaceOnUse">
+
+                                <stop offset=".57" stop-color="#3e863d"/>
+
+                                <stop offset=".72" stop-color="#619857"/>
+
+                                <stop offset="1" stop-color="#76ac64"/>
+
+                                </linearGradient>
+
+                                <linearGradient id="f" x1="197.051" x2="288.72" y1="279.652" y2="279.652" gradientUnits="userSpaceOnUse">
+
+                                <stop offset=".16" stop-color="#6bbf47"/>
+
+                                <stop offset=".38" stop-color="#79b461"/>
+
+                                <stop offset=".47" stop-color="#75ac64"/>
+
+                                <stop offset=".7" stop-color="#659e5a"/>
+
+                                <stop offset=".9" stop-color="#3e863d"/>
+
+                                </linearGradient>
+
+                                <clipPath id="a">
+
+                                <path d="m239.03 226.605-42.13 24.317a5.085 5.085 0 0 0-2.546 4.406v48.668c0 1.817.968 3.496 2.546 4.406l42.133 24.336a5.1 5.1 0 0 0 5.09 0l42.126-24.336a5.096 5.096 0 0 0 2.54-4.406v-48.668c0-1.816-.97-3.496-2.55-4.406l-42.12-24.317a5.123 5.123 0 0 0-5.1 0"/>
+
+                                </clipPath>
+
+                                <clipPath id="c">
+
+                                <path d="M195.398 307.086c.403.523.907.976 1.5 1.316l36.14 20.875 6.02 3.46c.9.52 1.926.74 2.934.665.336-.027.672-.09 1-.183l44.434-81.36c-.34-.37-.738-.68-1.184-.94l-27.586-15.93-14.582-8.39a5.318 5.318 0 0 0-1.32-.53zm0 0"/>
+
+                                </clipPath>
+
+                                <clipPath id="e">
+
+                                <path d="M241.066 225.953a5.14 5.14 0 0 0-2.035.652l-42.01 24.247 45.3 82.51c.63-.09 1.25-.3 1.81-.624l42.13-24.336a5.105 5.105 0 0 0 2.46-3.476l-46.18-78.89a5.29 5.29 0 0 0-1.03-.102l-.42.02"/>
+
+                                </clipPath>
+
+                                </defs>
+
+                                <g clip-path="url(#a)" transform="translate(-68.564 -79.701) scale(.35278)">
+
+                                <path fill="url(#b)" d="m331.363 246.793-118.715-58.19-60.87 124.174L270.49 370.97zm0 0"/>
+
+                                </g>
+
+                                <g clip-path="url(#c)" transform="translate(-68.564 -79.701) scale(.35278)">
+
+                                <path fill="url(#d)" d="m144.07 264.004 83.825 113.453 110.86-81.906-83.83-113.45zm0 0"/>
+
+                                </g>
+
+                                <g clip-path="url(#e)" transform="translate(-68.564 -79.701) scale(.35278)">
+
+                                <path fill="url(#f)" d="M197.02 225.934v107.43h91.683v-107.43zm0 0"/>
+
+                                </g>
+
+                                </svg>
+                        </div>
+                        <div class="tombolan">
+                            <div class="tebal"></div>
+                            <div class="tombolIni"></div>
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z" fill="#53C1DE"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7004 11.1537C25.2661 8.92478 25.9772 4.79148 23.4704 3.39016C20.9753 1.99495 17.7284 4.66843 16.0139 6.27318C14.3044 4.68442 10.9663 2.02237 8.46163 3.42814C5.96751 4.82803 6.73664 8.8928 7.3149 11.1357C4.98831 11.7764 1 13.1564 1 15.9759C1 18.7874 4.98416 20.2888 7.29698 20.9289C6.71658 23.1842 5.98596 27.1909 8.48327 28.5877C10.9973 29.9932 14.325 27.3945 16.0554 25.7722C17.7809 27.3864 20.9966 30.0021 23.4922 28.6014C25.9956 27.1963 25.3436 23.1184 24.7653 20.8625C27.0073 20.221 31 18.7523 31 15.9759C31 13.1835 26.9903 11.7923 24.7004 11.1537ZM24.4162 19.667C24.0365 18.5016 23.524 17.2623 22.8971 15.9821C23.4955 14.7321 23.9881 13.5088 24.3572 12.3509C26.0359 12.8228 29.7185 13.9013 29.7185 15.9759C29.7185 18.07 26.1846 19.1587 24.4162 19.667ZM22.85 27.526C20.988 28.571 18.2221 26.0696 16.9478 24.8809C17.7932 23.9844 18.638 22.9422 19.4625 21.7849C20.9129 21.6602 22.283 21.4562 23.5256 21.1777C23.9326 22.7734 24.7202 26.4763 22.85 27.526ZM9.12362 27.5111C7.26143 26.47 8.11258 22.8946 8.53957 21.2333C9.76834 21.4969 11.1286 21.6865 12.5824 21.8008C13.4123 22.9332 14.2816 23.9741 15.1576 24.8857C14.0753 25.9008 10.9945 28.557 9.12362 27.5111ZM2.28149 15.9759C2.28149 13.874 5.94207 12.8033 7.65904 12.3326C8.03451 13.5165 8.52695 14.7544 9.12123 16.0062C8.51925 17.2766 8.01977 18.5341 7.64085 19.732C6.00369 19.2776 2.28149 18.0791 2.28149 15.9759ZM9.1037 4.50354C10.9735 3.45416 13.8747 6.00983 15.1159 7.16013C14.2444 8.06754 13.3831 9.1006 12.5603 10.2265C11.1494 10.3533 9.79875 10.5569 8.55709 10.8297C8.09125 9.02071 7.23592 5.55179 9.1037 4.50354ZM20.3793 11.5771C21.3365 11.6942 22.2536 11.85 23.1147 12.0406C22.8562 12.844 22.534 13.6841 22.1545 14.5453C21.6044 13.5333 21.0139 12.5416 20.3793 11.5771ZM16.0143 8.0481C16.6054 8.66897 17.1974 9.3623 17.7798 10.1145C16.5985 10.0603 15.4153 10.0601 14.234 10.1137C14.8169 9.36848 15.414 8.67618 16.0143 8.0481ZM9.8565 14.5444C9.48329 13.6862 9.16398 12.8424 8.90322 12.0275C9.75918 11.8418 10.672 11.69 11.623 11.5748C10.9866 12.5372 10.3971 13.5285 9.8565 14.5444ZM11.6503 20.4657C10.6679 20.3594 9.74126 20.2153 8.88556 20.0347C9.15044 19.2055 9.47678 18.3435 9.85796 17.4668C10.406 18.4933 11.0045 19.4942 11.6503 20.4657ZM16.0498 23.9915C15.4424 23.356 14.8365 22.6531 14.2448 21.8971C15.4328 21.9423 16.6231 21.9424 17.811 21.891C17.2268 22.6608 16.6369 23.3647 16.0498 23.9915ZM22.1667 17.4222C22.5677 18.3084 22.9057 19.1657 23.1742 19.9809C22.3043 20.1734 21.3652 20.3284 20.3757 20.4435C21.015 19.4607 21.6149 18.4536 22.1667 17.4222ZM18.7473 20.5941C16.9301 20.72 15.1016 20.7186 13.2838 20.6044C12.2509 19.1415 11.3314 17.603 10.5377 16.0058C11.3276 14.4119 12.2404 12.8764 13.2684 11.4158C15.0875 11.2825 16.9178 11.2821 18.7369 11.4166C19.7561 12.8771 20.6675 14.4086 21.4757 15.9881C20.6771 17.5812 19.7595 19.1198 18.7473 20.5941ZM22.8303 4.4666C24.7006 5.51254 23.8681 9.22726 23.4595 10.8426C22.2149 10.5641 20.8633 10.3569 19.4483 10.2281C18.6239 9.09004 17.7698 8.05518 16.9124 7.15949C18.1695 5.98441 20.9781 3.43089 22.8303 4.4666Z" fill="#53C1DE"/>
+                            </svg>
+                        </div>
+                        <div class="tombolan">
+                            <div class="tebal"></div>
+                            <div class="tombolIni"></div>
+                            <svg fill="var(--gelap)" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.745 0.917c-1.458 0.328-2.906 0.781-4.266 1.464 0.031 1.198 0.109 2.344 0.266 3.505-0.526 0.339-1.078 0.63-1.568 1.026-0.5 0.38-1.010 0.75-1.464 1.198-0.906-0.594-1.859-1.156-2.849-1.651-1.063 1.141-2.052 2.375-2.865 3.755 0.609 0.99 1.25 1.911 1.938 2.792h0.016v8.474c0.016 0 0.031 0 0.047 0.005l5.198 0.5c0.271 0.026 0.484 0.245 0.5 0.521l0.161 2.292 4.531 0.323 0.313-2.115c0.042-0.276 0.276-0.479 0.552-0.479h5.484c0.276 0 0.51 0.203 0.552 0.479l0.313 2.115 4.531-0.323 0.161-2.292c0.016-0.276 0.229-0.495 0.505-0.521l5.193-0.5c0.016 0 0.031-0.005 0.047-0.005v-8.474h0.021c0.688-0.875 1.323-1.802 1.932-2.792-0.807-1.38-1.802-2.615-2.865-3.755-0.984 0.495-1.943 1.057-2.849 1.651-0.453-0.448-0.958-0.818-1.458-1.198-0.495-0.396-1.047-0.688-1.573-1.026 0.156-1.161 0.234-2.307 0.266-3.505-1.354-0.682-2.802-1.135-4.266-1.464-0.583 0.984-1.115 2.047-1.578 3.083-0.552-0.089-1.109-0.125-1.661-0.13h-0.026c-0.552 0.005-1.109 0.042-1.661 0.13-0.464-1.036-0.995-2.099-1.583-3.083zM8.635 13.323c1.729 0 3.13 1.406 3.13 3.135s-1.401 3.13-3.13 3.13c-1.729 0-3.13-1.401-3.13-3.13s1.401-3.135 3.13-3.135zM23.365 13.323c1.729 0 3.13 1.406 3.13 3.135s-1.401 3.13-3.13 3.13c-1.729 0-3.13-1.401-3.13-3.13s1.401-3.135 3.13-3.135zM8.932 14.568c-1.146 0-2.078 0.927-2.078 2.078 0 1.146 0.932 2.073 2.078 2.073 1.151 0 2.083-0.927 2.083-2.073 0-1.151-0.932-2.078-2.083-2.078zM23.063 14.568c-1.146 0-2.078 0.927-2.078 2.078 0 1.146 0.932 2.073 2.078 2.073 1.151 0 2.078-0.927 2.078-2.073 0-1.151-0.927-2.078-2.078-2.078zM16 15.172c0.557 0 1.010 0.406 1.010 0.911v2.885c0 0.505-0.453 0.917-1.010 0.917s-1.010-0.411-1.010-0.917v-2.885c0-0.505 0.453-0.911 1.010-0.911zM1.948 22.599c0 0.505 0.005 1.052 0.005 1.161 0 4.938 6.26 7.307 14.036 7.333h0.021c7.776-0.026 14.031-2.396 14.031-7.333 0-0.109 0.005-0.656 0.010-1.161l-4.672 0.453-0.161 2.307c-0.021 0.276-0.24 0.5-0.516 0.516l-5.578 0.396c-0.271 0-0.51-0.198-0.552-0.474l-0.318-2.156h-4.516l-0.318 2.156c-0.042 0.286-0.297 0.495-0.594 0.474l-5.531-0.396c-0.276-0.021-0.5-0.24-0.521-0.516l-0.156-2.307-4.672-0.448z"/>
+                            </svg>
+                        </div>
+                        <div class="tombolan">
+                            <div class="tebal"></div>
+                            <div class="tombolIni"></div>
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+
+                                <g fill="none" fill-rule="evenodd">
+
+                                <path d="M0 0h32v32H0z"/>
+
+                                <path fill="#70AD51" d="M5.466 27.993c.586.473 1.446.385 1.918-.202.475-.585.386-1.445-.2-1.92-.585-.474-1.444-.383-1.92.202-.45.555-.392 1.356.115 1.844l-.266-.234C1.972 24.762 0 20.597 0 15.978 0 7.168 7.168 0 15.98 0c4.48 0 8.53 1.857 11.435 4.836.66-.898 1.232-1.902 1.7-3.015 2.036 6.118 3.233 11.26 2.795 15.31-.592 8.274-7.508 14.83-15.93 14.83-3.912 0-7.496-1.416-10.276-3.757l-.238-.21zm23.58-4.982c4.01-5.336 1.775-13.965-.085-19.48-1.657 3.453-5.738 6.094-9.262 6.93-3.303.788-6.226.142-9.283 1.318-6.97 2.68-6.86 10.992-3.02 12.86.002 0 .23.124.227.12 0-.002 5.644-1.122 8.764-2.274 4.56-1.684 9.566-5.835 11.213-10.657-.877 5.015-5.182 9.84-9.507 12.056-2.302 1.182-4.092 1.445-7.88 2.756-.464.158-.828.314-.828.314.96-.16 1.917-.212 1.917-.212 5.393-.255 13.807 1.516 17.745-3.73z"/>
+
+                                </g>
+
+                            </svg>
                         </div>
                     </div>
-                    <!-- <div class="project">
-                        <div class="photo">
-                            <img src="project/image/Screenshot 2025-01-26 134244.png" alt="">
-                        </div>
-                    </div> -->
-                    <div class="project">
-                        <div class="photo">
-                            <img src="project/image/Screenshot 2025-02-06 113338.png" alt="">
+                    <div class="kanane">
+                        <div class="wadah">
+                            <div class="pro">
+                                <div class="judul">
+                                    <h2>fontous</h2>
+                                </div>
+                                
+                            </div>
+                            <a href="#">see more ...</a>
                         </div>
                     </div>
-                    <div class="project"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="penjelasan">
+            <div class="wrapper">
+                <div class="paragraph">
+                    <p>for the back end i know how to use spring boot, django, express and next js.</p>
+                    <p>i know whats every advantage to use them. I make a website for it. <a href="#">whoisbackend</a></p>
+                    <p>the point of it is, everything is useles unless the security is good, like how to hande klickjacking, XSS attack, </p>
+                </div>
+
+                <h3>Do i use Ai ?</h3>
+
+                <div class="paragraph">
+                    <p>yes i use it wisely. i am not eat them all without chewing it first.</p>
+                    <p>imposible to reject the technology.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="contactMe">
+            <div class="wrapper">
+                <div class="tulisan">
+                    <h1>C</h1>
+                    <h1>O</h1>
+                    <h1>N</h1>
+                    <h1>T</h1>
+                    <h1>A</h1>
+                    <h1>C</h1>
+                    <h1>T</h1>
+                    <h1>S</h1>
+                </div>
+                <div class="gambaran">
+                    <div class="gambar">
+                        <div class="kotak"></div>
+                    </div>
+                    <div class="gambar">
+                        <div class="kotak coba"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -804,7 +1388,6 @@
                     <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
                 </svg>
             </div>
-            <div class="background3"></div>
             <div class="wrapper">
                 <div class="kiri">
                     <div class="judul">
@@ -875,7 +1458,11 @@
                         </select>
                     </div>
                     <div class="donation">
-                        <h3>donate me</h3>
+                        <h3>doughnut me 🍩</h3>
+                        <div class="penutup">
+                            <div class="bundar"></div>
+                            <div class="bundar"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -886,5 +1473,55 @@
 
     <script src="script/hello.js"></script>
     <script src="script/darkmode.js"></script>
+    
+    <script src="gunungan.js"></script>
+
+    <!-- untuk tombolan project gerak dari kiri ke kanan -->
+    <script>
+        const box = document.querySelectorAll('.tombolan');
+        const geseran = document.querySelectorAll(".tombolan .tebal");
+
+        const pilihIni = document.querySelectorAll(".tombolan .tombolIni");
+
+        box.forEach((ini, i)=>{
+            ini.addEventListener('mouseenter', () => {
+                geseran[i].classList.remove('no-transition');
+                
+                geseran[i].classList.remove('move-right');
+                
+                geseran[i].classList.add('move-center');
+            });
+        })
+
+        box.forEach((ini, i)=>{
+            ini.addEventListener('mouseleave', () => {
+                setTimeout(()=>{
+                    geseran[i].classList.remove('move-center');
+                    geseran[i].classList.add('move-right');
+                }, 100)
+            });
+        })
+
+        box.forEach((ini, i)=>{
+            ini.addEventListener('transitionend', () => {
+                
+                if (geseran[i].classList.contains('move-right')) {
+                    
+                    geseran[i].classList.add('no-transition');
+                    
+                    geseran[i].classList.remove('move-right');
+                }
+            });
+            ini.addEventListener('click', function(){
+                pilihIni.forEach((apa, g)=>{
+                    apa.classList.remove("pilihIni");
+                })
+                pilihIni[i].classList.add("pilihIni");
+            })
+        })
+
+    </script>
+
+
 </body>
 </html>

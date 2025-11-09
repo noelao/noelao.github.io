@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Hover Kustom</title>
+    <style>
+        /* Mengatur halaman agar kotak berada di tengah */
+        body {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden; /* Mencegah scrollbar saat animasi */
+        }
+
+        /* Ini adalah 3 Status CSS kita:
+           1. .box (Default / KIRI)
+           2. .move-center (Tengah)
+           3. .move-right (Kanan)
+        */
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #8e8e8e52;
+            
+            overflow: hidden;
+            display: flex;
+            align-items: end;
+            cursor: pointer;
+        }
+        .visual {
+            background-color: crimson;
+            height: 10px;
+            width: 100%;
+            transform: translateX(-200px);
+            transition: transform 0.4s ;
+        }
+
+        /* Status 2: Hover (TENGAH) */
+        .move-center {
+            transform: translateX(0); /* Pindah ke tengah */
+        }
+
+        /* Status 3: After-Hover (KANAN) */
+        .move-right {
+            transform: translateX(200px); /* Pindah ke kanan */
+        }
+        
+        /* Class utilitas ini digunakan oleh JS
+           untuk mematikan transisi saat reset.
+        */
+        .no-transition {
+            transition: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>Hover kotak di bawah ini:</p>
+
+    <div id="box-js" class="box">
+        <div class="visual" id="visual">
+
+        </div>
+    </div>
+
+    <script>
+        // Ambil elemen yang akan dianimasikan
+        const box = document.getElementById('box-js');
+        const geseran = document.getElementById("visual");
+
+        // 1. Event saat mouse masuk (Hover)
+        // Animasi: KIRI -> TENGAH
+        box.addEventListener('mouseenter', () => {
+            // Pastikan transisi aktif
+            geseran.classList.remove('no-transition');
+            
+            // Hapus status 'kanan' (jika ada)
+            geseran.classList.remove('move-right');
+            
+            // Tambahkan status 'tengah' untuk memulai animasi
+            geseran.classList.add('move-center');
+        });
+
+        // 2. Event saat mouse keluar (After-Hover)
+        // Animasi: TENGAH -> KANAN
+        box.addEventListener('mouseleave', () => {
+            // Hapus status 'tengah'
+            geseran.classList.remove('move-center');
+            
+            // Tambahkan status 'kanan' untuk memulai animasi
+            geseran.classList.add('move-right');
+        });
+
+        // 3. Event saat transisi selesai
+        // Animasi: RESET (KANAN -> KIRI)
+        box.addEventListener('transitionend', () => {
+            
+            // Cek apakah transisi yang baru selesai adalah yang 'move-right'
+            if (geseran.classList.contains('move-right')) {
+                
+                // 1. Matikan transisi agar 'lompatan' reset tidak terlihat
+                geseran.classList.add('no-transition');
+                
+                // 2. Hapus class 'move-right'.
+                // Ini akan membuat elemen kembali ke status default (.geseran)
+                // yaitu 'transform: translateX(-200px)' (KIRI)
+                geseran.classList.remove('move-right');
+                
+                // Catatan: Class 'no-transition' akan dihapus
+                // saat 'mouseenter' berikutnya (lihat event no 1).
+            }
+        });
+
+    </script>
+
+</body>
+</html>
