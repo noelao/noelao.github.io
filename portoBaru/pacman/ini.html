@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Pac-Man HTML</title>
+    <style>
+        /* CSS untuk Styling Dasar */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #333;
+            margin: 0;
+        }
+
+        /* Styling untuk Gambar Pac-Man */
+        #pacman {
+            width: 100px; /* Ukuran gambar Pac-Man */
+            height: 100px;
+            /* Membuat gambar tetap tajam (opsional) */
+            image-rendering: pixelated;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <img id="pacman" src="https://i.imgur.com/8Qn4pC2.png" alt="Pac-Man Membuka Mulut">
+
+    <script>
+        // JavaScript untuk Animasi Pergantian Gambar
+        const pacmanImage = document.getElementById('pacman');
+
+        // URL Gambar 1: Pac-Man Membuka Mulut
+        const imageOpen = 'https://i.imgur.com/8Qn4pC2.png';
+
+        // URL Gambar 2: Pac-Man Menutup Mulut
+        const imageClosed = 'https://i.imgur.com/39J6iXh.png';
+
+        // Variabel untuk melacak status mulut
+        let isMouthOpen = true;
+
+        // Fungsi untuk mengganti gambar
+        function togglePacmanMouth() {
+            if (isMouthOpen) {
+                // Ganti ke gambar mulut tertutup
+                pacmanImage.src = imageClosed;
+                pacmanImage.alt = "Pac-Man Menutup Mulut";
+            } else {
+                // Ganti ke gambar mulut terbuka
+                pacmanImage.src = imageOpen;
+                pacmanImage.alt = "Pac-Man Membuka Mulut";
+            }
+
+            // Balikkan status untuk siklus berikutnya
+            isMouthOpen = !isMouthOpen;
+        }
+
+        // Atur interval (waktu) pergantian gambar.
+        // Di sini kita gunakan 100 milidetik (0.1 detik)
+        // Semakin kecil angka, semakin cepat "mengunyah"
+        setInterval(togglePacmanMouth, 100);
+
+        // Tambahan: Contoh bagaimana Pac-Man bisa bergerak ke kanan (CSS Animation)
+        pacmanImage.style.position = 'relative';
+        pacmanImage.animate([
+            { transform: 'translateX(0)' },
+            { transform: 'translateX(200px)' }
+        ], {
+            duration: 2000, // Durasi 2 detik
+            iterations: Infinity, // Ulangi terus menerus
+            direction: 'alternate', // Bolak-balik
+            easing: 'linear'
+        });
+    </script>
+
+</body>
+</html>

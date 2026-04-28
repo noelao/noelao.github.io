@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "name":"fontous",
+        "deskripsi":"website untuk memudahkan client mendisplay font untuk kebutuhan design.",
+        "dependency":["express", "ejs"],
+        "language":["html", "css", "javascript"],
+        "image":"./project/image/fontous2.png",
+        "link":"https://fontous.vercel.app/"
+    },
+    {
+        "id":2,
+        "name":"buatSvg",
+        "deskripsi":"website untuk membuat design manual dengan bahasa Svg dasar",
+        "dependency":["express", "ejs", "supabase"],
+        "language":["html", "css", "javascript"],
+        "image":"./project/image/buatSvg.png",
+        "link":"https://svg-noelao.vercel.app/"
+    }
+]
